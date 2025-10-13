@@ -9,24 +9,12 @@ public class EventManager : MonoBehaviour
     public static Action<PlayerMovEventData> OnPlayerMov;
     public static Action<PlayerExitDelayEventData> OnPlayerExitDelay;
     public static Action OnPlayerEnterDelay;
+    public static Action<CPUEnterTargetEventData> OnCPUEnterTarget;
     public static EventManager instance;
 
     private void Start()
     {
         instance = this;
-    }
-    public static bool ChecSubscribe(Action action,MethodInfo method) 
-    {
-        if (action == null)
-            return false;
-
-        Delegate[] delegates = action.GetInvocationList();
-        foreach (Delegate del in delegates)
-        {
-            if (del.Method == method)
-                return true;
-        }
-        return false;
     }
     public static void PlayerMov(PlayerMovEventData data) 
     {
@@ -40,7 +28,10 @@ public class EventManager : MonoBehaviour
     {
         OnPlayerEnterDelay?.Invoke();
     }
-    
+    public static void CPUEnterTarget(CPUEnterTargetEventData data) 
+    {
+        OnCPUEnterTarget?.Invoke(data);
+    }
 }
 
 public class PlayerMovEventData 
@@ -55,5 +46,17 @@ public class PlayerExitDelayEventData
     public PlayerExitDelayEventData() 
     {
         ;
+    }
+}
+public class CPUEnterTargetEventData 
+{
+    public CPU cpu;
+    public CPUEnterTargetEventData(CPU cpu) 
+    {
+        this.cpu=cpu;
+    }    
+    public CPUEnterTargetEventData() 
+    {
+        this.cpu=null;
     }
 }

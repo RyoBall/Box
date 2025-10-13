@@ -31,4 +31,8 @@ public class GameManager : MonoBehaviour
             MapManager.instance.Reset();
         }
     }
+    public void Win(CPUEnterTargetEventData data) 
+    {
+        ;
+    }
 }

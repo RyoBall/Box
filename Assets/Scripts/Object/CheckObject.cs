@@ -44,6 +44,18 @@ public class CheckObject : MonoBehaviour
         }
         return false;
     }
+    public bool CheckWithTag(Vector3 posOffset,int downVec, Vector2 vec, String tag)//对射线初始位置进行偏移以及允许向下发射射线
+    {
+        RaycastHit[] hits = Physics.RaycastAll(transform.position+posOffset, new Vector3(vec.x, -downVec, vec.y), Data.fixedChecLength+.01f);
+        foreach (RaycastHit hit in hits)
+        {
+            if (hit.collider.tag == tag)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public virtual void Move(Vector2 vec)
     {

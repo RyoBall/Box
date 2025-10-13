@@ -8,6 +8,8 @@ using UnityEngine.UIElements;
 
 public class Box : CheckObject
 {
+    public enum Type {Battery,CPU,Target,Other }
+    public Type type=Type.Other;
     public bool pushable;
     public int timeCount;
     public TimeText text;
@@ -75,7 +77,7 @@ public class Box : CheckObject
     {
         if(moveVec.Count <= 0) 
         {
-            text.text.enabled = false ;
+            text.text.enabled = false;
         }
     }
     public virtual bool CheckMove(Vector2 vec)//�ƶ��������Ƿ�ɹ��ƶ�
