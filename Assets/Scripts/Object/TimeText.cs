@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class TimeText : MonoBehaviour
 {
-    TMP_Text text;
+    public TMP_Text text;
     // Start is called before the first frame update
     void Start()
     {
         text = GetComponent<TMP_Text>();
+        DelayTextManager.instance.texts.Add(text);
     }
 
     // Update is called once per frame

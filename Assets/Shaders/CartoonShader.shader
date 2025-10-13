@@ -20,7 +20,7 @@ Shader "Unlit/CartoonShader"
             struct Attributes
             {
                 float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
+                float2 uvx : TEXCOORD0;
             };
 
             struct Varyings
@@ -29,7 +29,7 @@ Shader "Unlit/CartoonShader"
                 float4 positionCS : SV_POSITION;
             };
             
-
+            
             Varyings vert (Attributes v)
             {
                 Varyings o;
@@ -37,7 +37,7 @@ Shader "Unlit/CartoonShader"
                 o.uv = v.uv;
                 return o;
             }
-
+            
             half4 frag (Varyings i) : SV_Target
             {
                 return half4(1,1,1,1);

@@ -30,7 +30,7 @@ Shader "Unlit/EdgeShader"
                 float3 normalWS : TEXCOORD0;
                 float4 positionCS : SV_POSITION;
             };
-
+            
             float _OutLineLength;
 
             Varyings vert (Attributes v)

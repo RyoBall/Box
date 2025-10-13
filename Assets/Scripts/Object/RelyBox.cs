@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RelyBox : Box
 {
-    Vector2 moveVec;
+    /*Vector2 moveVec;
     public override bool GetPush(Vector2 vec)
     {
         moveVec = vec;
@@ -31,13 +31,6 @@ public class RelyBox : Box
         }
         return false;
     }
-    void SetTimeCount(int count)
-    {
-        timeCount = count;
-        if (timeCount == 1 && !CheckWithTag(moveVec,"Wall"))
-            ismoving = true;
-        text.UpdateText(count);
-    }
     public void CountTime(PlayerMovEventData data)
     {
         SetTimeCount(timeCount - 1);
@@ -47,4 +40,5 @@ public class RelyBox : Box
         }
         EventManager.OnPlayerMov -= CountTime;
     }
+    */
 }
