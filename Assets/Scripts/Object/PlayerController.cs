@@ -2,24 +2,30 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
 public class PlayerController : CheckObject
 {
     public static PlayerController instance;
-    public static bool delaySkillUnlock=false;
+    public static bool delaySkillUnlock = false;
     bool moving;
     Animator playerAnimator;
-    public bool jump;
+    [FormerlySerializedAs("jump")] public bool jumpSkill;
+    public bool canJump;
     public bool delay;
     private bool onBox;//在箱子上前进
-    Vector2 faceVec=new Vector2(1,0);
-    private int jumpCount;
+    Vector2 faceVec = new Vector2(1,0);
+    public int jumpCount;
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
         playerAnimator = GetComponent<Animator>();
+        if (jumpSkill)
+        {
+            canJump = true;
+        }
     }   
 
     // Update is called once per frame
@@ -29,7 +35,7 @@ public class PlayerController : CheckObject
         //时刻检查，进入新一关重置，在jump第一次开启后，才有可能计数
         if (jumpCount > 2)
         {
-            jump = false;
+            canJump = false;
         }
     }
     int Control()
@@ -71,7 +77,7 @@ public class PlayerController : CheckObject
                 }
                 return 0;
             }
-            else if (Input.GetKeyDown(KeyCode.Space)&&jump) 
+            else if (Input.GetKeyDown(KeyCode.Space) && canJump) 
             {
                 if (CheckWithTag(faceVec, "Box")) 
                 {
@@ -169,6 +175,8 @@ public class PlayerController : CheckObject
         moving = true;
         transform.DOMove(transform.position + new Vector3(vec.x * Data.fixedLength, 0, vec.y * Data.fixedLength), Data.fixedMovTime).OnComplete(() => moving = false);
     }
+    
+    //Jump和JumpDown都是弧线轨迹，等动画出了修改
     public void Jump(Vector2 vec) 
     {
         moving = true;

@@ -44,6 +44,12 @@ public class MapManager : MonoBehaviour
         {
             t.Key.position = t.Value.position;
         }
+
+        if (PlayerController.instance.jumpSkill)
+        {
+            PlayerController.instance.jumpCount = 0;
+            PlayerController.instance.canJump = true;
+        }
     }
     
 }

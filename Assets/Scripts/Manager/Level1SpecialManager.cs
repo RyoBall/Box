@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Level1SpecialManager : MonoBehaviour//ÓÃÕâ¸ö¹ÜÀíÆ÷×¨ÃÅÊµÏÖµÚÒ»¹ØµÄĞé»¯Ğ§¹û
+public class Level1SpecialManager : MonoBehaviour//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¨ï¿½ï¿½Êµï¿½Öµï¿½Ò»ï¿½Øµï¿½ï¿½é»¯Ğ§ï¿½ï¿½
 {
     public static Level1SpecialManager instance;
     public GameObject badInsect;
@@ -10,7 +10,7 @@ public class Level1SpecialManager : MonoBehaviour//ÓÃÕâ¸ö¹ÜÀíÆ÷×¨ÃÅÊµÏÖµÚÒ»¹ØµÄĞ
     [SerializeField] private Color clarityColor;
     [SerializeField] private Color normalColor;
     [SerializeField] private GameObject wallToDestroy;
-    private CPU cPU;
+    private CPUEnterTargetEventData data;
     private void Awake()
     {
         instance = this;
@@ -23,12 +23,13 @@ public class Level1SpecialManager : MonoBehaviour//ÓÃÕâ¸ö¹ÜÀíÆ÷×¨ÃÅÊµÏÖµÚÒ»¹ØµÄĞ
     public void CPUEnterSpecialEvent(CPUEnterTargetEventData data) 
     {
         data.cpu.transform.position = badInsect.transform.position;
-        PlayerController.instance.jump = true;
+        PlayerController.instance.jumpSkill = true;
         material.color = clarityColor;
         Destroy(wallToDestroy);
+        this.data = data;
     }
     public void HitBadInsectEvent() 
     {
-        GameManager.instance.Win(new CPUEnterTargetEventData());
+        GameManager.instance.Win(data);
     }
 }
