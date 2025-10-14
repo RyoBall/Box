@@ -6,6 +6,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+public interface ICode 
+{
+    enum CodeType {Main,Is,Guest };
+    public CodeType codeType { get; set; }
+    public string name { get; set; }
+}
 public class Box : CheckObject
 {
     public enum Type {Battery,CPU,Target,Other }

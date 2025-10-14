@@ -1,0 +1,59 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+public class IsCode : Box,ICode
+{
+    ICode.CodeType ICode.codeType { get ; set ; }
+    string ICode.name { get; set; }
+
+    ICode main;
+    GuestCode guest;
+    public override bool CheckMove(Vector2 vec)
+    {
+        return base.CheckMove(vec);
+    }
+
+    public override void GetDelayPush(Vector2 vec)
+    {
+        base.GetDelayPush(vec);
+    }
+
+    public override bool GetPush(Vector2 vec)
+    {
+        return base.GetPush(vec);
+    }
+
+    public override void Move(Vector2 vec)
+    {
+        base.Move(vec);
+    }
+    public void HorizontalChec() 
+    {
+        CheckObject box;
+        if(CheckWithTag<CheckObject>(Vector2.up, "Box",out box)) 
+        {
+            ICode code = box.GetComponent<ICode>();
+            if (code!=null&&code.codeType==ICode.CodeType.Main) 
+            {
+                main = box.GetComponent<ICode>();
+            }
+        } 
+        if(CheckWithTag<CheckObject>(Vector2.down, "Box",out box)) 
+        {
+            ICode code = box.GetComponent<ICode>();
+            if (code!=null&&code.codeType==ICode.CodeType.Guest) 
+            {
+                guest = box.GetComponent<GuestCode>();
+            }
+        }
+    }
+    public void Effect() 
+    {
+        if (main != null&&guest!=null) 
+        {
+            guest.Effect(main.name);
+        }
+    }
+}

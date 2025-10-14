@@ -16,6 +16,8 @@ public class PlayerController : CheckObject
     public bool delay;
     private bool onBox;//在箱子上前进
     Vector2 faceVec = new Vector2(1,0);
+    //[SerializeField] float accelaration;
+    //[SerializeField] float first;
     public int jumpCount;
     // Start is called before the first frame update
     void Start()
@@ -189,6 +191,16 @@ public class PlayerController : CheckObject
         onBox = false;
         transform.DOMove(transform.position + new Vector3(vec.x * Data.fixedLength, -1, vec.y * Data.fixedLength), Data.fixedMovTime).OnComplete(() => moving = false);
     }
+    /*IEnumerator JumpInOneFrame(float vel) 
+    {
+       yield return new WaitForSeconds(0);
+        transform.position += Vector3.up*vel*Time.deltaTime;
+        if (transform.position.y > 1.5f || vel > 0) 
+        {
+            JumpInOneFrame(vel-=accelaration);   
+        }
+
+    }*///试图通过直接对transform进行修改实现弧线轨迹，具体实现等动画出来了再说吧
     public void FinishAction()
     {
         playerAnimator.SetBool("Walk", false);
