@@ -56,7 +56,6 @@ public class CheckObject : MonoBehaviour
         }
         return false;
     }
-
     public virtual void Move(Vector2 vec)
     {
         transform.DOMove(transform.position + new Vector3(vec.x * Data.fixedLength, 0, vec.y * Data.fixedLength), Data.fixedMovTime);

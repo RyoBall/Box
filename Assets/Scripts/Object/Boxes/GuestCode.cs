@@ -35,7 +35,9 @@ public class GuestCode : Box,ICode
             case "Jump":
                 PlayerController.instance.jumpSkill = true;
                 break;
-            case "":
+            case "Delay":
+                PlayerController.instance.jumpSkill = true;
+                break;
         }
     }
 }

@@ -8740,10 +8740,10 @@ GameObject:
   - component: {fileID: 995291294}
   - component: {fileID: 995291293}
   - component: {fileID: 995291292}
-  - component: {fileID: 995291291}
+  - component: {fileID: 995291295}
   m_Layer: 0
   m_Name: BattryHouse
-  m_TagString: Box
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8757,24 +8757,12 @@ Transform:
   m_GameObject: {fileID: 995291289}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 1, y: 0.5, z: -3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1, y: -0.02, z: -3}
+  m_LocalScale: {x: 1, y: 0.05, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 113191096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &995291291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 995291289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83c2d87f7a46deb498351d3a12c876f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &995291292
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8846,6 +8834,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 995291289}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &995291295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995291289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec067a4e1f37ac4a94e5662a77bae25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &995470013
 GameObject:
   m_ObjectHideFlags: 0
@@ -10338,10 +10338,10 @@ GameObject:
   - component: {fileID: 1205922826}
   - component: {fileID: 1205922825}
   - component: {fileID: 1205922824}
-  - component: {fileID: 1205922823}
+  - component: {fileID: 1205922827}
   m_Layer: 0
   m_Name: BattryHouse(1)
-  m_TagString: Box
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10355,24 +10355,12 @@ Transform:
   m_GameObject: {fileID: 1205922821}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 1, y: 0.5, z: -2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1, y: -0.02, z: -2}
+  m_LocalScale: {x: 1, y: 0.05, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 113191096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1205922823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1205922821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83c2d87f7a46deb498351d3a12c876f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1205922824
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10444,6 +10432,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1205922821}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1205922827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205922821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec067a4e1f37ac4a94e5662a77bae25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1220218383
 GameObject:
   m_ObjectHideFlags: 0
@@ -15375,6 +15375,7 @@ MonoBehaviour:
   canJump: 0
   delay: 0
   jumpCount: 0
+  inElectricity: 0
 --- !u!95 &1907342887
 Animator:
   serializedVersion: 5

@@ -18,6 +18,10 @@ public class CPU : Box
         }
         return base.CheckMove(vec);
     }
+    public void BurnOut() 
+    {
+        ;//失败事件
+    }
     IEnumerator CPUEnterTarget() //进入结算应该在移动动画结束后进行
     {
         yield return new WaitForSeconds(Data.fixedMovTime);

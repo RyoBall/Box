@@ -9,6 +9,7 @@ public class EventManager : MonoBehaviour
     public static Action<PlayerMovEventData> OnPlayerMov;
     public static Action<PlayerExitDelayEventData> OnPlayerExitDelay;
     public static Action OnPlayerEnterDelay;
+    public static Action OnPlayerOverMov;
     public static Action<CPUEnterTargetEventData> OnCPUEnterTarget;
     public static EventManager instance;
 
@@ -19,6 +20,10 @@ public class EventManager : MonoBehaviour
     public static void PlayerMov(PlayerMovEventData data) 
     {
         OnPlayerMov?.Invoke(data);
+    }
+    public static void PlayerOverMov() 
+    {
+        OnPlayerOverMov?.Invoke();
     }
     public static void PlayerExitDelay(PlayerExitDelayEventData data) 
     {

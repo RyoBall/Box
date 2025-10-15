@@ -15,20 +15,21 @@ public class PlayerController : CheckObject
     public bool canJump;
     public bool delay;
     private bool onBox;//在箱子上前进
-    Vector2 faceVec = new Vector2(1,0);
+    Vector2 faceVec = new Vector2(1, 0);
     //[SerializeField] float accelaration;
     //[SerializeField] float first;
     public int jumpCount;
-    // Start is called before the first frame update
+    public bool inElectricity;
     void Start()
     {
+        EventManager.OnPlayerOverMov += InElectricityChecAround;
         instance = this;
         playerAnimator = GetComponent<Animator>();
         if (jumpSkill)
         {
             canJump = true;
         }
-    }   
+    }
 
     // Update is called once per frame
     void Update()
@@ -65,23 +66,23 @@ public class PlayerController : CheckObject
                 vec = new Vector2(1, 0);
                 EventManager.PlayerMov(new PlayerMovEventData());
             }
-            else if (Input.GetKeyDown(KeyCode.E)) 
+            else if (Input.GetKeyDown(KeyCode.E))
             {
-                if (delay) 
+                if (delay)
                 {
                     EventManager.PlayerExitDelay(new PlayerExitDelayEventData());
                     delay = false;
                 }
-                else 
+                else
                 {
                     EventManager.PlayerEnterDelay();
                     delay = true;
                 }
                 return 0;
             }
-            else if (Input.GetKeyDown(KeyCode.Space) && canJump) 
+            else if (Input.GetKeyDown(KeyCode.Space) && canJump)
             {
-                if (CheckWithTag(faceVec, "Box")) 
+                if (CheckWithTag(faceVec, "Box"))
                 {
                     Jump(faceVec);
                 }
@@ -103,7 +104,7 @@ public class PlayerController : CheckObject
         if (onBox)
         {
             //如果前下方没有box
-            if (!CheckWithTag(new Vector3(vec.x*(Data.fixedChecLength+.01f),0,vec.y*(Data.fixedChecLength+.01f)),1,Vector2.zero, "Box"))
+            if (!CheckWithTag(new Vector3(vec.x * (Data.fixedChecLength + .01f), 0, vec.y * (Data.fixedChecLength + .01f)), 1, Vector2.zero, "Box"))
             {
                 playerAnimator.SetBool("Jump", true);
                 //飞下去的轨迹
@@ -117,15 +118,15 @@ public class PlayerController : CheckObject
                 playerAnimator.SetBool("Walk", true);
             }
         }
-        else if (delay) 
+        else if (delay)
         {
-            if(CheckWithTag(vec,"Box",out box)) 
+            if (CheckWithTag(vec, "Box", out box))
             {
                 box.GetDelayPush(vec);
             }
-            else if(!CheckWithTag(vec,"Wall"))
+            else if (!CheckWithTag(vec, "Wall"))
             {
-                Move(vec);   
+                Move(vec);
             }
         }
         //在地面上前进
@@ -175,21 +176,21 @@ public class PlayerController : CheckObject
     public override void Move(Vector2 vec)
     {
         moving = true;
-        transform.DOMove(transform.position + new Vector3(vec.x * Data.fixedLength, 0, vec.y * Data.fixedLength), Data.fixedMovTime).OnComplete(() => moving = false);
+        transform.DOMove(transform.position + new Vector3(vec.x * Data.fixedLength, 0, vec.y * Data.fixedLength), Data.fixedMovTime).OnComplete(() => { moving = false; EventManager.PlayerOverMov(); });
     }
-    
+
     //Jump和JumpDown都是弧线轨迹，等动画出了修改
-    public void Jump(Vector2 vec) 
+    public void Jump(Vector2 vec)
     {
         moving = true;
         onBox = true;
-        transform.DOMove(transform.position + new Vector3(vec.x * Data.fixedLength, 1, vec.y * Data.fixedLength), Data.fixedMovTime).OnComplete(() => moving = false);
-    } 
-    public void JumpDown(Vector2 vec) 
+        transform.DOMove(transform.position + new Vector3(vec.x * Data.fixedLength, 1, vec.y * Data.fixedLength), Data.fixedMovTime).OnComplete(() => { moving = false; EventManager.PlayerOverMov(); });
+    }
+    public void JumpDown(Vector2 vec)
     {
         moving = true;
         onBox = false;
-        transform.DOMove(transform.position + new Vector3(vec.x * Data.fixedLength, -1, vec.y * Data.fixedLength), Data.fixedMovTime).OnComplete(() => moving = false);
+        transform.DOMove(transform.position + new Vector3(vec.x * Data.fixedLength, -1, vec.y * Data.fixedLength), Data.fixedMovTime).OnComplete(() => { moving = false; EventManager.PlayerOverMov(); });
     }
     /*IEnumerator JumpInOneFrame(float vel) 
     {
@@ -206,5 +207,32 @@ public class PlayerController : CheckObject
         playerAnimator.SetBool("Walk", false);
         playerAnimator.SetBool("Push", false);
         playerAnimator.SetBool("Jump", false);
+    }
+    public void InElectricityChecAround()
+    {
+        if (inElectricity)
+        {
+            Box box;
+            List<Box> boxes = new List<Box>();
+            CheckWithTag(Vector2.up, "Box", out box);
+            boxes.Add(box);
+            CheckWithTag(Vector2.down, "Box", out box);
+            boxes.Add(box);
+            CheckWithTag(Vector2.left, "Box", out box);
+            boxes.Add(box);
+            CheckWithTag(Vector2.right, "Box", out box);
+            boxes.Add(box);
+            foreach (Box box1 in boxes)
+            {
+                if (box1.type == Box.Type.CPU)
+                {
+                    box1.GetComponent<CPU>().BurnOut();
+                }
+                else if (box1.type == Box.Type.Battery)
+                {
+                    box1.GetComponent<Battery>().inPower = true;
+                }
+            }
+        }
     }
 }
