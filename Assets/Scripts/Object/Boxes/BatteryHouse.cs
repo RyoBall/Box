@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,11 +21,28 @@ public class BatteryHouse : MonoBehaviour
         RaycastHit[] hits= Physics.RaycastAll(transform.position,new Vector3(0,1,0),.1f);
         foreach(RaycastHit hit in hits) 
         {
-            if (hit.collider.tag=="Box"&&hit.collider.gameObject.GetComponent<Box>().type == Box.Type.Battery)
+            // if (hit.collider.tag == "Box" && hit.collider.gameObject.GetComponent<Box>().type == Box.Type.Battery)
+            // { 
+            //     if (hit.collider.gameObject.GetComponent<Battery>().inPower) 
+            //     {
+            //         Effect();   
+            //     }
+            // }
+
+            if (hit.collider.gameObject.TryGetComponent(out Box box))
             {
-                if (hit.collider.gameObject.GetComponent<Battery>().inPower) 
+                if (box.type == Box.Type.CPU)
                 {
-                    Effect();   
+                    Debug.Log("CPU");
+                    box.pushable = false;
+                }
+
+                if (box.type == Box.Type.Battery)
+                {
+                    if (box.GetComponent<Battery>().inPower) 
+                    {
+                        Effect();   
+                    }
                 }
             }
         }
@@ -32,5 +50,11 @@ public class BatteryHouse : MonoBehaviour
     public void Effect() 
     {
         
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position,transform.position+new Vector3(0,0,1));
     }
 }

@@ -14,7 +14,7 @@ public interface ICode
 }
 public class Box : CheckObject
 {
-    public enum Type {Battery,CPU,Target,Other }
+    public enum Type {Battery,CPU,Target,Unreal,Other }
     public Type type=Type.Other;
     public bool pushable;
     public int timeCount;
@@ -89,28 +89,33 @@ public class Box : CheckObject
     public virtual bool CheckMove(Vector2 vec)//�ƶ��������Ƿ�ɹ��ƶ�
     {
         Box box;
-        if (!CheckWithTag(vec, "Box", out box)) 
+        if (pushable)
         {
-            Move(vec);
-            return true;
-        }
-        else
-        {
-            if (box.ismoving) //比如relybox正在移动
+            if (!CheckWithTag(vec, "Box", out box))
             {
-                Move(vec);//自己移动
+                Move(vec);
                 return true;
             }
-            else if (box.pushable)//自己和箱子都可以移动
+            else
             {
-                if (box.GetPush(vec)) //������Ӳ��ƶ���һ�����ƶ�����
+                if (box.ismoving) //比如relybox正在移动
                 {
-                    Move(vec);
+                    Move(vec); //自己移动
                     return true;
                 }
+                else if (box.pushable) //自己和箱子都可以移动
+                {
+                    if (box.GetPush(vec)) //������Ӳ��ƶ���һ�����ƶ�����
+                    {
+                        Move(vec);
+                        return true;
+                    }
+                }
+                
             }
             return false;
         }
+        return false;
     }
 
 }
