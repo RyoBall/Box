@@ -1,4 +1,3 @@
-using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,6 +23,8 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         state = State.ONE;//暂时没有做开头
+        //PlayerController.instance.transform.position = new Vector3(-4,.5f,-3);
+        //cam.transform.position = new Vector3(0.54f, 7.18f, -6.64f);
     }
 
     // Update is called once per frame
@@ -34,7 +35,8 @@ public class GameManager : MonoBehaviour
             MapManager.instance.Reset();
         }
     }
-    public void Win(CPUEnterTargetEventData data) 
+    //第一关特殊
+    public void WinForLevel1(CPUEnterTargetEventData data) 
     {
         //后续改为switch
         if (state == State.ONE)
@@ -44,19 +46,29 @@ public class GameManager : MonoBehaviour
             //TODO:
             //唤起一个剧情，文本有待考察
             //摄像头跟随
-            cam.transform.DOMove(new Vector3(13.22f, 6.1f, -7.2f),Data.fixedCameraMovTime);
+            cam.transform.position = new Vector3(13.22f,6.1f,-7.2f);
             PlayerController.instance.transform.position = new Vector3(9, .5f, -1);
-            PlayerController.instance.Reset();
+            int layer = LayerMask.NameToLayer("Level2");
+            MapManager.instance.ResaveTransform(layer);
             EventManager.OnCPUEnterTarget += Win;
         }
-        else 
-        {
-            PlayerController.instance.Reset();
-            MovePlayer();
-        }
-    }
-    public void MovePlayer() 
-    {
         
+    }
+
+    public void Win(CPUEnterTargetEventData data)
+    {
+        switch (state)
+        {
+            case State.TWO:
+                state = State.THREE;
+                PlayerController.instance.transform.position = new Vector3(22.5f,.5f,-8);
+                cam.transform.position = new Vector3(27.5f, 6.5f, -8f);
+                EventManager.OnCPUEnterTarget -= Win;
+                int layer = LayerMask.NameToLayer("Level3");
+                MapManager.instance.ResaveTransform(layer);
+                break;
+            default:
+                break;
+        }
     }
 }

@@ -17,7 +17,7 @@ public class MapManager : MonoBehaviour
     void Start()//这里用Dictionary保存物体初始位置，后续需要保存其他数据可以调整
     {
         instance = this;
-        int currentLayer = LayerMask.NameToLayer("Default"); 
+        int currentLayer = LayerMask.NameToLayer("Level1"); 
         ResaveTransform(currentLayer);
     }
 
@@ -27,7 +27,7 @@ public class MapManager : MonoBehaviour
 
         foreach (Transform t in allObject)
         {
-            if (t.hideFlags == HideFlags.None && t.gameObject.layer == layer)
+            if (t.hideFlags == HideFlags.None && (t.gameObject.layer == layer || t.CompareTag("Player")))
             {
                 var data = new TransformData()
                 {

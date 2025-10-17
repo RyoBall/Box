@@ -15,14 +15,18 @@ public class CPU : Box
                 StartCoroutine(CPUEnterTarget());
                 return true;
             }
+            else if (box.type == Type.Unreal)
+            {
+                return false;
+            }
         }
         return base.CheckMove(vec);
     }
     public void BurnOut() 
     {
-        ;//Ê§°ÜÊÂ¼þ
+        this.pushable = false;//Ê§ï¿½ï¿½ï¿½Â¼ï¿½
     }
-    IEnumerator CPUEnterTarget() //½øÈë½áËãÓ¦¸ÃÔÚÒÆ¶¯¶¯»­½áÊøºó½øÐÐ
+    IEnumerator CPUEnterTarget() //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     {
         yield return new WaitForSeconds(Data.fixedMovTime);
         EventManager.CPUEnterTarget(new CPUEnterTargetEventData(this));
