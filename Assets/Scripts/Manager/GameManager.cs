@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,8 +44,19 @@ public class GameManager : MonoBehaviour
             //TODO:
             //唤起一个剧情，文本有待考察
             //摄像头跟随
-            cam.transform.position = new Vector3(13.22f,6.1f,-7.2f);
+            cam.transform.DOMove(new Vector3(13.22f, 6.1f, -7.2f),Data.fixedCameraMovTime);
             PlayerController.instance.transform.position = new Vector3(9, .5f, -1);
+            PlayerController.instance.Reset();
+            EventManager.OnCPUEnterTarget += Win;
         }
+        else 
+        {
+            PlayerController.instance.Reset();
+            MovePlayer();
+        }
+    }
+    public void MovePlayer() 
+    {
+        
     }
 }

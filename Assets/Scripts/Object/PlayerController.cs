@@ -41,6 +41,11 @@ public class PlayerController : CheckObject
             canJump = false;
         }
     }
+    public void Reset()
+    {
+        onBox = false;
+        jumpCount = 0;
+    }
     int Control()
     {
         Vector2 vec;

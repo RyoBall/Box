@@ -9,7 +9,7 @@ public class BadInsect : CheckObject
     // Update is called once per frame
     void Update()
     {
-        if (PlayerController.instance.transform.position.x >= transform.position.x)
+        if (PlayerController.instance.transform.position.x >= transform.position.x && PlayerController.instance.transform.position.z==transform.position.z)
         {
             Level1SpecialManager.instance.HitBadInsectEvent();
         }
