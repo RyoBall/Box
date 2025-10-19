@@ -6,13 +6,15 @@ using UnityEngine;
 
 public class BadInsect : CheckObject
 {
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        if (PlayerController.instance.transform.position.x >= transform.position.x && PlayerController.instance.transform.position.z==transform.position.z)
+        EventManager.OnPlayerOverMov += BadInsectChec;
+    }
+    public void BadInsectChec() 
+    {
+        if (PlayerController.instance.transform.position.x == transform.position.x && PlayerController.instance.transform.position.z == transform.position.z)
         {
             Level1SpecialManager.instance.HitBadInsectEvent();
         }
     }
-    
 }

@@ -30,7 +30,6 @@ public class Level1SpecialManager : MonoBehaviour//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿
     }
     public void HitBadInsectEvent() 
     {
-        GameManager.instance.WinForLevel1(data);
-        EventManager.OnCPUEnterTarget -= CPUEnterSpecialEvent;
+        GameManager.instance.Win(data);
     }
 }

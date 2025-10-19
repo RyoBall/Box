@@ -11,12 +11,9 @@ public class EventManager : MonoBehaviour
     public static Action OnPlayerEnterDelay;
     public static Action OnPlayerOverMov;
     public static Action<CPUEnterTargetEventData> OnCPUEnterTarget;
-    public static EventManager instance;
-
-    private void Start()
-    {
-        instance = this;
-    }
+    public static Action OnCPUGetPush;
+    public static Action OnBatteryEnterHouse;
+    public static Action OnLevelReset;
     public static void PlayerMov(PlayerMovEventData data) 
     {
         OnPlayerMov?.Invoke(data);
@@ -37,6 +34,18 @@ public class EventManager : MonoBehaviour
     {
         OnCPUEnterTarget?.Invoke(data);
     }
+    public static void CPUGetPush() 
+    {
+        OnCPUGetPush?.Invoke();
+    }
+    public static void BatteryEnterHouse() 
+    {
+        OnBatteryEnterHouse?.Invoke();
+    }
+    public static void LevelReset() 
+    {
+        OnLevelReset?.Invoke();
+    }
 }
 
 public class PlayerMovEventData 
@@ -51,6 +60,13 @@ public class PlayerExitDelayEventData
     public PlayerExitDelayEventData() 
     {
         ;
+    }
+}public class BatteryEnterHouseData
+{
+    int eventID;
+    public BatteryEnterHouseData(int eventID) 
+    {
+        this.eventID=eventID;
     }
 }
 public class CPUEnterTargetEventData 

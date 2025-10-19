@@ -49,6 +49,7 @@ public class MapManager : MonoBehaviour
         {
             PlayerController.instance.jumpCount = 0;
             PlayerController.instance.canJump = true;
+            PlayerController.instance.onBox=false;
         }
     }
     

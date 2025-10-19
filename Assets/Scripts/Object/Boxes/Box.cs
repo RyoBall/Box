@@ -23,10 +23,10 @@ public class Box : CheckObject
     public List<Vector2> moveVec;
     bool delayMovSubscribePlayerMov=false;//代表DelayMov函数是否监听玩家移动事件，找不到检测是否监听的函数先代替一下
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
-       EventManager.OnPlayerExitDelay+=DelayMoveSubscribePlayerMov;//让延迟移动函数在脱离ExitDelay后订阅玩家移动事件
-       EventManager.OnPlayerExitDelay+=DisactiveText;
+        EventManager.OnPlayerExitDelay+=DelayMoveSubscribePlayerMov;//让延迟移动函数在脱离ExitDelay后订阅玩家移动事件
+        EventManager.OnPlayerExitDelay+=DisactiveText;
         text = GetComponentInChildren<TimeText>();
         pushable = true;
     }
@@ -71,6 +71,15 @@ public class Box : CheckObject
         else
             DelayMoveDisSubscribePlayerMov();
     }
+    public void DelayMoveInLevel3(PlayerMovEventData data) 
+    {
+        if (moveVec.Count > 0) 
+        {
+            CheckMove(moveVec[0]);
+            moveVec.RemoveAt(0);
+            SetTextCount();
+        }
+    }
     public void SetTextCount()
     {
         text.UpdateText(moveVec.Count);
@@ -81,7 +90,7 @@ public class Box : CheckObject
     }
     public void DisactiveText(PlayerExitDelayEventData data) 
     {
-        if(moveVec.Count <= 0) 
+        if(moveVec.Count <= 0&&text!=null) 
         {
             text.text.enabled = false;
         }

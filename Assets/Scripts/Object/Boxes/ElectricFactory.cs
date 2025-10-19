@@ -14,13 +14,12 @@ public class ElectricFactory : MonoBehaviour
     }
     void ChecUp() 
     {
-        RaycastHit[] hits= Physics.RaycastAll(transform.position, Vector3.up, .5f);
+        RaycastHit[] hits= Physics.RaycastAll(transform.position-new Vector3(0,0.1f,0), Vector3.up, .5f);
         foreach (RaycastHit hit in hits) 
         {
-        Debug.Log(1);
             if (hit.collider.GetComponent<PlayerController>() != null) 
             {
-                hit.collider.GetComponent<PlayerController>().inElectricity = true;
+                hit.collider.GetComponent<PlayerController>().inPower = true;
             }
             else if(hit.collider.GetComponent<Battery>() != null) 
             {

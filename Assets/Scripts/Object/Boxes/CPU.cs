@@ -24,7 +24,7 @@ public class CPU : Box
     }
     public void BurnOut() 
     {
-        this.pushable = false;//ʧ���¼�
+        pushable = false;//ʧ���¼�
     }
     IEnumerator CPUEnterTarget() //�������Ӧ�����ƶ��������������
     {

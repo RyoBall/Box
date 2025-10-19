@@ -14,12 +14,12 @@ public class PlayerController : CheckObject
     [FormerlySerializedAs("jump")] public bool jumpSkill;
     public bool canJump;
     public bool delay;
-    private bool onBox;//在箱子上前进
+    public bool onBox;//在箱子上前进
     Vector2 faceVec = new Vector2(1, 0);
     //[SerializeField] float accelaration;
     //[SerializeField] float first;
     public int jumpCount;
-    public bool inElectricity;
+    public bool inPower;
     void Start()
     {
         EventManager.OnPlayerOverMov += InElectricityChecAround;
@@ -54,22 +54,18 @@ public class PlayerController : CheckObject
             if (Input.GetKeyDown(KeyCode.W))
             {
                 vec = new Vector2(0, 1);
-                EventManager.PlayerMov(new PlayerMovEventData());
             }
             else if (Input.GetKeyDown(KeyCode.S))
             {
                 vec = new Vector2(0, -1);
-                EventManager.PlayerMov(new PlayerMovEventData());
             }
             else if (Input.GetKeyDown(KeyCode.A))
             {
                 vec = new Vector2(-1, 0);
-                EventManager.PlayerMov(new PlayerMovEventData());
             }
             else if (Input.GetKeyDown(KeyCode.D))
             {
                 vec = new Vector2(1, 0);
-                EventManager.PlayerMov(new PlayerMovEventData());
             }
             else if (Input.GetKeyDown(KeyCode.E))
             {
@@ -127,6 +123,7 @@ public class PlayerController : CheckObject
         {
             if (CheckWithTag(vec, "Box", out box))
             {
+                Debug.Log("DelayPush");
                 box.GetDelayPush(vec);
             }
             else if (!CheckWithTag(vec, "Wall"))
@@ -176,8 +173,9 @@ public class PlayerController : CheckObject
                 }
             }
         }
+        EventManager.PlayerMov(new PlayerMovEventData());
     }
-
+   
     public override void Move(Vector2 vec)
     {
         moving = true;
@@ -215,7 +213,7 @@ public class PlayerController : CheckObject
     }
     public void InElectricityChecAround()
     {
-        if (inElectricity)
+        if (inPower)
         {
             Box box;
             List<Box> boxes = new List<Box>();
@@ -232,10 +230,12 @@ public class PlayerController : CheckObject
                 if (box1.type == Box.Type.CPU)
                 {
                     box1.GetComponent<CPU>().BurnOut();
+                    Debug.Log("BurnOut");
                 }
                 else if (box1.type == Box.Type.Battery)
                 {
                     box1.GetComponent<Battery>().inPower = true;
+                    Debug.Log("Charge");
                 }
             }
         }
