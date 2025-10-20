@@ -15,8 +15,8 @@ public class Battery : Box
             material.color = Color.red;
         }
     }
-    bool ChecDistance() { return PlayerController.instance.transform.position.x - transform.position.x <= 1 && PlayerController.instance.transform.position.x - transform.position.x >= -1 && PlayerController.instance.transform.position.y - transform.position.y <= 1 && PlayerController.instance.transform.position.y - transform.position.y >= -1; }
-
+    bool ChecDistance() { return PlayerController.instance.transform.position.x - transform.position.x <= 1 && PlayerController.instance.transform.position.x - transform.position.x >= -1 && PlayerController.instance.transform.position.z - transform.position.z <= 1 && PlayerController.instance.transform.position.z - transform.position.z >= -1; }
+    
     public override bool CheckMove(Vector2 vec)
     {
         Box box;
@@ -50,6 +50,9 @@ public class Battery : Box
     protected override void Start()
     {
         base.Start();
+        Renderer renderer = GetComponent<Renderer>();
+        material =new Material(material);
+        renderer.material = material;
         EventManager.OnPlayerOverMov += FindPlayer;
     }
 }

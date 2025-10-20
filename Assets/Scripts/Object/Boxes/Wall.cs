@@ -25,11 +25,14 @@ public class Wall : Box
         ;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         pushable = false;
+        type = Type.Other;
     }
+
+    // Start is called before the first frame update
+
 
     // Update is called once per frame
     void Update()

@@ -23,4 +23,8 @@ public class Target : Wall
     {
         base.Move(vec);
     }
+    private void Start()
+    {
+        ;
+    }
 }

@@ -22,7 +22,6 @@ public class PlayerController : CheckObject
     public bool inPower;
     void Start()
     {
-        EventManager.OnPlayerOverMov += InElectricityChecAround;
         instance = this;
         playerAnimator = GetComponent<Animator>();
         if (jumpSkill)
@@ -214,34 +213,5 @@ public class PlayerController : CheckObject
         playerAnimator.SetBool("Walk", false);
         playerAnimator.SetBool("Push", false);
         playerAnimator.SetBool("Jump", false);
-    }
-    public void InElectricityChecAround()
-    {
-        if (inPower)
-        {
-            Box box;
-            List<Box> boxes = new List<Box>();
-            CheckWithTag(Vector2.up, "Box", out box);
-            boxes.Add(box);
-            CheckWithTag(Vector2.down, "Box", out box);
-            boxes.Add(box);
-            CheckWithTag(Vector2.left, "Box", out box);
-            boxes.Add(box);
-            CheckWithTag(Vector2.right, "Box", out box);
-            boxes.Add(box);
-            foreach (Box box1 in boxes)
-            {
-                if (box1.type == Box.Type.CPU)
-                {
-                    box1.GetComponent<CPU>().BurnOut();
-                    Debug.Log("BurnOut");
-                }
-                else if (box1.type == Box.Type.Battery)
-                {
-                    box1.GetComponent<Battery>().inPower = true;
-                    Debug.Log("Charge");
-                }
-            }
-        }
     }
 }
