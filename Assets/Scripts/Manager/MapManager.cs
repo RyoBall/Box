@@ -18,10 +18,10 @@ public class MapManager : MonoBehaviour
     {
         instance = this;
         int currentLayer = LayerMask.NameToLayer("Level1"); 
-        ResaveTransform(currentLayer);
+        ResaveTransformAndResetPlayer(currentLayer);
     }
 
-    public void ResaveTransform(LayerMask layer)//进入新一关需要使用这个函数来保存新一关的初始位置
+    public void ResaveTransformAndResetPlayer(LayerMask layer)//进入新一关需要使用这个函数来保存新一关的初始位置
     {
         var allObject = FindObjectsOfType<Transform>();
 
@@ -36,6 +36,10 @@ public class MapManager : MonoBehaviour
                 originalTransforms[t] = data;
             }
         }
+
+        PlayerController.instance.jumpCount = 0;
+        PlayerController.instance.canJump = true;
+        PlayerController.instance.onBox = false;
     }
 
     public void Reset()//所有物体回到原点

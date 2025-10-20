@@ -5,12 +5,14 @@ using UnityEngine;
 public class Battery : Box
 {
     public bool inPower;
+    public Material material;
     public void FindPlayer() 
     {
         if (PlayerController.instance.inPower&&ChecDistance()) 
         {
             PlayerController.instance.inPower = false;
             inPower = true;
+            material.color = Color.red;
         }
     }
     bool ChecDistance() { return PlayerController.instance.transform.position.x - transform.position.x <= 1 && PlayerController.instance.transform.position.x - transform.position.x >= -1 && PlayerController.instance.transform.position.y - transform.position.y <= 1 && PlayerController.instance.transform.position.y - transform.position.y >= -1; }

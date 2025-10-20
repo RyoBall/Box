@@ -73,18 +73,18 @@ public class GameManager : MonoBehaviour
                 //唤起一个剧情，文本有待考察
                 //摄像头跟随
                 EventManager.OnCPUEnterTarget -= Level1SpecialManager.instance.CPUEnterSpecialEvent;
-                PlayerController.instance.transform.position = new Vector3(9, .5f, -1);
+                PlayerController.instance.transform.position = new Vector3(9, 0, -1);
                 cam.transform.DOMove(new Vector3(13.5f, 6.5f, -7.5f), Data.fixedCameraMovTime);
                 layer = LayerMask.NameToLayer("Level2");
-                MapManager.instance.ResaveTransform(layer);
+                MapManager.instance.ResaveTransformAndResetPlayer(layer);
                 EventManager.OnCPUEnterTarget += Win;
                 break;
             case State.TWO:
                 state = State.THREE;
-                PlayerController.instance.transform.position = new Vector3(22.5f, .5f, -8);
+                PlayerController.instance.transform.position = new Vector3(22.5f, 0, -8);
                 cam.transform.DOMove(new Vector3(27.5f, 6.5f, -8f), Data.fixedCameraMovTime);
                 layer = LayerMask.NameToLayer("Level3");
-                MapManager.instance.ResaveTransform(layer);
+                MapManager.instance.ResaveTransformAndResetPlayer(layer);
                 //
                 Level3SpecialManager.instance.Init();
                 break;
@@ -95,11 +95,11 @@ public class GameManager : MonoBehaviour
                 Level4SpecialManager.instance.Init();
                 //
                 state = State.FOUR;
-                PlayerController.instance.transform.position = new Vector3(41f, .5f, -2);
+                PlayerController.instance.transform.position = new Vector3(41f, 0, -2);
                 cam.transform.DOMove(new Vector3(44.5f, 8.5f, -8f), Data.fixedCameraMovTime);
                 EventManager.OnCPUEnterTarget -= Win;
                 layer = LayerMask.NameToLayer("Level4");
-                MapManager.instance.ResaveTransform(layer);
+                MapManager.instance.ResaveTransformAndResetPlayer(layer);
                 break;
             default:
                 break;

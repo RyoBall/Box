@@ -54,18 +54,22 @@ public class PlayerController : CheckObject
             if (Input.GetKeyDown(KeyCode.W))
             {
                 vec = new Vector2(0, 1);
+                this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             }
             else if (Input.GetKeyDown(KeyCode.S))
             {
                 vec = new Vector2(0, -1);
+                this.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
             }
             else if (Input.GetKeyDown(KeyCode.A))
             {
                 vec = new Vector2(-1, 0);
+                this.transform.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
             }
             else if (Input.GetKeyDown(KeyCode.D))
             {
                 vec = new Vector2(1, 0);
+                this.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
             }
             else if (Input.GetKeyDown(KeyCode.E))
             {
