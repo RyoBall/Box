@@ -28,6 +28,8 @@ public class PlayerController : CheckObject
         {
             canJump = true;
         }
+
+        playerAnimator.speed = 3;
     }
 
     // Update is called once per frame
@@ -88,6 +90,7 @@ public class PlayerController : CheckObject
             {
                 if (CheckWithTag(faceVec, "Box"))
                 {
+                    playerAnimator.SetBool("Jump",true);
                     Jump(faceVec);
                 }
                 return 0;
@@ -182,7 +185,7 @@ public class PlayerController : CheckObject
     public override void Move(Vector2 vec)
     {
         moving = true;
-        transform.DOMove(transform.position + new Vector3(vec.x * Data.fixedLength, 0, vec.y * Data.fixedLength), Data.fixedMovTime).OnComplete(() => { moving = false; EventManager.PlayerOverMov(); });
+        transform.DOMove(transform.position + new Vector3(vec.x * Data.fixedLength, 0, vec.y * Data.fixedLength), Data.fixedMovTime).OnComplete(() => { moving = false; EventManager.PlayerOverMov(); FinishAction();});
     }
 
     //Jump和JumpDown都是弧线轨迹，等动画出了修改
@@ -190,13 +193,13 @@ public class PlayerController : CheckObject
     {
         moving = true;
         onBox = true;
-        transform.DOMove(transform.position + new Vector3(vec.x * Data.fixedLength, 1, vec.y * Data.fixedLength), Data.fixedMovTime).OnComplete(() => { moving = false; EventManager.PlayerOverMov(); });
+        transform.DOMove(transform.position + new Vector3(vec.x * Data.fixedLength, 1, vec.y * Data.fixedLength), Data.fixedMovTime).OnComplete(() => { moving = false; EventManager.PlayerOverMov(); FinishAction();});
     }
     public void JumpDown(Vector2 vec)
     {
         moving = true;
         onBox = false;
-        transform.DOMove(transform.position + new Vector3(vec.x * Data.fixedLength, -1, vec.y * Data.fixedLength), Data.fixedMovTime).OnComplete(() => { moving = false; EventManager.PlayerOverMov(); });
+        transform.DOMove(transform.position + new Vector3(vec.x * Data.fixedLength, -1, vec.y * Data.fixedLength), Data.fixedMovTime).OnComplete(() => { moving = false; EventManager.PlayerOverMov(); FinishAction();});
     }
     /*IEnumerator JumpInOneFrame(float vel) 
     {

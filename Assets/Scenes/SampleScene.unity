@@ -2707,7 +2707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0ce92f2ea0279d49b205129c6e8c87c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSkill: 1
+  jumpSkill: 0
   canJump: 0
   delay: 0
   onBox: 0
@@ -19023,6 +19023,7 @@ GameObject:
   - component: {fileID: 991462995}
   - component: {fileID: 991462996}
   - component: {fileID: 991462997}
+  - component: {fileID: 991462998}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -19147,6 +19148,19 @@ MonoBehaviour:
   - {x: 48, y: 0.5, z: -8}
   - {x: 0, y: 0, z: 0}
   target: {fileID: 488482519}
+--- !u!114 &991462998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991462989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e811cd83c6cb94b8f170980298f1d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 330585545}
 --- !u!1 &994360623
 GameObject:
   m_ObjectHideFlags: 0
@@ -26150,7 +26164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
       propertyPath: m_Name
-      value: fei
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
       propertyPath: m_TagString
