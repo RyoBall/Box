@@ -7,9 +7,19 @@ public class IsCode : Box,ICode
 {
     ICode.CodeType ICode.codeType { get ; set ; }
     string ICode.name { get; set; }
-
-    ICode main;
-    GuestCode guest;
+    public void Init(LevelChangeData data) 
+    {
+        if (gameObject.layer == data.layer) 
+        {
+            EventManager.OnPlayerOverMov += HorizontalChec;
+            EventManager.OnPlayerOverMov += VerticalChec;
+        }
+    }
+    public void Quit(LevelChangeData data) 
+    {
+        EventManager.OnPlayerOverMov -= HorizontalChec;
+        EventManager.OnPlayerOverMov -= VerticalChec;
+    }
     public override bool CheckMove(Vector2 vec)
     {
         return base.CheckMove(vec);
@@ -29,10 +39,13 @@ public class IsCode : Box,ICode
     {
         base.Move(vec);
     }
+
     public void HorizontalChec() 
     {
         CheckObject box;
-        if(CheckWithTag<CheckObject>(Vector2.up, "Box",out box)) 
+        ICode main=null;
+        GuestCode guest=null;
+        if (CheckWithTag<CheckObject>(Vector2.up, "Box",out box)) 
         {
             ICode code = box.GetComponent<ICode>();
             if (code!=null&&code.codeType==ICode.CodeType.Main) 
@@ -48,8 +61,32 @@ public class IsCode : Box,ICode
                 guest = box.GetComponent<GuestCode>();
             }
         }
+        Effect(main,guest);
+    } 
+    public void VerticalChec() 
+    {
+        CheckObject box;
+        ICode main = null;
+        GuestCode guest = null;
+        if (CheckWithTag<CheckObject>(Vector2.left, "Box",out box)) 
+        {
+            ICode code = box.GetComponent<ICode>();
+            if (code!=null&&code.codeType==ICode.CodeType.Main) 
+            {
+                main = box.GetComponent<ICode>();
+            }
+        } 
+        if(CheckWithTag<CheckObject>(Vector2.right, "Box",out box)) 
+        {
+            ICode code = box.GetComponent<ICode>();
+            if (code!=null&&code.codeType==ICode.CodeType.Guest) 
+            {
+                guest = box.GetComponent<GuestCode>();
+            }
+        }
+        Effect(main, guest);
     }
-    public void Effect() 
+    public void Effect(ICode main,GuestCode guest) 
     {
         if (main != null&&guest!=null) 
         {

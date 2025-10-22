@@ -25,19 +25,13 @@ public class GuestCode : Box,ICode
     {
         base.Move(vec);
     }
-    public void Effect(string name) 
+    public virtual void Effect(string name) 
     {
-        switch (name) 
-        {
-            case "Bug":
-                //好像什么也不用做
-                break;
-            case "Jump":
-                PlayerController.instance.jumpSkill = true;
-                break;
-            case "Delay":
-                PlayerController.instance.jumpSkill = true;
-                break;
-        }
+        ;
+    }
+
+    protected override void Start()
+    {
+        base.Start();
     }
 }

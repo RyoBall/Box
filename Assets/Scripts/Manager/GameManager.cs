@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
         TWO,
         THREE,
         FOUR,
+        FIVE,
         END
     }
 
@@ -63,7 +64,7 @@ public class GameManager : MonoBehaviour
 
     public void Win(CPUEnterTargetEventData data)
     {
-        int layer;
+        int layer=0;
         switch (state)
         {
             case State.ONE:
@@ -73,11 +74,11 @@ public class GameManager : MonoBehaviour
                 //唤起一个剧情，文本有待考察
                 //摄像头跟随
                 EventManager.OnCPUEnterTarget -= Level1SpecialManager.instance.CPUEnterSpecialEvent;
+                EventManager.OnCPUEnterTarget += Win;
                 PlayerController.instance.transform.position = new Vector3(9, 0, -1);
                 cam.transform.DOMove(new Vector3(13.5f, 6.5f, -7.5f), Data.fixedCameraMovTime);
                 layer = LayerMask.NameToLayer("Level2");
                 MapManager.instance.ResaveTransformAndResetPlayer(layer);
-                EventManager.OnCPUEnterTarget += Win;
                 break;
             case State.TWO:
                 state = State.THREE;
@@ -100,9 +101,23 @@ public class GameManager : MonoBehaviour
                 EventManager.OnCPUEnterTarget -= Win;
                 layer = LayerMask.NameToLayer("Level4");
                 MapManager.instance.ResaveTransformAndResetPlayer(layer);
+                break; 
+            case State.FOUR:
+                //
+                Level4SpecialManager.instance.Quit();
+                Level5SpecialManager.instance.Init();   
+                //
+                state = State.FIVE;
+                PlayerController.instance.transform.position = new Vector3(10, .5f, -25f);
+                cam.transform.DOMove(new Vector3(15, 10f, -27f), Data.fixedCameraMovTime);
+                cam.transform.DORotate(new Vector3(72,0,0), Data.fixedCameraMovTime);
+                EventManager.OnCPUEnterTarget -= Win;
+                layer = LayerMask.NameToLayer("Level5");
+                MapManager.instance.ResaveTransformAndResetPlayer(layer);
                 break;
             default:
                 break;
         }
+        EventManager.LevelChange(new LevelChangeData(layer));
     }
 }

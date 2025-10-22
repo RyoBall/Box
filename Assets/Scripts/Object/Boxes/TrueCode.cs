@@ -2,25 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeleteBox : Box
+public class TrueCode : GuestCode
 {
     public override bool CheckMove(Vector2 vec)
     {
-        StartCoroutine(SendEvent());
-        Box box;
-        if (CheckWithTag(vec, "Box", out box) && box.type == Type.Wall) 
-        {
-            Destroy(gameObject);
-            Destroy(box.gameObject);
-            return true;
-        }
         return base.CheckMove(vec);
     }
-    IEnumerator SendEvent() 
+
+    public override void Effect(string name)
     {
-        yield return new WaitForSeconds(Data.fixedMovTime);
-        EventManager.DeleteBoxGetPush();    
+        switch (name)
+        {
+            case "Bug":
+                //好像什么也不用做
+                break;
+            case "Jump":
+                PlayerController.instance.jumpSkill = true;
+                break;
+            case "Delay":
+                PlayerController.instance.jumpSkill = true;
+                break;
+        }
     }
+
     public override void GetDelayPush(Vector2 vec)
     {
         base.GetDelayPush(vec);

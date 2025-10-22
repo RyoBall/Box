@@ -14,6 +14,8 @@ public class EventManager : MonoBehaviour
     public static Action OnCPUGetPush;
     public static Action OnBatteryEnterHouse;
     public static Action OnLevelReset;
+    public static Action OnDeleteBoxGetPush;
+    public static Action<LevelChangeData> OnLevelChange;
     public static void PlayerMov(PlayerMovEventData data) 
     {
         OnPlayerMov?.Invoke(data);
@@ -45,7 +47,16 @@ public class EventManager : MonoBehaviour
     public static void LevelReset() 
     {
         OnLevelReset?.Invoke();
+    }   
+    public static void LevelChange(LevelChangeData data) 
+    {
+        OnLevelChange?.Invoke(data);
     }
+    public static void DeleteBoxGetPush() 
+    {
+        OnDeleteBoxGetPush?.Invoke();
+    }
+    
 }
 
 public class PlayerMovEventData 
@@ -61,7 +72,8 @@ public class PlayerExitDelayEventData
     {
         ;
     }
-}public class BatteryEnterHouseData
+}
+public class BatteryEnterHouseData
 {
     int eventID;
     public BatteryEnterHouseData(int eventID) 
@@ -80,4 +92,12 @@ public class CPUEnterTargetEventData
     {
         this.cpu=null;
     }
+}
+public class LevelChangeData 
+{
+    public LayerMask layer;
+    public LevelChangeData(LayerMask layer) 
+    {
+        this.layer=layer;
+    }    
 }

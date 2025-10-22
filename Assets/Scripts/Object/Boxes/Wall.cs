@@ -28,7 +28,7 @@ public class Wall : Box
     protected override void Start()
     {
         pushable = false;
-        type = Type.Other;
+        type = Type.Wall;
     }
 
     // Start is called before the first frame update

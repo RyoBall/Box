@@ -14,7 +14,7 @@ public interface ICode
 }
 public class Box : CheckObject
 {
-    public enum Type {Battery,CPU,Target,Unreal,Other }
+    public enum Type {Battery,CPU,Target,Unreal,Other ,Wall}
     public Type type=Type.Other;
     public bool pushable;
     public int timeCount;

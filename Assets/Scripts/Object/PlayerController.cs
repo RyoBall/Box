@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
-public class PlayerController : CheckObject
+public class PlayerController : CheckObject,ICode
 {
     public static PlayerController instance;
     public static bool delaySkillUnlock = false;
@@ -20,8 +20,13 @@ public class PlayerController : CheckObject
     //[SerializeField] float first;
     public int jumpCount;
     public bool inPower;
+
+    ICode.CodeType ICode.codeType { get; set; }
+    string ICode.name { get; set; }
+
     void Start()
     {
+        name = "Bug";
         instance = this;
         playerAnimator = GetComponent<Animator>();
         if (jumpSkill)
