@@ -1,0 +1,61 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Level6SpecialManager : MonoBehaviour
+{
+    public List<bool> allTargetsGetIn;
+    public List<Target> targets;
+    public static Level6SpecialManager instance;
+    public bool loopSkill=true;
+    public bool loopBug=true;
+    const float genTime = .2f;
+    private void Awake()
+    {
+        instance = this;
+    }
+    public void Init() 
+    {
+        EventManager.OnCPUEnterTarget -= GameManager.instance.Win;
+        EventManager.OnPlayerOverMov += TargetChecUp;
+        EventManager.OnLevelReset += LevelReset;
+    }
+    public void LoopBug() 
+    {
+        if (loopBug) 
+        {
+            StartCoroutine(LoopGenerate(20));
+        }
+    }
+    IEnumerator LoopGenerate(int time) 
+    {
+        yield return new WaitForSeconds(.2f);
+        GameObject obj= Instantiate(gameObject, gameObject.transform.position + new Vector3(Random.Range(0, 8f), 0, Random.Range(0, 8f)), Quaternion.identity);
+        MapManager.instance.tmpObjects.Add(obj);
+        if(time>0)
+        StartCoroutine(LoopGenerate(time-1));
+    }
+    public void LevelReset() 
+    {
+        loopSkill = true;
+        loopBug = true;
+    }
+    public void TargetChecUp()
+    {
+        for(int i=0;i<2;i++)
+        {
+            RaycastHit[] hits = Physics.RaycastAll(targets[i].transform.position - new Vector3(0, 0.6f, 0), Vector3.up, .5f);
+            foreach (RaycastHit hit in hits)
+            {
+                if (hit.collider.GetComponent<CPU>() != null)
+                {
+                    allTargetsGetIn[i]=true;
+                    continue;
+                }
+            }
+            allTargetsGetIn[i]=false;
+        }
+        if (allTargetsGetIn[0] && allTargetsGetIn[1])
+            GameManager.instance.Win(null);
+    }
+}

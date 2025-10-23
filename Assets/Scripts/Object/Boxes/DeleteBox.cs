@@ -10,8 +10,10 @@ public class DeleteBox : Box
         Box box;
         if (CheckWithTag(vec, "Box", out box) && box.type == Type.Wall) 
         {
-            Destroy(gameObject);
-            Destroy(box.gameObject);
+            gameObject.SetActive(false);
+            box.gameObject.SetActive(false);
+            MapManager.instance.delObjects.Add(gameObject);
+            MapManager.instance.delObjects.Add(box.gameObject);
             return true;
         }
         return base.CheckMove(vec);

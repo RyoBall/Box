@@ -8,7 +8,8 @@ public class MapManager : MonoBehaviour
     public static MapManager instance;
     
     private Dictionary<Transform, TransformData> originalTransforms = new Dictionary<Transform, TransformData>();
-
+    public List<GameObject> tmpObjects = new List<GameObject>();
+    public List<GameObject> delObjects = new List<GameObject>();
     public class TransformData
     {
         public Vector3 position;
@@ -44,11 +45,23 @@ public class MapManager : MonoBehaviour
 
     public void Reset()//所有物体回到原点
     {
+        EventManager.LevelReset();
         foreach (var t in originalTransforms)
         {
             t.Key.position = t.Value.position;
         }
-
+        foreach(GameObject obj in tmpObjects) 
+        {
+            Destroy(obj);
+        }       
+        foreach(GameObject obj in delObjects) 
+        {
+            obj.SetActive(true);
+        }
+        tmpObjects.Clear();
+        delObjects.Clear();
+        PlayerController.instance.jumpSkill = false;
+        PlayerController.instance.delay = false;
         if (PlayerController.instance.jumpSkill)
         {
             PlayerController.instance.jumpCount = 0;

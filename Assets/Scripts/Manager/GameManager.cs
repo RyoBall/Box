@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
         THREE,
         FOUR,
         FIVE,
+        SIX,
         END
     }
 
@@ -113,6 +114,17 @@ public class GameManager : MonoBehaviour
                 cam.transform.DORotate(new Vector3(72,0,0), Data.fixedCameraMovTime);
                 EventManager.OnCPUEnterTarget -= Win;
                 layer = LayerMask.NameToLayer("Level5");
+                MapManager.instance.ResaveTransformAndResetPlayer(layer);
+                break;       
+            case State.FIVE:
+                //
+                //Level5SpecialManager.instance.Quit();
+                Level6SpecialManager.instance.Init();   
+                //
+                state = State.SIX;
+                PlayerController.instance.transform.position = new Vector3(10, .5f, -25f);
+                cam.transform.DOMove(new Vector3(15, 10f, -27f), Data.fixedCameraMovTime);
+                layer = LayerMask.NameToLayer("Level6");
                 MapManager.instance.ResaveTransformAndResetPlayer(layer);
                 break;
             default:

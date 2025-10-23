@@ -15,6 +15,7 @@ public class EventManager : MonoBehaviour
     public static Action OnBatteryEnterHouse;
     public static Action OnLevelReset;
     public static Action OnDeleteBoxGetPush;
+    public static Action<LoopEnterEventData> OnLoopEnter;
     public static Action<LevelChangeData> OnLevelChange;
     public static void PlayerMov(PlayerMovEventData data) 
     {
@@ -55,10 +56,20 @@ public class EventManager : MonoBehaviour
     public static void DeleteBoxGetPush() 
     {
         OnDeleteBoxGetPush?.Invoke();
+    }    
+    public static void LoopEnter(LoopEnterEventData data) 
+    {
+        OnLoopEnter?.Invoke(data);
     }
-    
 }
-
+public class LoopEnterEventData
+{
+    public GameObject gameObject;
+    public LoopEnterEventData(GameObject gameObject) 
+    {
+        this.gameObject = gameObject;
+    }
+}
 public class PlayerMovEventData 
 {
     public PlayerMovEventData() 

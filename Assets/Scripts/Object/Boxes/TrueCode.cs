@@ -22,6 +22,9 @@ public class TrueCode : GuestCode
             case "Delay":
                 PlayerController.instance.jumpSkill = true;
                 break;
+            case "Loop":
+                Level6SpecialManager.instance.loopSkill = true;
+                break;
         }
     }
 

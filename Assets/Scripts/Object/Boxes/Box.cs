@@ -6,27 +6,28 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public interface ICode 
+public interface ICode
 {
-    enum CodeType {Main,Is,Guest };
+    enum CodeType { Main, Is, Guest };
     public CodeType codeType { get; set; }
     public string name { get; set; }
 }
 public class Box : CheckObject
 {
-    public enum Type {Battery,CPU,Target,Unreal,Other ,Wall}
-    public Type type=Type.Other;
+    public enum Type { Battery, CPU, Target, Unreal, Other, Wall }
+    public Type type = Type.Other;
     public bool pushable;
     public int timeCount;
     public TimeText text;
-    public bool ismoving;//ֻ����Relaybox�вŻ�ʹ��
+    public bool isMoving;//ֻ����Relaybox�вŻ�ʹ��
     public List<Vector2> moveVec;
-    bool delayMovSubscribePlayerMov=false;//代表DelayMov函数是否监听玩家移动事件，找不到检测是否监听的函数先代替一下
+    bool delayMovSubscribePlayerMov = false;//代表DelayMov函数是否监听玩家移动事件，找不到检测是否监听的函数先代替一下
+    public Vector2 currentMoveVec;//仅在第六关使用，我实在没招了
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        EventManager.OnPlayerExitDelay+=DelayMoveSubscribePlayerMov;//让延迟移动函数在脱离ExitDelay后订阅玩家移动事件
-        EventManager.OnPlayerExitDelay+=DisactiveText;
+        EventManager.OnPlayerExitDelay += DelayMoveSubscribePlayerMov;//让延迟移动函数在脱离ExitDelay后订阅玩家移动事件
+        EventManager.OnPlayerExitDelay += DisactiveText;
         text = GetComponentInChildren<TimeText>();
         pushable = true;
     }
@@ -34,35 +35,36 @@ public class Box : CheckObject
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public virtual bool GetPush(Vector2 vec) //�����Ƿ�ɹ��ƶ�
     {
         return CheckMove(vec);
     }
-    public virtual void GetDelayPush(Vector2 vec) 
+    public virtual void GetDelayPush(Vector2 vec)
     {
-        moveVec.Add(vec);
+        if (moveVec.Count <= 1)
+            moveVec.Add(vec);
         SetTextCount();
     }
     #region 为了防止重复订阅专门写的让delaymove订阅和取消订阅玩家移动事件的函数
-    void DelayMoveSubscribePlayerMov(PlayerExitDelayEventData data) 
+    void DelayMoveSubscribePlayerMov(PlayerExitDelayEventData data)
     {
-        if (!delayMovSubscribePlayerMov) 
+        if (!delayMovSubscribePlayerMov)
         {
             EventManager.OnPlayerMov += DelayMove;
             delayMovSubscribePlayerMov = true;
         }
     }
-    void DelayMoveDisSubscribePlayerMov() 
+    void DelayMoveDisSubscribePlayerMov()
     {
         EventManager.OnPlayerMov -= DelayMove;
         delayMovSubscribePlayerMov = false;
     }
     #endregion
-    public void DelayMove(PlayerMovEventData data) 
+    public void DelayMove(PlayerMovEventData data)
     {
-        if (moveVec.Count > 0) 
+        if (moveVec.Count > 0)
         {
             CheckMove(moveVec[0]);
             moveVec.RemoveAt(0);
@@ -71,9 +73,9 @@ public class Box : CheckObject
         else
             DelayMoveDisSubscribePlayerMov();
     }
-    public void DelayMoveInLevel3(PlayerMovEventData data) 
+    public void DelayMoveInLevel3(PlayerMovEventData data)
     {
-        if (moveVec.Count > 0) 
+        if (moveVec.Count > 0)
         {
             CheckMove(moveVec[0]);
             moveVec.RemoveAt(0);
@@ -83,14 +85,14 @@ public class Box : CheckObject
     public void SetTextCount()
     {
         text.UpdateText(moveVec.Count);
-        if (moveVec.Count <= 0 && !DelayStateManager.instance.inDelayAction) 
+        if (moveVec.Count <= 0 && !DelayStateManager.instance.inDelayAction)
         {
             text.text.enabled = false;
         }
     }
-    public void DisactiveText(PlayerExitDelayEventData data) 
+    public void DisactiveText(PlayerExitDelayEventData data)
     {
-        if(moveVec.Count <= 0&&text!=null) 
+        if (moveVec.Count <= 0 && text != null)
         {
             text.text.enabled = false;
         }
@@ -98,16 +100,17 @@ public class Box : CheckObject
     public virtual bool CheckMove(Vector2 vec)//�ƶ��������Ƿ�ɹ��ƶ�
     {
         Box box;
+        currentMoveVec = vec;
         if (pushable)
         {
-            if (!CheckWithTag(vec, "Box", out box))
+            if (!CheckWithTag(vec, "Box", out box) && !CheckWithTag(vec, "Player"))
             {
                 Move(vec);
                 return true;
             }
             else
             {
-                if (box.ismoving) //比如relybox正在移动
+                if (box.isMoving) //比如relybox正在移动
                 {
                     Move(vec); //自己移动
                     return true;
@@ -120,7 +123,7 @@ public class Box : CheckObject
                         return true;
                     }
                 }
-                
+
             }
             return false;
         }

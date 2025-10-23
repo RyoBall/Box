@@ -13,6 +13,7 @@ public class PlayerController : CheckObject,ICode
     Animator playerAnimator;
     [FormerlySerializedAs("jump")] public bool jumpSkill;
     public bool canJump;
+    public bool delaySkill;
     public bool delay;
     public bool onBox;//在箱子上前进
     Vector2 faceVec = new Vector2(1, 0);
@@ -77,7 +78,7 @@ public class PlayerController : CheckObject,ICode
                 vec = new Vector2(1, 0);
                 this.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
             }
-            else if (Input.GetKeyDown(KeyCode.E))
+            else if (Input.GetKeyDown(KeyCode.E)&&delaySkill)
             {
                 if (delay)
                 {
@@ -164,7 +165,7 @@ public class PlayerController : CheckObject,ICode
             }
             else
             {
-                if (box.ismoving) //�˺�����һ��
+                if (box.isMoving) //�˺�����һ��
                 {
                     Move(vec);
                     playerAnimator.SetBool("Push", true);

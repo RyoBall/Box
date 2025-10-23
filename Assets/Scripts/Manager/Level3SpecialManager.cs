@@ -28,6 +28,7 @@ public class Level3SpecialManager : MonoBehaviour
     {
         Debug.Log(1);
         Destroy(unrealBox);
+        EventManager.OnBatteryEnterHouse -= DestroyUnrealBox;
     }
     public void ChecDelayBoxes(PlayerMovEventData data) 
     {
