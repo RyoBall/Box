@@ -30,6 +30,7 @@ public class Box : CheckObject
         EventManager.OnPlayerExitDelay += DisactiveText;
         text = GetComponentInChildren<TimeText>();
         pushable = true;
+        MapManager.OnReset += ResetDealyBox;
     }
 
     // Update is called once per frame
@@ -128,6 +129,21 @@ public class Box : CheckObject
             return false;
         }
         return false;
+    }
+
+    public void ResetDealyBox(object sender, EventArgs e)
+    {
+        //DelayMoveDisSubscribePlayerMov();
+        moveVec.Clear();
+        
+        delayMovSubscribePlayerMov = false;
+        ismoving = false;
+        
+        if (text != null)
+        {
+            text.UpdateText(0);  
+            text.text.enabled = true; 
+        }
     }
 
 }

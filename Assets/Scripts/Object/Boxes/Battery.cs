@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,8 +7,10 @@ public class Battery : Box
 {
     public bool inPower;
     public Material material;
+    private Color originColor;
     public void FindPlayer() 
     {
+        
         if (PlayerController.instance.inPower&&ChecDistance()) 
         {
             PlayerController.instance.inPower = false;
@@ -47,6 +50,12 @@ public class Battery : Box
         base.Move(vec);
     }
 
+    public void ResetPower(object sender, EventArgs e)
+    {
+        this.inPower = false;
+        material.color = originColor;
+    }
+
     protected override void Start()
     {
         base.Start();
@@ -54,5 +63,7 @@ public class Battery : Box
         material =new Material(material);
         renderer.material = material;
         EventManager.OnPlayerOverMov += FindPlayer;
+        originColor = material.color;
+        MapManager.OnReset += ResetPower;
     }
 }
