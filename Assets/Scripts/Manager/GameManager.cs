@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
                 EventManager.OnCPUEnterTarget -= Level1SpecialManager.instance.CPUEnterSpecialEvent;
                 EventManager.OnCPUEnterTarget += Win;
                 PlayerController.instance.transform.position = new Vector3(9, 0, -1);
-                cam.transform.DOMove(new Vector3(13.5f, 6.5f, -7.5f), Data.fixedCameraMovTime);
+                cam.transform.DOMove(new Vector3(13.5f, 6.5f, -5.85f), Data.fixedCameraMovTime);
                 layer = LayerMask.NameToLayer("Level2");
                 MapManager.instance.ResaveTransformAndResetPlayer(layer);
                 break;
