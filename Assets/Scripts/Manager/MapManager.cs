@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
@@ -6,6 +7,7 @@ using UnityEngine;
 public class MapManager : MonoBehaviour
 {
     public static MapManager instance;
+    public static event EventHandler OnReset;
     
     private Dictionary<Transform, TransformData> originalTransforms = new Dictionary<Transform, TransformData>();
 
@@ -55,6 +57,8 @@ public class MapManager : MonoBehaviour
             PlayerController.instance.canJump = true;
             PlayerController.instance.onBox=false;
         }
+        
+        OnReset?.Invoke(this, EventArgs.Empty);
     }
     
 }

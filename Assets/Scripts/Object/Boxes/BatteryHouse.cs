@@ -33,12 +33,7 @@ public class BatteryHouse : Wall
         Debug.Log(1);
         EventManager.BatteryEnterHouse();
     }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position,transform.position+new Vector3(0,0,1));
-    }
+    
 
     public override string ToString()
     {

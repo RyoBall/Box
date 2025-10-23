@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
             case State.TWO:
                 state = State.THREE;
                 PlayerController.instance.transform.position = new Vector3(22.5f, 0, -8);
-                cam.transform.DOMove(new Vector3(27.5f, 6.5f, -8f), Data.fixedCameraMovTime);
+                cam.transform.DOMove(new Vector3(27f, 7f, -7.5f), Data.fixedCameraMovTime);
                 layer = LayerMask.NameToLayer("Level3");
                 MapManager.instance.ResaveTransformAndResetPlayer(layer);
                 //

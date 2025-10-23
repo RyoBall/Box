@@ -26,7 +26,6 @@ public class Level3SpecialManager : MonoBehaviour
     }
     public void DestroyUnrealBox() 
     {
-        Debug.Log(1);
         Destroy(unrealBox);
     }
     public void ChecDelayBoxes(PlayerMovEventData data) 
