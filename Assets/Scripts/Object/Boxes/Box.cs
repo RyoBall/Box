@@ -21,8 +21,9 @@ public class Box : CheckObject
     public TimeText text;
     public bool isMoving;//ֻ����Relaybox�вŻ�ʹ��
     public List<Vector2> moveVec;
+    public bool supportDelay;
     bool delayMovSubscribePlayerMov = false;//代表DelayMov函数是否监听玩家移动事件，找不到检测是否监听的函数先代替一下
-    public Vector2 currentMoveVec;//仅在第六关使用，我实在没招了
+    public Vector2 currentMoveVec;//仅在第六关使用，我实在没招了<-没事，哥们已经很棒了
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -104,7 +105,7 @@ public class Box : CheckObject
         currentMoveVec = vec;
         if (pushable)
         {
-            if (!CheckWithTag(vec, "Box", out box) && !CheckWithTag(vec, "Player"))
+            if (!CheckWithTag(vec, "Box", out box) && !CheckWithTag(vec, "Player") && !CheckWithTag(vec, "Wall"))
             {
                 Move(vec);
                 return true;
@@ -133,16 +134,7 @@ public class Box : CheckObject
 
     public void ResetDealyBox(object sender, EventArgs e)
     {
-        //DelayMoveDisSubscribePlayerMov();
-        moveVec.Clear();
-        
-        delayMovSubscribePlayerMov = false;
-        
-        if (text != null)
-        {
-            text.UpdateText(0);  
-            text.text.enabled = true; 
-        }
+        //还没想好怎么重置，直接清零moveVec的话文字子物体会出错
     }
 
 }
