@@ -94,9 +94,9 @@ public class PlayerController : CheckObject,ICode
             }
             else if (Input.GetKeyDown(KeyCode.Space) && canJump)
             {
-                if (CheckWithTag(faceVec, "Box"))
+                if (CheckWithTag(faceVec, "Box",out Box box))
                 {
-                    playerAnimator.SetBool("Jump",true);
+                    playerAnimator.SetBool("Jump", true);
                     Jump(faceVec);
                 }
                 return 0;
@@ -116,19 +116,25 @@ public class PlayerController : CheckObject,ICode
         faceVec = vec;
         if (onBox)
         {
-            //如果前下方没有box
-            if (!CheckWithTag(new Vector3(vec.x * (Data.fixedChecLength + .01f), 0, vec.y * (Data.fixedChecLength + .01f)), 1, Vector2.zero, "Box"))
+            if (!CheckWithTag(new Vector3(vec.x * (Data.fixedChecLength + .01f), 0, vec.y * (Data.fixedChecLength + .01f)), 1,
+                    Vector2.zero, "Wall"))
             {
-                playerAnimator.SetBool("Jump", true);
-                //飞下去的轨迹
-                JumpDown(vec);
-                jumpCount++;
-            }
-            else
-            {
-                //如果前下方是box，继续走
-                Move(vec);
-                playerAnimator.SetBool("Walk", true);
+                //如果前下方没有box
+                if (!CheckWithTag(
+                        new Vector3(vec.x * (Data.fixedChecLength + .01f), 0, vec.y * (Data.fixedChecLength + .01f)), 1,
+                        Vector2.zero, "Box"))
+                {
+                    playerAnimator.SetBool("Jump", true);
+                    //飞下去的轨迹
+                    JumpDown(vec);
+                    jumpCount++;
+                }
+                else
+                {
+                    //如果前下方是box，继续走
+                    Move(vec);
+                    playerAnimator.SetBool("Walk", true);
+                }
             }
         }
         else if (delay)
@@ -146,42 +152,45 @@ public class PlayerController : CheckObject,ICode
         //在地面上前进
         else
         {
-            if (!CheckWithTag(vec, "Box", out box)) //ǰ��û������
+            if (!CheckWithTag(faceVec, "Wall"))
             {
-                Move(vec);
-                playerAnimator.SetBool("Walk", true);
-                /*if (!jump)
+                if (!CheckWithTag(vec, "Box", out box)) //ǰ��û������
                 {
                     Move(vec);
                     playerAnimator.SetBool("Walk", true);
+                    /*if (!jump)
+                    {
+                        Move(vec);
+                        playerAnimator.SetBool("Walk", true);
+                    }
+                    else
+                    {
+                        //第一次jump
+                        playerAnimator.SetBool("Jump", true);
+                        //这里会设置jump的移动，但是移动形式待定，根据要求写
+                        onBox = true;
+                    }*/
                 }
                 else
                 {
-                    //第一次jump
-                    playerAnimator.SetBool("Jump", true);
-                    //这里会设置jump的移动，但是移动形式待定，根据要求写
-                    onBox = true;
-                }*/
-            }
-            else
-            {
-                if (box.isMoving) //�˺�����һ��
-                {
-                    Move(vec);
-                    playerAnimator.SetBool("Push", true);
-                }
-                else if (box.pushable) //���ӿ�����
-                {
-                    if (box.GetPush(vec)) //�ɹ��ƶ�
+                    if (box.isMoving) //�˺�����һ��
                     {
                         Move(vec);
                         playerAnimator.SetBool("Push", true);
                     }
-                }
-                //这一段效果是如果箱子不可推动，那么箱子被推，估计用于relybox计数？但是以后有更多不可推动箱子要注意
-                else
-                {
-                    box.GetPush(vec); //�����ӣ������ƶ�
+                    else if (box.pushable) //���ӿ�����
+                    {
+                        if (box.GetPush(vec)) //�ɹ��ƶ�
+                        {
+                            Move(vec);
+                            playerAnimator.SetBool("Push", true);
+                        }
+                    }
+                    //这一段效果是如果箱子不可推动，那么箱子被推，估计用于relybox计数？但是以后有更多不可推动箱子要注意
+                    else
+                    {
+                        box.GetPush(vec); //�����ӣ������ƶ�
+                    }
                 }
             }
         }

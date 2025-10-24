@@ -44,7 +44,7 @@ public class CheckObject : MonoBehaviour
         }
         return false;
     }
-    public bool CheckWithTag(Vector3 posOffset,int downVec, Vector2 vec, String tag)//¶ÔÉäÏß³õÊ¼Î»ÖÃ½øÐÐÆ«ÒÆÒÔ¼°ÔÊÐíÏòÏÂ·¢ÉäÉäÏß
+    public bool CheckWithTag(Vector3 posOffset,int downVec, Vector2 vec, String tag)//ï¿½ï¿½ï¿½ï¿½ï¿½ß³ï¿½Ê¼Î»ï¿½Ã½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     {
         RaycastHit[] hits = Physics.RaycastAll(transform.position+posOffset, new Vector3(vec.x, -downVec, vec.y), Data.fixedChecLength+.01f);
         foreach (RaycastHit hit in hits)
@@ -54,6 +54,21 @@ public class CheckObject : MonoBehaviour
                 return true;
             }
         }
+        return false;
+    }
+    
+    public bool CheckWithTag<T>(Vector3 posOffset,int downVec, Vector2 vec, String tag,out T obj)//ï¿½ï¿½ï¿½ï¿½ï¿½ß³ï¿½Ê¼Î»ï¿½Ã½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    {
+        RaycastHit[] hits = Physics.RaycastAll(transform.position+posOffset, new Vector3(vec.x, -downVec, vec.y), Data.fixedChecLength+.01f);
+        foreach (RaycastHit hit in hits)
+        {
+            if (hit.collider.tag == tag)
+            {
+                obj = hit.collider.gameObject.GetComponent<T>();
+                return true;
+            }
+        }
+        obj = default(T);
         return false;
     }
     public virtual void Move(Vector2 vec)

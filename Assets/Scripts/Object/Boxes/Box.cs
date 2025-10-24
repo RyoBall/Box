@@ -137,7 +137,6 @@ public class Box : CheckObject
         moveVec.Clear();
         
         delayMovSubscribePlayerMov = false;
-        ismoving = false;
         
         if (text != null)
         {
