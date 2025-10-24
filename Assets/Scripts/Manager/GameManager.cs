@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
     public void Win(CPUEnterTargetEventData data)
     {
         int layer=0;
+        PlayerController.instance.Reset();
         switch (state)
         {
             case State.ONE:
@@ -94,12 +95,12 @@ public class GameManager : MonoBehaviour
                 //
                 Level3SpecialManager.instance.Quit();
                 Level4SpecialManager.instance.Init();
+                PlayerController.instance.delaySkillUnlock = true;
                 EventManager.OnCPUEnterTarget -= Win;
                 //
                 state = State.FOUR;
                 PlayerController.instance.transform.position = new Vector3(41f, 0, -2);
                 cam.transform.DOMove(new Vector3(44.5f, 8.5f, -8f), Data.fixedCameraMovTime);
-                EventManager.OnCPUEnterTarget -= Win;
                 layer = LayerMask.NameToLayer("Level4");
                 MapManager.instance.ResaveTransformAndResetPlayer(layer);
                 break; 
@@ -107,12 +108,12 @@ public class GameManager : MonoBehaviour
                 //
                 Level4SpecialManager.instance.Quit();
                 Level5SpecialManager.instance.Init();   
+                EventManager.OnCPUEnterTarget += Win;
                 //
                 state = State.FIVE;
                 PlayerController.instance.transform.position = new Vector3(10, .5f, -25f);
                 cam.transform.DOMove(new Vector3(15, 10f, -27f), Data.fixedCameraMovTime);
                 cam.transform.DORotate(new Vector3(72,0,0), Data.fixedCameraMovTime);
-                EventManager.OnCPUEnterTarget -= Win;
                 layer = LayerMask.NameToLayer("Level5");
                 MapManager.instance.ResaveTransformAndResetPlayer(layer);
                 break;       
@@ -122,8 +123,8 @@ public class GameManager : MonoBehaviour
                 Level6SpecialManager.instance.Init();   
                 //
                 state = State.SIX;
-                PlayerController.instance.transform.position = new Vector3(10, .5f, -25f);
-                cam.transform.DOMove(new Vector3(15, 10f, -27f), Data.fixedCameraMovTime);
+                PlayerController.instance.transform.position = new Vector3(29, .5f, -27f);
+                cam.transform.DOMove(new Vector3(35, 10, -27.5f), Data.fixedCameraMovTime);
                 layer = LayerMask.NameToLayer("Level6");
                 MapManager.instance.ResaveTransformAndResetPlayer(layer);
                 break;

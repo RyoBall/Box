@@ -11,6 +11,7 @@ public class FalseCode : GuestCode
 
     public override void Effect(string name)
     {
+        Debug.Log(1);
         switch (name)
         {
             case "Bug":
@@ -20,7 +21,7 @@ public class FalseCode : GuestCode
                 PlayerController.instance.jumpSkill = false;
                 break;
             case "Delay":
-                PlayerController.instance.jumpSkill = false;
+                PlayerController.instance.delaySkillUnlock = false;
                 break;
             case "Loop":
                 Level6SpecialManager.instance.loopSkill = true;
@@ -47,5 +48,6 @@ public class FalseCode : GuestCode
     protected override void Start()
     {
         base.Start();
+        ((ICode)this).codeType = ICode.CodeType.Guest;
     }
 }

@@ -12,6 +12,8 @@ public class MapManager : MonoBehaviour
     private Dictionary<Transform, TransformData> originalTransforms = new Dictionary<Transform, TransformData>();
     public List<GameObject> tmpObjects = new List<GameObject>();
     public List<GameObject> delObjects = new List<GameObject>();
+    public bool playerJumpSkill = false;
+    public bool playerDelaySkill = false;
     public class TransformData
     {
         public Vector3 position;
@@ -27,7 +29,6 @@ public class MapManager : MonoBehaviour
     public void ResaveTransformAndResetPlayer(LayerMask layer)//进入新一关需要使用这个函数来保存新一关的初始位置
     {
         var allObject = FindObjectsOfType<Transform>();
-
         foreach (Transform t in allObject)
         {
             if (t.hideFlags == HideFlags.None && (t.gameObject.layer == layer || t.CompareTag("Player")))
@@ -62,8 +63,6 @@ public class MapManager : MonoBehaviour
         }
         tmpObjects.Clear();
         delObjects.Clear();
-        PlayerController.instance.jumpSkill = false;
-        PlayerController.instance.delay = false;
         if (PlayerController.instance.jumpSkill)
         {
             PlayerController.instance.jumpCount = 0;

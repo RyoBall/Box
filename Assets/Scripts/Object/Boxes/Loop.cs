@@ -5,13 +5,21 @@ using UnityEngine;
 
 public class Loop : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    Collider collision=null;
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.collider.tag == "Box"&&Level6SpecialManager.instance.loopSkill)
+        if (collision.tag == "Box" && Level6SpecialManager.instance.loopSkill && collision.gameObject.GetComponent<Box>().cloneable)
         {
-            EventManager.LoopEnter(new LoopEnterEventData(collision.gameObject));
-            GameObject box=Instantiate(collision.collider.gameObject, collision.collider.transform.position + new Vector3(collision.collider.GetComponent<Box>().currentMoveVec.x, 0, collision.collider.GetComponent<Box>().currentMoveVec.y), Quaternion.identity);
-            MapManager.instance.tmpObjects.Add(box);
+            this.collision = collision;
+            EventManager.OnPlayerOverMov += LoopEnter;
         }
+    }
+    public void LoopEnter() 
+    {
+        EventManager.LoopEnter(new LoopEnterEventData(collision.gameObject));
+        GameObject box = Instantiate(collision.gameObject, collision.transform.position + new Vector3(collision.GetComponent<Box>().currentMoveVec.x, 0, collision.GetComponent<Box>().currentMoveVec.y), Quaternion.identity);
+            box.GetComponent<Box>().cloneable = false;
+        MapManager.instance.tmpObjects.Add(box);
+        EventManager.OnPlayerOverMov -= LoopEnter;
     }
 }

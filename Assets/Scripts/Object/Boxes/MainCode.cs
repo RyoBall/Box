@@ -31,5 +31,7 @@ public class MainCode : Box,ICode
     protected override void Start()
     {
         base.Start();
+        ((ICode)this).codeType = ICode.CodeType.Main;
+        ((ICode)this).name = codeName;
     }
 }

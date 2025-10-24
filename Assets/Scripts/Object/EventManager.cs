@@ -10,6 +10,7 @@ public class EventManager : MonoBehaviour
     public static Action<PlayerExitDelayEventData> OnPlayerExitDelay;
     public static Action OnPlayerEnterDelay;
     public static Action OnPlayerOverMov;
+    public static Action OnPlayerOverMovWithElem;
     public static Action<CPUEnterTargetEventData> OnCPUEnterTarget;
     public static Action OnCPUGetPush;
     public static Action OnBatteryEnterHouse;
@@ -24,6 +25,7 @@ public class EventManager : MonoBehaviour
     public static void PlayerOverMov() 
     {
         OnPlayerOverMov?.Invoke();
+        OnPlayerOverMovWithElem?.Invoke();
     }
     public static void PlayerExitDelay(PlayerExitDelayEventData data) 
     {

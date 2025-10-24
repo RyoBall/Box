@@ -2,23 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static ICode;
 
-public class IsCode : Box,ICode
+public class IsCode : Box, ICode
 {
-    ICode.CodeType ICode.codeType { get ; set ; }
+    ICode.CodeType ICode.codeType { get; set; }
     string ICode.name { get; set; }
-    public void Init(LevelChangeData data) 
+    public void Init(LevelChangeData data)
     {
-        if (gameObject.layer == data.layer) 
+        if (gameObject.layer == (int)data.layer)
         {
             EventManager.OnPlayerOverMov += HorizontalChec;
             EventManager.OnPlayerOverMov += VerticalChec;
         }
     }
-    public void Quit(LevelChangeData data) 
+    public void Quit(LevelChangeData data)
     {
-        EventManager.OnPlayerOverMov -= HorizontalChec;
-        EventManager.OnPlayerOverMov -= VerticalChec;
+        if (gameObject.layer != (int)data.layer)
+        {
+            EventManager.OnPlayerOverMov -= HorizontalChec;
+            EventManager.OnPlayerOverMov -= VerticalChec;
+        }
     }
     public override bool CheckMove(Vector2 vec)
     {
@@ -39,58 +43,67 @@ public class IsCode : Box,ICode
     {
         base.Move(vec);
     }
-
-    public void HorizontalChec() 
+    public void HorizontalChec()
     {
-        CheckObject box;
-        ICode main=null;
-        GuestCode guest=null;
-        if (CheckWithTag<CheckObject>(Vector2.up, "Box",out box)) 
-        {
-            ICode code = box.GetComponent<ICode>();
-            if (code!=null&&code.codeType==ICode.CodeType.Main) 
-            {
-                main = box.GetComponent<ICode>();
-            }
-        } 
-        if(CheckWithTag<CheckObject>(Vector2.down, "Box",out box)) 
-        {
-            ICode code = box.GetComponent<ICode>();
-            if (code!=null&&code.codeType==ICode.CodeType.Guest) 
-            {
-                guest = box.GetComponent<GuestCode>();
-            }
-        }
-        Effect(main,guest);
-    } 
-    public void VerticalChec() 
-    {
+        Debug.Log("IsChec");
         CheckObject box;
         ICode main = null;
         GuestCode guest = null;
-        if (CheckWithTag<CheckObject>(Vector2.left, "Box",out box)) 
+        if (CheckWithTag<CheckObject>(Vector2.up, "Box", out box))
         {
             ICode code = box.GetComponent<ICode>();
-            if (code!=null&&code.codeType==ICode.CodeType.Main) 
+            if (code != null && code.codeType == ICode.CodeType.Main)
             {
                 main = box.GetComponent<ICode>();
             }
-        } 
-        if(CheckWithTag<CheckObject>(Vector2.right, "Box",out box)) 
+        }
+        if (CheckWithTag<CheckObject>(Vector2.down, "Box", out box))
         {
             ICode code = box.GetComponent<ICode>();
-            if (code!=null&&code.codeType==ICode.CodeType.Guest) 
+            if (code != null && code.codeType == ICode.CodeType.Guest)
             {
                 guest = box.GetComponent<GuestCode>();
             }
         }
         Effect(main, guest);
     }
-    public void Effect(ICode main,GuestCode guest) 
+    public void VerticalChec()
     {
-        if (main != null&&guest!=null) 
+        CheckObject box;
+        ICode main = null;
+        GuestCode guest = null;
+        if (CheckWithTag<CheckObject>(Vector2.left, "Box", out box))
+        {
+            ICode code = box.GetComponent<ICode>();
+            if (code != null && code.codeType == ICode.CodeType.Main)
+            {
+                main = box.GetComponent<ICode>();
+            }
+        }
+        if (CheckWithTag<CheckObject>(Vector2.right, "Box", out box))
+        {
+            ICode code = box.GetComponent<ICode>();
+            if (code != null && code.codeType == ICode.CodeType.Guest)
+            {
+                guest = box.GetComponent<GuestCode>();
+            }
+        }
+        Effect(main, guest);
+    }
+    public void Effect(ICode main, GuestCode guest)
+    {
+        if (main != null && guest != null)
         {
             guest.Effect(main.name);
         }
+    }
+
+    protected override void Start()
+    {
+        EventManager.OnLevelChange += Init;
+        EventManager.OnLevelChange += Quit;
+        ((ICode)this).codeType = ICode.CodeType.Is;
+        base.Start();
+
     }
 }

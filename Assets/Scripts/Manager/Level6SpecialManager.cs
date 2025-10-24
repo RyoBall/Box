@@ -7,53 +7,57 @@ public class Level6SpecialManager : MonoBehaviour
     public List<bool> allTargetsGetIn;
     public List<Target> targets;
     public static Level6SpecialManager instance;
-    public bool loopSkill=true;
-    public bool loopBug=true;
+    public bool loopSkill = true;
+    public bool loopBug = true;
     const float genTime = .2f;
     private void Awake()
     {
         instance = this;
     }
-    public void Init() 
+    public void Init()
     {
         EventManager.OnCPUEnterTarget -= GameManager.instance.Win;
         EventManager.OnPlayerOverMov += TargetChecUp;
         EventManager.OnLevelReset += LevelReset;
+        EventManager.OnLoopEnter += LoopBug;
     }
-    public void LoopBug() 
+    public void LoopBug(LoopEnterEventData data)
     {
-        if (loopBug) 
+        if (loopBug)
         {
-            StartCoroutine(LoopGenerate(20));
+            StartCoroutine(LoopGenerate(20, data.gameObject));
         }
     }
-    IEnumerator LoopGenerate(int time) 
+    IEnumerator LoopGenerate(int time, GameObject gameObject)
     {
         yield return new WaitForSeconds(.2f);
-        GameObject obj= Instantiate(gameObject, gameObject.transform.position + new Vector3(Random.Range(0, 8f), 0, Random.Range(0, 8f)), Quaternion.identity);
-        MapManager.instance.tmpObjects.Add(obj);
-        if(time>0)
-        StartCoroutine(LoopGenerate(time-1));
+        if (gameObject != null)
+        {
+            GameObject obj = Instantiate(gameObject, gameObject.transform.position + new Vector3(Random.Range(0, 8f), 0, Random.Range(0, 8f)), Quaternion.identity);
+            MapManager.instance.tmpObjects.Add(obj);
+            if (time > 0)
+                StartCoroutine(LoopGenerate(time - 1, gameObject));
+        }
     }
-    public void LevelReset() 
+    public void LevelReset()
     {
         loopSkill = true;
         loopBug = true;
     }
     public void TargetChecUp()
     {
-        for(int i=0;i<2;i++)
+        for (int i = 0; i < 2; i++)
         {
             RaycastHit[] hits = Physics.RaycastAll(targets[i].transform.position - new Vector3(0, 0.6f, 0), Vector3.up, .5f);
             foreach (RaycastHit hit in hits)
             {
                 if (hit.collider.GetComponent<CPU>() != null)
                 {
-                    allTargetsGetIn[i]=true;
+                    allTargetsGetIn[i] = true;
                     continue;
                 }
             }
-            allTargetsGetIn[i]=false;
+            allTargetsGetIn[i] = false;
         }
         if (allTargetsGetIn[0] && allTargetsGetIn[1])
             GameManager.instance.Win(null);

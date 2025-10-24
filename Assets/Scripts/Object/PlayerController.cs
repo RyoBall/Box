@@ -8,12 +8,11 @@ using UnityEngine.UIElements;
 public class PlayerController : CheckObject,ICode
 {
     public static PlayerController instance;
-    public static bool delaySkillUnlock = false;
+    public bool delaySkillUnlock = false;
     bool moving;
     Animator playerAnimator;
     [FormerlySerializedAs("jump")] public bool jumpSkill;
     public bool canJump;
-    public bool delaySkill;
     public bool delay;
     public bool onBox;//在箱子上前进
     Vector2 faceVec = new Vector2(1, 0);
@@ -29,12 +28,8 @@ public class PlayerController : CheckObject,ICode
     {
         name = "Bug";
         instance = this;
+        jumpSkill = true;
         playerAnimator = GetComponent<Animator>();
-        if (jumpSkill)
-        {
-            canJump = true;
-        }
-
         playerAnimator.speed = 3;
     }
 
@@ -78,7 +73,7 @@ public class PlayerController : CheckObject,ICode
                 vec = new Vector2(1, 0);
                 this.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
             }
-            else if (Input.GetKeyDown(KeyCode.E)&&delaySkill)
+            else if (Input.GetKeyDown(KeyCode.E)&&delaySkillUnlock)
             {
                 if (delay)
                 {
@@ -92,7 +87,7 @@ public class PlayerController : CheckObject,ICode
                 }
                 return 0;
             }
-            else if (Input.GetKeyDown(KeyCode.Space) && canJump)
+            else if (Input.GetKeyDown(KeyCode.Space) && canJump&& jumpSkill)
             {
                 if (CheckWithTag(faceVec, "Box",out Box box))
                 {

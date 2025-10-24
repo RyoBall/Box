@@ -24,6 +24,7 @@ public class Box : CheckObject
     public bool supportDelay;
     bool delayMovSubscribePlayerMov = false;//代表DelayMov函数是否监听玩家移动事件，找不到检测是否监听的函数先代替一下
     public Vector2 currentMoveVec;//仅在第六关使用，我实在没招了<-没事，哥们已经很棒了
+    public bool cloneable;//同样仅在第六关使用，我实在没招了
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -105,7 +106,7 @@ public class Box : CheckObject
         currentMoveVec = vec;
         if (pushable)
         {
-            if (!CheckWithTag(vec, "Box", out box) && !CheckWithTag(vec, "Player"))
+            if (!CheckWithTag(vec, "Box", out box) && !CheckWithTag(vec, "Player") && !CheckWithTag(vec, "Wall"))
             {
                 Move(vec);
                 return true;

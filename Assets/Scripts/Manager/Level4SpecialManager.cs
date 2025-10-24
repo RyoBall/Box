@@ -18,7 +18,6 @@ public class Level4SpecialManager : MonoBehaviour
     }
     public void Init() 
     {
-        Debug.Log("InitLevel4");
         EventManager.OnCPUEnterTarget += ChangeCPU;
         EventManager.OnBatteryEnterHouse += EndChangePos;
     }

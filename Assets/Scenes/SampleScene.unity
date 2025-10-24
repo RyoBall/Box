@@ -179,6 +179,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &2674169
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1243,6 +1244,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!4 &61622197 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3144607957212027277, guid: 1776de1e984ab734d84450cec7a2f558, type: 3}
@@ -1303,6 +1305,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &66740719
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1784,6 +1787,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &85671426
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2052,6 +2056,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &99288458
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2135,7 +2140,7 @@ GameObject:
   - component: {fileID: 99858610}
   - component: {fileID: 99858609}
   - component: {fileID: 99858608}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2421,6 +2426,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &103278847
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2547,6 +2553,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &107689192
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2970,6 +2977,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &125320897
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3163,6 +3171,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &130686836
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3738,9 +3747,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0ce92f2ea0279d49b205129c6e8c87c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSkill: 1
+  delaySkillUnlock: 0
+  jumpSkill: 0
   canJump: 0
-  delaySkill: 0
   delay: 0
   onBox: 0
   jumpCount: 0
@@ -4347,6 +4356,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &193316581
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4712,6 +4722,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &216912266
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5399,6 +5410,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &245524510
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5525,6 +5537,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &246344855
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5641,6 +5654,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &252488210
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6020,6 +6034,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &275399522
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6151,6 +6166,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &278071828
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6405,6 +6421,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!1 &283352655
 GameObject:
   m_ObjectHideFlags: 0
@@ -6460,6 +6477,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &283352658
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6890,6 +6908,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &311966236
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7051,6 +7070,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &315071038
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7266,6 +7286,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &319109325
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7821,6 +7842,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &326751605
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7947,6 +7969,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &329428993
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8105,13 +8128,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.60181504, y: 0, z: 0, w: 0.79863554}
-  m_LocalPosition: {x: 0.5, y: 8, z: -5.25}
+  m_LocalRotation: {x: 0.58778524, y: 0, z: 0, w: 0.809017}
+  m_LocalPosition: {x: 35, y: 10, z: -27.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 74, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 72, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8488,6 +8511,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!1 &337643656
 GameObject:
   m_ObjectHideFlags: 0
@@ -8543,6 +8567,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &337643659
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8736,6 +8761,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &345307484
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8867,6 +8893,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &345436886
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9349,7 +9376,7 @@ GameObject:
   - component: {fileID: 365005098}
   - component: {fileID: 365005097}
   - component: {fileID: 365005096}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9578,6 +9605,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &370138451
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9704,6 +9732,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &370150614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10058,6 +10087,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &383907204
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10826,6 +10856,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &421930147
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11270,6 +11301,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &436637399
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11499,6 +11531,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &457636171
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11625,6 +11658,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &460898921
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12344,6 +12378,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &486938090
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12598,6 +12633,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!1 &491425301
 GameObject:
   m_ObjectHideFlags: 0
@@ -12653,6 +12689,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &491425304
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12882,6 +12919,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &503701478
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13010,6 +13048,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &503768813
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13385,6 +13424,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &526327366
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13531,7 +13571,7 @@ GameObject:
   - component: {fileID: 535168583}
   - component: {fileID: 535168582}
   - component: {fileID: 535168585}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Target (2)
   m_TagString: Box
   m_Icon: {fileID: 0}
@@ -13644,6 +13684,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!1 &535762193
 GameObject:
   m_ObjectHideFlags: 0
@@ -13900,6 +13941,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &547543337
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14389,6 +14431,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &574260912
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14763,6 +14806,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &588386437
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14889,6 +14933,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &590654189
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15201,6 +15246,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &595863359
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15470,6 +15516,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!1 &614075052
 GameObject:
   m_ObjectHideFlags: 0
@@ -15525,6 +15572,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &614075055
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15651,6 +15699,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &618494778
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15778,6 +15827,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &623247074
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15905,6 +15955,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &624271098
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16111,7 +16162,7 @@ GameObject:
   - component: {fileID: 638310531}
   - component: {fileID: 638310533}
   - component: {fileID: 638310532}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16331,6 +16382,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &645187084
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16634,6 +16686,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &652977770
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16765,6 +16818,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &659238469
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16948,6 +17002,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &663254723
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17031,7 +17086,7 @@ GameObject:
   - component: {fileID: 665231772}
   - component: {fileID: 665231771}
   - component: {fileID: 665231770}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17447,6 +17502,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &679790115
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17587,7 +17643,7 @@ GameObject:
   - component: {fileID: 680464562}
   - component: {fileID: 680464561}
   - component: {fileID: 680464560}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17816,6 +17872,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &681556377
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18004,6 +18061,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &687248007
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18430,6 +18488,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &705905693
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18613,6 +18672,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &718558741
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18712,7 +18772,7 @@ GameObject:
   - component: {fileID: 719890149}
   - component: {fileID: 719890148}
   - component: {fileID: 719890147}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: False
   m_TagString: Box
   m_Icon: {fileID: 0}
@@ -18756,6 +18816,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 1
 --- !u!65 &719890148
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18771,7 +18832,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -18885,6 +18946,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &720495183
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19203,6 +19265,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
   inPower: 0
   material: {fileID: 2100000, guid: df263f94871e0104098f79145257b975, type: 2}
 --- !u!1001 &737790020
@@ -19496,6 +19559,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &746686801
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19724,6 +19788,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &758309760
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19845,7 +19910,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2284232380190420607, guid: 6c9855a069e6a6b49845922f6dce7d0a, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279312806067682915, guid: 6c9855a069e6a6b49845922f6dce7d0a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6777728755310495950, guid: 6c9855a069e6a6b49845922f6dce7d0a, type: 3}
       propertyPath: m_Name
@@ -19853,7 +19922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6777728755310495950, guid: 6c9855a069e6a6b49845922f6dce7d0a, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8580009500018567945, guid: 6c9855a069e6a6b49845922f6dce7d0a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19911,6 +19980,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 1
 --- !u!1001 &758813318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20137,6 +20207,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &765031606
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20335,7 +20406,7 @@ GameObject:
   - component: {fileID: 769792185}
   - component: {fileID: 769792184}
   - component: {fileID: 769792183}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Delay (1)
   m_TagString: Box
   m_Icon: {fileID: 0}
@@ -20379,6 +20450,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 1
   codeName: Loop
 --- !u!65 &769792184
 BoxCollider:
@@ -20395,7 +20467,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -20507,6 +20579,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &783577754
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20707,6 +20780,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
   codeName: Jump
 --- !u!4 &798544899 stripped
 Transform:
@@ -20768,6 +20842,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &800340608
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20951,6 +21026,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &807339894
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21211,6 +21287,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &814876633
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21428,6 +21505,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &820998685
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21574,6 +21652,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &828255428
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22305,6 +22384,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &852449614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22488,6 +22568,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &857413163
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22746,6 +22827,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &867519479
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22978,6 +23060,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &890500780
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23467,6 +23550,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &902622775
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23879,6 +23963,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
   inPower: 0
   material: {fileID: 2100000, guid: df263f94871e0104098f79145257b975, type: 2}
 --- !u!65 &916102822
@@ -24315,6 +24400,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &927961263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24503,6 +24589,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &944821934
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24743,6 +24830,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &951289808
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25278,6 +25366,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &977828255
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25540,7 +25629,7 @@ GameObject:
   - component: {fileID: 988124087}
   - component: {fileID: 988124086}
   - component: {fileID: 988124085}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Is
   m_TagString: Box
   m_Icon: {fileID: 0}
@@ -25584,6 +25673,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 1
 --- !u!65 &988124086
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25599,7 +25689,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -25684,6 +25774,7 @@ GameObject:
   - component: {fileID: 991462997}
   - component: {fileID: 991462998}
   - component: {fileID: 991462999}
+  - component: {fileID: 991463000}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -25705,6 +25796,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tmpObjects: []
   delObjects: []
+  playerJumpSkill: 0
+  playerDelaySkill: 0
 --- !u!114 &991462991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25835,6 +25928,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 330585545}
+--- !u!114 &991463000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991462989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d166c7d77641d748b54f2eb5207bcaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allTargetsGetIn: 0000
+  targets:
+  - {fileID: 2022141873}
+  - {fileID: 535168585}
+  loopSkill: 1
+  loopBug: 1
 --- !u!1001 &994840439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26127,6 +26238,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1000609659
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26292,6 +26404,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1003388936
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26666,6 +26779,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1033408604
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26797,6 +26911,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1041337921
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27454,6 +27569,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1068628841
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27660,6 +27776,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1076232193
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27905,6 +28022,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1080996507
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28241,6 +28359,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1096871415
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28339,7 +28458,7 @@ GameObject:
   - component: {fileID: 1099344264}
   - component: {fileID: 1099344263}
   - component: {fileID: 1099344262}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28573,6 +28692,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1113233045
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28761,6 +28881,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1122720335
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28887,6 +29008,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1123537114
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29070,6 +29192,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1127125737
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29258,6 +29381,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1139927214
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29415,7 +29539,7 @@ Transform:
   m_GameObject: {fileID: 1145477088}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 0.5, z: -0.9999995}
+  m_LocalPosition: {x: 3, y: 0.5, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29441,6 +29565,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1145477091
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29681,6 +29806,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1149122984
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29884,6 +30010,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1166031841
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30010,6 +30137,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1170131792
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30235,6 +30363,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1172812087
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30523,6 +30652,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1182248773
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30649,6 +30779,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1186876871
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31101,6 +31232,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!1 &1209455651
 GameObject:
   m_ObjectHideFlags: 0
@@ -31114,7 +31246,7 @@ GameObject:
   - component: {fileID: 1209455655}
   - component: {fileID: 1209455654}
   - component: {fileID: 1209455653}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Delay
   m_TagString: Box
   m_Icon: {fileID: 0}
@@ -31158,6 +31290,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 1
   codeName: Delay
 --- !u!65 &1209455654
 BoxCollider:
@@ -31174,7 +31307,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -31286,6 +31419,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1209975788
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31407,7 +31541,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2284232380190420607, guid: 6c9855a069e6a6b49845922f6dce7d0a, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279312806067682915, guid: 6c9855a069e6a6b49845922f6dce7d0a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6777728755310495950, guid: 6c9855a069e6a6b49845922f6dce7d0a, type: 3}
       propertyPath: m_Name
@@ -31415,7 +31553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6777728755310495950, guid: 6c9855a069e6a6b49845922f6dce7d0a, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8580009500018567945, guid: 6c9855a069e6a6b49845922f6dce7d0a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -31473,6 +31611,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 1
 --- !u!1001 &1213629335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31999,6 +32138,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1230139475
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32503,7 +32643,7 @@ Transform:
   m_GameObject: {fileID: 1263676367}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 0.5, z: 0.00000044703484}
+  m_LocalPosition: {x: 3, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32529,6 +32669,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1263676370
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32654,7 +32795,7 @@ GameObject:
   - component: {fileID: 1281143299}
   - component: {fileID: 1281143298}
   - component: {fileID: 1281143297}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Jump
   m_TagString: Box
   m_Icon: {fileID: 0}
@@ -32698,6 +32839,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 1
   codeName: Jump
 --- !u!65 &1281143298
 BoxCollider:
@@ -32714,7 +32856,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -32955,6 +33097,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1295498168
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33048,7 +33191,7 @@ GameObject:
   - component: {fileID: 1301016182}
   - component: {fileID: 1301016181}
   - component: {fileID: 1301016180}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33396,6 +33539,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1310626847
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33539,6 +33683,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1318025300
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33666,6 +33811,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1319099302
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33859,6 +34005,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1333644337
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34051,6 +34198,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1344974071
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34515,7 +34663,7 @@ GameObject:
   - component: {fileID: 1346634489}
   - component: {fileID: 1346634488}
   - component: {fileID: 1346634487}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35204,6 +35352,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1375607750
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35340,6 +35489,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1384680517
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35466,6 +35616,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1389498585
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35592,6 +35743,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1395378641
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35745,7 +35897,7 @@ Transform:
   m_GameObject: {fileID: 1401895964}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18, y: 0, z: -20}
+  m_LocalPosition: {x: 20, y: 0, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -35763,6 +35915,7 @@ Transform:
   - {fileID: 2046933822}
   - {fileID: 2022141868}
   - {fileID: 535168580}
+  - {fileID: 1638353652}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1405600545 stripped
@@ -35825,6 +35978,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1408393680
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36290,7 +36444,7 @@ GameObject:
   - component: {fileID: 1428490665}
   - component: {fileID: 1428490664}
   - component: {fileID: 1428490663}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Is (2)
   m_TagString: Box
   m_Icon: {fileID: 0}
@@ -36334,6 +36488,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 1
 --- !u!65 &1428490664
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36349,7 +36504,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -36888,6 +37043,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1448348631
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37024,6 +37180,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1457205953
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37207,6 +37364,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1465023923
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37477,7 +37635,7 @@ GameObject:
   - component: {fileID: 1486323759}
   - component: {fileID: 1486323758}
   - component: {fileID: 1486323757}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Is (3)
   m_TagString: Box
   m_Icon: {fileID: 0}
@@ -37521,6 +37679,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 1
 --- !u!65 &1486323758
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37536,7 +37695,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -37658,6 +37817,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1492466461
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38106,6 +38266,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1517515366
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38325,6 +38486,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1521113172
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38408,7 +38570,7 @@ GameObject:
   - component: {fileID: 1523274987}
   - component: {fileID: 1523274986}
   - component: {fileID: 1523274985}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39228,6 +39390,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1567251504
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39339,6 +39502,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1568980819
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39599,6 +39763,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1574357380
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39839,6 +40004,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1587311320
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39922,7 +40088,7 @@ GameObject:
   - component: {fileID: 1592029662}
   - component: {fileID: 1592029661}
   - component: {fileID: 1592029660}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40151,6 +40317,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1593173671
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40282,6 +40449,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1593688265
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40451,6 +40619,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1595388838
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40577,6 +40746,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1596288081
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40703,6 +40873,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1597850111
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41010,6 +41181,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1608708897
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41146,6 +41318,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1611849501
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41558,6 +41731,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1628364202
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41673,12 +41847,12 @@ Transform:
   m_GameObject: {fileID: 1638353651}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28, y: 0.5, z: -2}
+  m_LocalPosition: {x: 10, y: 0.5, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 594575828}
-  m_Father: {fileID: 1926922261}
+  m_Father: {fileID: 1401895965}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1638353653
 MonoBehaviour:
@@ -41700,6 +41874,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 1
 --- !u!65 &1638353654
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41817,6 +41992,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1644278169
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42554,6 +42730,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1678955741
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42940,6 +43117,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1687003796
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43260,6 +43438,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1710349785
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43396,6 +43575,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1713589670
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43580,6 +43760,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1715568805
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43841,6 +44022,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1741419426
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44138,6 +44320,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1762204802
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44269,6 +44452,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1767013615
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44395,6 +44579,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1768563501
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45008,6 +45193,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1803161034
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45263,6 +45449,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1816144332
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45374,6 +45561,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1820304838
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45520,6 +45708,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1828716136
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45795,6 +45984,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1844513851
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46793,6 +46983,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1883153889
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47343,6 +47534,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1901814470
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47475,6 +47667,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1905788773
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47665,9 +47858,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0ce92f2ea0279d49b205129c6e8c87c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delaySkillUnlock: 0
   jumpSkill: 1
   canJump: 0
-  delaySkill: 0
   delay: 0
   onBox: 0
   jumpCount: 0
@@ -47805,6 +47998,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1918742502
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47973,6 +48167,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1920296824
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48171,6 +48366,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1921975262
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48302,6 +48498,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1922850305
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48409,7 +48606,6 @@ Transform:
   m_Children:
   - {fileID: 984638425}
   - {fileID: 1715568803}
-  - {fileID: 1638353652}
   - {fileID: 1207046156}
   - {fileID: 1901814468}
   - {fileID: 720495181}
@@ -48636,6 +48832,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1941689257
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48772,6 +48969,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1949585468
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49069,6 +49267,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1966902148
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49401,6 +49600,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!1001 &1971916348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49513,6 +49713,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1971949454
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49696,6 +49897,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1978793119
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49879,6 +50081,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1986069699
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50010,6 +50213,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &1994548720
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50141,6 +50345,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &2007174029
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50225,7 +50430,7 @@ GameObject:
   - component: {fileID: 2022141871}
   - component: {fileID: 2022141870}
   - component: {fileID: 2022141873}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Target (1)
   m_TagString: Box
   m_Icon: {fileID: 0}
@@ -50338,6 +50543,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!4 &2022848316 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3144607957212027277, guid: 1776de1e984ab734d84450cec7a2f558, type: 3}
@@ -50398,6 +50604,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &2024788858
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50673,7 +50880,7 @@ GameObject:
   - component: {fileID: 2028237679}
   - component: {fileID: 2028237678}
   - component: {fileID: 2028237677}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Is (1)
   m_TagString: Box
   m_Icon: {fileID: 0}
@@ -50717,6 +50924,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 1
 --- !u!65 &2028237678
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50732,7 +50940,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -50851,6 +51059,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
   codeName: Delay
 --- !u!65 &2036684696
 BoxCollider:
@@ -50979,6 +51188,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &2037465999
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51167,6 +51377,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &2040914264
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51256,7 +51467,7 @@ GameObject:
   - component: {fileID: 2046933825}
   - component: {fileID: 2046933824}
   - component: {fileID: 2046933823}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: False (1)
   m_TagString: Box
   m_Icon: {fileID: 0}
@@ -51300,6 +51511,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 1
 --- !u!65 &2046933824
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51315,7 +51527,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -51799,6 +52011,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &2066886113
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51975,6 +52188,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &2073581456
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52059,9 +52273,10 @@ GameObject:
   - component: {fileID: 2075752280}
   - component: {fileID: 2075752279}
   - component: {fileID: 2075752282}
-  m_Layer: 0
+  - component: {fileID: 2075752283}
+  m_Layer: 11
   m_Name: Loop
-  m_TagString: Box
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52075,7 +52290,7 @@ Transform:
   m_GameObject: {fileID: 2075752276}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.5, y: 0.5, z: 0.49999982}
+  m_LocalPosition: {x: 4.5, y: 0.5, z: 0.5}
   m_LocalScale: {x: 2, y: 1, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -52097,11 +52312,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.9, y: 1, z: 0.9}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2075752280
 MeshRenderer:
@@ -52165,6 +52380,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 382f1c4367054c642816e76fb3209d97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &2075752283
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075752276}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &2079271346 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3144607957212027277, guid: 1776de1e984ab734d84450cec7a2f558, type: 3}
@@ -52328,6 +52570,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &2086276595
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52589,6 +52832,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &2111426900
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -53371,6 +53615,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!65 &2142898581
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -53615,6 +53860,7 @@ MonoBehaviour:
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
 --- !u!1001 &7530802548820676640
 PrefabInstance:
   m_ObjectHideFlags: 0
