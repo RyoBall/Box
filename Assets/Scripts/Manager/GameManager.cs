@@ -93,8 +93,8 @@ public class GameManager : MonoBehaviour
             case State.THREE:
                 //
                 Level3SpecialManager.instance.Quit();
-                EventManager.OnCPUEnterTarget -= Win;
                 Level4SpecialManager.instance.Init();
+                EventManager.OnCPUEnterTarget -= Win;
                 //
                 state = State.FOUR;
                 PlayerController.instance.transform.position = new Vector3(41f, 0, -2);

@@ -105,29 +105,31 @@ public class Box : CheckObject
         currentMoveVec = vec;
         if (pushable)
         {
-            if (!CheckWithTag(vec, "Box", out box) && !CheckWithTag(vec, "Player") && !CheckWithTag(vec, "Wall"))
+            if (!CheckWithTag(vec, "Box", out box) && !CheckWithTag(vec, "Player"))
             {
                 Move(vec);
                 return true;
             }
             else
             {
-                if (box.isMoving) //比如relybox正在移动
+                if (box != null)
                 {
-                    Move(vec); //自己移动
-                    return true;
-                }
-                else if (box.pushable) //自己和箱子都可以移动
-                {
-                    if (box.GetPush(vec)) //������Ӳ��ƶ���һ�����ƶ�����
+                    if (box.isMoving)
                     {
                         Move(vec);
                         return true;
                     }
+                    else if (box.pushable)
+                    {
+                        if (box.GetPush(vec))
+                        {
+                            Move(vec);
+                            return true;
+                        }
+                    }
                 }
-
+                return false;
             }
-            return false;
         }
         return false;
     }

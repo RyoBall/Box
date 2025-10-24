@@ -7,7 +7,7 @@ public class Level4SpecialManager : MonoBehaviour
     public static Level4SpecialManager instance;
     public List<Vector3> MovPositions;
     int currentPosId=1;
-    public Wall target;
+    public Target target;
     private void Awake()
     {
         instance = this;
@@ -18,6 +18,7 @@ public class Level4SpecialManager : MonoBehaviour
     }
     public void Init() 
     {
+        Debug.Log("InitLevel4");
         EventManager.OnCPUEnterTarget += ChangeCPU;
         EventManager.OnBatteryEnterHouse += EndChangePos;
     }

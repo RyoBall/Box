@@ -14,15 +14,14 @@ public class BatteryHouse : Wall
         RaycastHit[] hits= Physics.RaycastAll(transform.position-new Vector3(0,1,0),new Vector3(0,1,0),1f);
         foreach(RaycastHit hit in hits) 
         {
-            Debug.Log(1);
             if (hit.collider.gameObject.TryGetComponent(out Box box))
             {
                 if (box.type == Box.Type.Battery)
                 {
                     if (box.GetComponent<Battery>().inPower) 
                     {
-                        Debug.Log(1);
                         Effect();   
+                        Destroy(box.gameObject);
                     }
                 }
             }
@@ -30,7 +29,6 @@ public class BatteryHouse : Wall
     }
     public void Effect() 
     {
-        Debug.Log(1);
         EventManager.BatteryEnterHouse();
     }
     

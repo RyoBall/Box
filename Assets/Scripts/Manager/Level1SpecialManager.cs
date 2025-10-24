@@ -27,6 +27,7 @@ public class Level1SpecialManager : MonoBehaviour//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿
         material.color = clarityColor;
         Destroy(wallToDestroy);
         this.data = data;
+        EventManager.OnCPUEnterTarget -= CPUEnterSpecialEvent;
     }
     public void HitBadInsectEvent() 
     {

@@ -25809,7 +25809,7 @@ MonoBehaviour:
   - {x: 47, y: 0.5, z: -3}
   - {x: 48, y: 0.5, z: -8}
   - {x: 0, y: 0, z: 0}
-  target: {fileID: 0}
+  target: {fileID: 488482523}
 --- !u!114 &991462998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36213,6 +36213,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -5895237757419775885, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1112619709763884236, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -151861166279887578, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 678507024268166177, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
       propertyPath: m_Name
       value: fei
@@ -36220,6 +36236,30 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4605208234442461011, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5450691349988582378, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519004576757902710, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515787117813538883, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8409926861299139936, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8698332802076197711, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

@@ -12,6 +12,7 @@ public class CPU : Box
             if (box.GetComponent<Box>().type == Box.Type.Target)
             {
                 Move(vec);
+                Debug.Log("Enter Target");
                 StartCoroutine(CPUEnterTarget());
                 return true;
             }
