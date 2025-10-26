@@ -136,12 +136,12 @@ public class PlayerController : CheckObject,ICode
         {
             if (CheckWithTag(vec, "Box", out box))
             {
-                Debug.Log("DelayPush");
                 box.GetDelayPush(vec);
             }
             else if (!CheckWithTag(vec, "Wall"))
             {
                 Move(vec);
+                playerAnimator.SetBool("Walk", true);
             }
         }
         //在地面上前进
