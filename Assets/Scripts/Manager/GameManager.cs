@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     {
         state = State.ONE;
         OpenPanel.SetActive(false);
+        Dialogue.instance.ShowText();
     }
 
     // Update is called once per frame
