@@ -2,7 +2,7 @@ Shader "Unlit/PBR_WithShadow"
 {
     Properties
     {
-        _BaseColor("Color",Color) = (1,1,1,1)
+        [HDR]_BaseColor("Color",Color) = (1,1,1,1)
         _Metallic("Metallic",Range(0,1)) = 0.5
         _Roughness("Roughness",Range(0,1)) = 0.5
     }
@@ -39,7 +39,7 @@ Shader "Unlit/PBR_WithShadow"
                 float3 positionWS : TEXCOORD0;
                 float3 normalWS : TEXCOORD1;
                 float3 viewDirWS : TEXCOORD2;
-                float4 shadowCoord : TEXCOORD3; // ✅ 阴影坐标
+                float4 shadowCoord : TEXCOORD3; 
             };
 
             CBUFFER_START(UnityPerMaterial)
@@ -99,10 +99,7 @@ Shader "Unlit/PBR_WithShadow"
 
                 return (diffuse + specular) * NdotL;
             }
-
-            //====================
-            // 顶点
-            //====================
+            
             Varyings vert (Attributes v)
             {
                 Varyings o;
@@ -111,15 +108,12 @@ Shader "Unlit/PBR_WithShadow"
                 o.positionWS = posInputs.positionWS;
                 o.normalWS = TransformObjectToWorldNormal(v.normal);
                 o.viewDirWS = GetWorldSpaceNormalizeViewDir(o.positionWS);
-
-                // ✅ 计算主光阴影坐标
+                
                 o.shadowCoord = TransformWorldToShadowCoord(o.positionWS);
                 return o;
             }
 
-            //====================
-            // 片元
-            //====================
+            
             half4 frag (Varyings i) : SV_Target
             {
                 Light light = GetMainLight(i.shadowCoord);
@@ -128,17 +122,74 @@ Shader "Unlit/PBR_WithShadow"
                 float3 L = normalize(light.direction);
                 float3 V = normalize(i.viewDirWS);
                 float3 albedo = _BaseColor.rgb;
-
-                // ✅ 采样阴影贴图
+                
                 float shadow = MainLightRealtimeShadow(i.shadowCoord);
 
                 float3 brdf = BRDF(N, L, V, albedo);
-                float3 ambient = SampleSH(N) * albedo * 0.2;
+                float3 ambient = SampleSH(N) * albedo * 0.1;
 
                 float3 finalColor = (brdf * light.color * shadow * light.distanceAttenuation) + ambient;
                 finalColor = pow(saturate(finalColor), 1.0 / 2.2);
                 
                 return half4(finalColor, 1.0);
+            }
+            ENDHLSL
+        }
+
+         Pass
+        {
+            Name "ShadowCaster"
+            Tags { "LightMode" = "ShadowCaster" }
+
+            ZWrite On
+            ZTest LEqual
+            ColorMask 0
+            Cull Back
+
+            HLSLPROGRAM
+            #pragma vertex ShadowPassVertex
+            #pragma fragment ShadowPassFragment
+
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
+
+            struct Attributes
+            {
+                float4 positionOS : POSITION;
+                float3 normalOS : NORMAL;
+                float2 texcoord : TEXCOORD0;
+            };
+
+            struct Varyings
+            {
+                float4 positionCS : SV_POSITION;
+            };
+
+            float3 _LightDirection;
+
+            Varyings ShadowPassVertex(Attributes v)
+            {
+                Varyings o;
+                
+                VertexPositionInputs vertexInput = GetVertexPositionInputs(v.positionOS.xyz);
+                float3 positionWS = vertexInput.positionWS;
+                float3 normalWS = TransformObjectToWorldNormal(v.normalOS);
+
+                float4 positionCS = TransformWorldToHClip(ApplyShadowBias(positionWS, normalWS, _LightDirection));
+                
+                #if UNITY_REVERSED_Z
+                    positionCS.z = min(positionCS.z, positionCS.w * UNITY_NEAR_CLIP_VALUE);
+                #else
+                    positionCS.z = max(positionCS.z, positionCS.w * UNITY_NEAR_CLIP_VALUE);
+                #endif
+
+                o.positionCS = positionCS;
+                return o;
+            }
+
+            half4 ShadowPassFragment(Varyings i) : SV_TARGET
+            {
+                return 0;
             }
             ENDHLSL
         }

@@ -137,7 +137,12 @@ public class Box : CheckObject
 
     public void ResetDealyBox(object sender, EventArgs e)
     {
-        //还没想好怎么重置，直接清零moveVec的话文字子物体会出错
+        transform.DOKill();
+        moveVec.Clear();
+        if (text != null)
+        {
+            text.UpdateText(0);
+        }
     }
 
 }

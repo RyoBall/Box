@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 410087040}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10600,7 +10600,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -10609,10 +10609,10 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_Strength: 0.659
+    m_Bias: 0.3
+    m_NormalBias: 0.23
+    m_NearPlane: 0.3
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -10659,7 +10659,7 @@ Transform:
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 1.24, y: 1.3, z: -1.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10687,7 +10687,7 @@ MonoBehaviour:
   m_ShadowRenderingLayers: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
+  m_SoftShadowQuality: 3
 --- !u!1001 &416523313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36729,7 +36729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.007
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -36783,6 +36783,10 @@ PrefabInstance:
       propertyPath: m_RenderingLayerMask
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -5895237757419775885, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b094f7ed72443f942bf450122f818319, type: 2}
     - target: {fileID: -5641353679380554080, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
       propertyPath: m_RenderingLayerMask
       value: 2
@@ -36831,6 +36835,10 @@ PrefabInstance:
       propertyPath: m_RenderingLayerMask
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 678507024268166177, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b094f7ed72443f942bf450122f818319, type: 2}
     - target: {fileID: 792980597951014800, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
       propertyPath: m_RenderingLayerMask
       value: 2
@@ -36899,6 +36907,10 @@ PrefabInstance:
       propertyPath: m_RenderingLayerMask
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5450691349988582378, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b094f7ed72443f942bf450122f818319, type: 2}
     - target: {fileID: 5519004576757902710, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
       propertyPath: m_RenderingLayerMask
       value: 2
@@ -36931,6 +36943,10 @@ PrefabInstance:
       propertyPath: m_RenderingLayerMask
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8409926861299139936, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b094f7ed72443f942bf450122f818319, type: 2}
     - target: {fileID: 8698332802076197711, guid: b6248ba42c2410342976607a50d3f7c1, type: 3}
       propertyPath: m_RenderingLayerMask
       value: 2
@@ -54577,13 +54593,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: CPU
       objectReference: {fileID: 0}
+    - target: {fileID: 9059035183417997864, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059035183417997864, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
+      propertyPath: m_TagString
+      value: Box
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9059035183417997864, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
