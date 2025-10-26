@@ -13756,7 +13756,7 @@ MonoBehaviour:
   pushable: 0
   timeCount: 0
   text: {fileID: 0}
-  isMoving: 0
+  isMoving: 1
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
@@ -23243,7 +23243,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: -379}
+  m_AnchoredPosition: {x: 4, y: -508.99997}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &892093447
@@ -25320,7 +25320,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: -260}
+  m_AnchoredPosition: {x: 4, y: -389.99997}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &959572766
@@ -46236,7 +46236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: -320}
+  m_AnchoredPosition: {x: 4, y: -449.99997}
   m_SizeDelta: {x: 120, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1827889889
@@ -51219,7 +51219,7 @@ MonoBehaviour:
   pushable: 0
   timeCount: 0
   text: {fileID: 0}
-  isMoving: 0
+  isMoving: 1
   moveVec: []
   supportDelay: 0
   currentMoveVec: {x: 0, y: 0}

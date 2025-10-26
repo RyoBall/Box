@@ -48,15 +48,17 @@ public class Level6SpecialManager : MonoBehaviour
     {
         for (int i = 0; i < 2; i++)
         {
+            bool getCPU=false;
             RaycastHit[] hits = Physics.RaycastAll(targets[i].transform.position - new Vector3(0, 0.6f, 0), Vector3.up, .5f);
             foreach (RaycastHit hit in hits)
             {
                 if (hit.collider.GetComponent<CPU>() != null)
                 {
+                    getCPU = true;
                     allTargetsGetIn[i] = true;
-                    continue;
                 }
             }
+            if(!getCPU)
             allTargetsGetIn[i] = false;
         }
         if (allTargetsGetIn[0] && allTargetsGetIn[1])

@@ -137,6 +137,8 @@ public class GameManager : MonoBehaviour
                 layer = LayerMask.NameToLayer("Level6");
                 MapManager.instance.ResaveTransformAndResetPlayer(layer);
                 break;
+            case State.SIX:
+                //胜利结算
             default:
                 break;
         }
