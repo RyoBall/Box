@@ -22,7 +22,7 @@ public class Level1SpecialManager : MonoBehaviour//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿
     }
     public void CPUEnterSpecialEvent(CPUEnterTargetEventData data) 
     {
-        data.cpu.transform.position = badInsect.transform.position;
+        data.cpu.transform.position = badInsect.transform.position + new Vector3(0,-0.2f,0);
         PlayerController.instance.jumpSkill = true;
         material.color = clarityColor;
         Destroy(wallToDestroy);

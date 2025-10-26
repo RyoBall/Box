@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        state = State.OPEN;//暂时没有做开头
+        state = State.ONE;//暂时没有做开头
         //PlayerController.instance.transform.position = new Vector3(-4,.5f,-3);
         //cam.transform.position = new Vector3(0.54f, 7.18f, -6.64f);
         OpenPanel.SetActive(true);
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        state = State.ONE;
+        //state = State.ONE;
         OpenPanel.SetActive(false);
         Dialogue.instance.ShowText();
     }

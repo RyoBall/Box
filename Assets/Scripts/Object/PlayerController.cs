@@ -126,6 +126,9 @@ public class PlayerController : CheckObject,ICode
                 }
                 else
                 {
+                    CheckWithTag(new Vector3(vec.x * (Data.fixedChecLength + .01f), 0, vec.y * (Data.fixedChecLength + .01f)), 1,
+                        Vector2.zero, "Box",out Box box2);
+                    Debug.Log(box2.name);
                     //如果前下方是box，继续走
                     Move(vec);
                     playerAnimator.SetBool("Walk", true);
