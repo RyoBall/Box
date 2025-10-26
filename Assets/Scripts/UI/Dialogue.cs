@@ -15,6 +15,8 @@ public class Dialogue : MonoBehaviour
     private string[] textFiles;
     int currentIndex = 0;
     string currentText = "";
+
+    private bool waitingForInput;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,11 +57,29 @@ public class Dialogue : MonoBehaviour
     IEnumerator TypeText(string fullText)
     {
         contentText.text = "";
-        for (int i = 0; i <= fullText.Length; i++)
+        string currentLine = "";
+
+        foreach (char c in fullText)
         {
-            contentText.text = fullText.Substring(0, i);
+            currentLine += c;
+            contentText.text = currentLine;
             yield return new WaitForSeconds(typeSpeed);
+            
+            if (c == '。' || c == '.' || c == '！' || c == '？')
+            {
+                waitingForInput = true;
+                // 等待玩家点击鼠标左键或按空格
+                yield return new WaitUntil(() => Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space));
+                waitingForInput = false;
+
+                // 清空文字再继续下一句
+                currentLine = "";
+                contentText.text = "";
+            }
         }
+
+        // 句子结束后等待玩家关闭
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space));
         DialoguePanel.SetActive(false);
     }
 }
