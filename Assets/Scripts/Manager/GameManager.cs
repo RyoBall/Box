@@ -117,7 +117,6 @@ public class GameManager : MonoBehaviour
                 //
                 Level4SpecialManager.instance.Quit();
                 Level5SpecialManager.instance.Init();   
-                EventManager.OnCPUEnterTarget += Win;
                 //
                 state = State.FIVE;
                 PlayerController.instance.transform.position = new Vector3(10, .5f, -25f);

@@ -32,6 +32,7 @@ public class Level4SpecialManager : MonoBehaviour
     public void EndChangePos() 
     {
         EventManager.OnCPUEnterTarget -= ChangeCPU;
+        EventManager.OnCPUEnterTarget += GameManager.instance.Win;
     }
     public void ChangeCPU(CPUEnterTargetEventData data) 
     {
