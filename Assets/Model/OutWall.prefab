@@ -124,4 +124,6 @@ MonoBehaviour:
   text: {fileID: 0}
   isMoving: 0
   moveVec: []
+  supportDelay: 0
   currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
