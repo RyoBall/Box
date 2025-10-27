@@ -5,6 +5,7 @@ Shader "Custom/GradientShader"
         [HDR]_ColorTop ("Top Color", Color) = (1,1,1,1)
         [HDR]_ColorBottom ("Bottom Color", Color) = (0,0,1,1)
         _Tilt ("Tilt", Range(0.0, 1.0)) = 0
+        _TimeSpeed("YimeSpeed",Range(0.0,1.0)) = 0.1
     }
     SubShader
     {
@@ -38,6 +39,7 @@ Shader "Custom/GradientShader"
             float4 _ColorTop;
             float4 _ColorBottom;
             float _Tilt;
+            float _TimeSpeed;
 
             v2f vert (appdata v)
             {
@@ -49,8 +51,8 @@ Shader "Custom/GradientShader"
 
             half4 frag (v2f i) : SV_Target
             {
-                float x = (i.uv.x + _Time.y * 0.1) % 1.0f;
-                float y = (i.uv.y + _Time.y * 0.1) % 1.0f;
+                float x = (i.uv.x + _Time.y * _TimeSpeed) % 1.0f;
+                float y = (i.uv.y + _Time.y * _TimeSpeed) % 1.0f;
                 float lerpValue = lerp(x,y,_Tilt);
                 
                 half3 bottomSRGB = LinearToSRGB(_ColorBottom.rgb);
