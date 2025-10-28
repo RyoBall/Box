@@ -4,14 +4,17 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using static ICode;
 
-public class IsCode : Box, ICode
+public class IsCode : Box, ICode,IRecord<BaseData>
 {
     ICode.CodeType ICode.codeType { get; set; }
     string ICode.name { get; set; }
+    Stack<BaseData> IRecord<BaseData>.stack { get; set; }
+
     public void Init(LevelChangeData data)
     {
         if (gameObject.layer == (int)data.layer)
         {
+            ((IRecord<BaseData>)this).Init();
             EventManager.OnPlayerOverMov += HorizontalChec;
             EventManager.OnPlayerOverMov += VerticalChec;
         }
@@ -104,6 +107,21 @@ public class IsCode : Box, ICode
         EventManager.OnLevelChange += Quit;
         ((ICode)this).codeType = ICode.CodeType.Is;
         base.Start();
+    }
+    void IRecord<BaseData>.Record(PlayerMovEventData data)
+    {
+        List<Vector2> Vecs = new List<Vector2>();
+        for (int i = 0; i < moveVec.Count; i++)
+        {
+            Vecs.Add(moveVec[i]);
+        }
+        ((IRecord<BaseData>)this).stack.Push(new BaseData(transform.position, Vecs));
+    }
 
+    void IRecord<BaseData>.BackEffectInClass(BaseData data)
+    {
+        transform.position = data.position;
+        moveVec = data.moveVec;
+        SetTextCount();
     }
 }

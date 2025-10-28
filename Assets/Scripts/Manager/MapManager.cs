@@ -3,8 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-
-public class MapManager : MonoBehaviour
+public class MapData 
+{
+    public List<GameObject> tmpObjects = new List<GameObject>();
+    public List<GameObject> delObjects = new List<GameObject>();
+    public MapData(List<GameObject> tmpObjects, List<GameObject> delObjects)
+    {
+        this.tmpObjects = tmpObjects;
+        this.delObjects = delObjects;
+    }
+}
+public class MapManager : MonoBehaviour,IRecord<MapData>
 {
     public static MapManager instance;
     public static event EventHandler OnReset;
@@ -14,6 +23,9 @@ public class MapManager : MonoBehaviour
     public List<GameObject> delObjects = new List<GameObject>();
     public bool playerJumpSkill = false;
     public bool playerDelaySkill = false;
+
+    Stack<MapData> IRecord<MapData>.stack { get; set; }
+
     public class TransformData
     {
         public Vector3 position;
@@ -24,6 +36,8 @@ public class MapManager : MonoBehaviour
         instance = this;
         int currentLayer = LayerMask.NameToLayer("Level1"); 
         ResaveTransformAndResetPlayer(currentLayer);
+        ((IRecord<MapData>)this).Init();
+        EventManager.OnPlayerReadyToMov += Record;
     }
 
     public void ResaveTransformAndResetPlayer(LayerMask layer)//进入新一关需要使用这个函数来保存新一关的初始位置
@@ -72,5 +86,43 @@ public class MapManager : MonoBehaviour
         
         OnReset?.Invoke(this, EventArgs.Empty);
     }
-    
+
+    void IRecord<MapData>.Record(PlayerMovEventData data)
+    {
+        ;
+    }
+
+    void IRecord<MapData>.BackEffectInClass(MapData data)
+    {
+        foreach(GameObject tmpObject in tmpObjects) 
+        {
+            if (!data.tmpObjects.Contains(tmpObject)) 
+            {
+                Destroy(tmpObject);
+            }
+        }
+        foreach(GameObject delObject in delObjects) 
+        {
+            if (!data.delObjects.Contains(delObject)) 
+            {
+                delObject.SetActive(true);
+            }
+        }
+        tmpObjects = data.tmpObjects;
+        delObjects = data.delObjects;
+    }
+    void Record() 
+    {
+        List<GameObject> tmpObjectsToStole = new List<GameObject>();
+        List<GameObject> delObjectsToStole = new List<GameObject>();
+        for (int i = 0; i < tmpObjects.Count; i++)
+        {
+            tmpObjectsToStole.Add(tmpObjects[i]);
+        }
+        for (int i = 0; i < delObjects.Count; i++)
+        {
+            delObjectsToStole.Add(delObjects[i]);
+        }
+        ((IRecord<MapData>)this).stack.Push(new MapData(tmpObjectsToStole, delObjectsToStole));
+    }
 }

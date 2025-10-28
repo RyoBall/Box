@@ -34,6 +34,23 @@ public interface IRecord<T>
         stack = new Stack<T>();
         EventManager.OnPlayerMov +=Record;
         EventManager.OnBack +=BackEffect;
+        EventManager.OnLevelReset+=ClearStack;
+        EventManager.OnLevelChange+=ClearStack;
+    }
+    public void Quit() 
+    {
+        EventManager.OnPlayerMov -= Record;
+        EventManager.OnBack -= BackEffect;
+        EventManager.OnLevelReset -= ClearStack;
+        EventManager.OnLevelChange -= ClearStack;
+    }
+    public void ClearStack() 
+    {
+        stack.Clear();
+    }
+    public void ClearStack(LevelChangeData data)
+    {
+        stack.Clear();
     }
     public void BackEffect()//框架 
     {
@@ -117,7 +134,7 @@ public class PlayerController : CheckObject,ICode,IRecord<PlayerActionData>
                 vec = new Vector2(1, 0);
                 this.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
             }
-            else if (Input.GetKeyDown(KeyCode.Z))
+            else if (Input.GetKeyDown(KeyCode.Z)&&!moving)
             {
                 EventManager.Back();
                 return 0;
@@ -158,6 +175,7 @@ public class PlayerController : CheckObject,ICode,IRecord<PlayerActionData>
     {
         Box box;
         faceVec = vec;
+        EventManager.PlayerReadyToMov();
         if (onBox)
         {
             if (!CheckWithTag(new Vector3(vec.x * (Data.fixedChecLength + .01f), 0, vec.y * (Data.fixedChecLength + .01f)), 1,
