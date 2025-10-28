@@ -24,6 +24,6 @@ public class TimeText : MonoBehaviour
     public void UpdateText(int count) 
     {
         text.text = count.ToString();     
-        rectTransform.localPosition = new Vector3(0, 0, 0);
+        rectTransform.localPosition = new Vector3(0, 0.5f, 0);
     }
 }
