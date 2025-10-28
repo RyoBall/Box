@@ -17,7 +17,14 @@ public class CheckObject : MonoBehaviour
     {
         
     }
-    
+    public void Record<T>(Stack<T> stack,T data) 
+    {
+        stack.Push(data);
+    }
+    public virtual void RecordEffect() 
+    {
+        ;
+    }
     public bool CheckWithTag<T>(Vector2 vec, String tag, out T obj)
     {
         RaycastHit[] hits = Physics.RaycastAll(transform.position, new Vector3(vec.x, 0, vec.y), Data.fixedChecLength);

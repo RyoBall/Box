@@ -18,6 +18,7 @@ public class EventManager : MonoBehaviour
     public static Action OnDeleteBoxGetPush;
     public static Action<LoopEnterEventData> OnLoopEnter;
     public static Action<LevelChangeData> OnLevelChange;
+    public static Action OnBack;
     public static void PlayerMov(PlayerMovEventData data) 
     {
         OnPlayerMov?.Invoke(data);
@@ -62,6 +63,10 @@ public class EventManager : MonoBehaviour
     public static void LoopEnter(LoopEnterEventData data) 
     {
         OnLoopEnter?.Invoke(data);
+    }
+    public static void Back() 
+    {
+        OnBack?.Invoke();
     }
 }
 public class LoopEnterEventData

@@ -4,9 +4,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;
+public class PlayerActionData 
+{
+    public Vector3 position;
+    public bool canJump;
+    public bool delay;
+    public bool onBox;//在箱子上前进
+    public int jumpCount;
+    public bool inPower;
+    public bool jumpSkill;
+    public bool delaySkillUnlock;
+    public PlayerActionData(Vector3 position,bool canJump,bool delay,bool onBox,int jumpCount,bool inPower,bool jumpSkill,bool delaySkillUnlock) 
+    {
+        this.position = position;
+        this.canJump = canJump;
+        this.delay = delay;
+        this.onBox = onBox;
+        this.jumpCount = jumpCount;
+        this.inPower = inPower;
+        this.jumpSkill = jumpSkill;
+        this.delaySkillUnlock = delaySkillUnlock;
+    }
+}
 
 public class PlayerController : CheckObject,ICode
 {
+    public Stack<PlayerActionData> actionCounter = new Stack<PlayerActionData>();
     public static PlayerController instance;
     public bool delaySkillUnlock = false;
     bool moving;
@@ -137,11 +160,16 @@ public class PlayerController : CheckObject,ICode
             if (CheckWithTag(vec, "Box", out box))
             {
                 box.GetDelayPush(vec);
+                EventManager.PlayerOverMov();
             }
             else if (!CheckWithTag(vec, "Wall"))
             {
                 Move(vec);
                 playerAnimator.SetBool("Walk", true);
+            }
+            else 
+            {
+                EventManager.PlayerOverMov();
             }
         }
         //在地面上前进
@@ -185,6 +213,7 @@ public class PlayerController : CheckObject,ICode
                     else
                     {
                         box.GetPush(vec); //�����ӣ������ƶ�
+                        EventManager.PlayerOverMov();
                     }
                 }
             }
@@ -227,4 +256,11 @@ public class PlayerController : CheckObject,ICode
         playerAnimator.SetBool("Push", false);
         playerAnimator.SetBool("Jump", false);
     }
+
+    public override void RecordEffect()
+    {
+        base.RecordEffect();
+        Record<PlayerActionData>(actionCounter, new PlayerActionData(transform.position, canJump, delay, onBox, jumpCount, inPower, jumpSkill, delaySkillUnlock));
+    }
+
 }
