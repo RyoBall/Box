@@ -15,7 +15,7 @@ public class EventManager : MonoBehaviour
     public static Action OnCPUGetPush;
     public static Action OnBatteryEnterHouse;
     public static Action OnLevelReset;
-    public static Action OnDeleteBoxGetPush;
+    public static Action<GameObject> OnDeleteBoxGetPush;
     public static Action<LoopEnterEventData> OnLoopEnter;
     public static Action<LevelChangeData> OnLevelChange;
     public static Action OnBack;
@@ -56,9 +56,9 @@ public class EventManager : MonoBehaviour
     {
         OnLevelChange?.Invoke(data);
     }
-    public static void DeleteBoxGetPush() 
+    public static void DeleteBoxGetPush(GameObject obj) 
     {
-        OnDeleteBoxGetPush?.Invoke();
+        OnDeleteBoxGetPush?.Invoke(obj);
     }    
     public static void LoopEnter(LoopEnterEventData data) 
     {

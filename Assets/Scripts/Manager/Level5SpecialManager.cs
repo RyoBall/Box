@@ -14,9 +14,17 @@ public class Level5SpecialManager : MonoBehaviour
         EventManager.OnDeleteBoxGetPush += DeleteBoxFirstGetPush;
     }
 
-    public void DeleteBoxFirstGetPush() 
+    public void DeleteBoxFirstGetPush(GameObject obj) 
     {
-        MapManager.instance.Reset();
+        PlayerController.instance.gameObject.SetActive(false);
+        obj.SetActive(false);
+        MapManager.instance.delObjects.Add(PlayerController.instance.gameObject);
+        MapManager.instance.delObjects.Add(obj);
+        StartCoroutine(ResetAfterTime());
+    }
+    IEnumerator ResetAfterTime() 
+    {
+        yield return new WaitForSeconds(1);
         MapManager.instance.Reset();
         EventManager.OnDeleteBoxGetPush -= DeleteBoxFirstGetPush;
     }

@@ -20,8 +20,8 @@ public class DeleteBox : Box
     }
     IEnumerator SendEvent() 
     {
-        yield return new WaitForSeconds(Data.fixedMovTime);
-        EventManager.DeleteBoxGetPush();    
+        yield return new WaitForSeconds(0);
+        EventManager.DeleteBoxGetPush(gameObject);    
     }
     public override void GetDelayPush(Vector2 vec)
     {
