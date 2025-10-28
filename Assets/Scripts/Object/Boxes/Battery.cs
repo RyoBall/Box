@@ -2,12 +2,26 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Battery : Box
+public class BatteryData 
+{
+    public Vector3 position;
+    public bool inPower;
+    public List<Vector2> moveVec;
+    public BatteryData(Vector3 position, bool inPower, List<Vector2> moveVec)
+    {
+        this.position = position;
+        this.inPower = inPower;
+        this.moveVec=moveVec;
+    }
+}
+public class Battery : Box,IRecord<BatteryData>
 {
     public bool inPower;
     public Material material;
     private Color originColor;
+
+    Stack<BatteryData> IRecord<BatteryData>.stack { get; set; }
+
     public void FindPlayer() 
     {
         
@@ -54,6 +68,13 @@ public class Battery : Box
     {
         this.inPower = false;
         material.color = originColor;
+    }   
+    private void ReChangePower()
+    {
+        if(!inPower)
+        material.color = originColor;
+        else
+        material.color = Color.red;
     }
 
     protected override void Start()
@@ -65,5 +86,31 @@ public class Battery : Box
         EventManager.OnPlayerOverMov += FindPlayer;
         originColor = material.color;
         MapManager.OnReset += ResetPower;
+        EventManager.OnLevelChange += Init;
+    }
+    void Init(LevelChangeData data)
+    {
+        if (gameObject.layer == (int)data.layer)
+        {
+            ((IRecord<BatteryData>)this).Init();
+        }
+    }
+
+    void IRecord<BatteryData>.Record(PlayerMovEventData data)
+    {
+        List<Vector2> Vecs = new List<Vector2>();
+        for (int i = 0; i < moveVec.Count; i++)
+        {
+            Vecs.Add(moveVec[i]);
+        }
+        ((IRecord<BatteryData>)this).stack.Push(new BatteryData(transform.position,inPower,Vecs));
+    }
+    void IRecord<BatteryData>.BackEffectInClass(BatteryData data)
+    {
+        transform.position = data.position;
+        inPower = data.inPower;
+        moveVec = data.moveVec;
+        SetTextCount();
+        ReChangePower();
     }
 }

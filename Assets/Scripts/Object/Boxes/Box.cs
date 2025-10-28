@@ -16,7 +16,6 @@ public class Box : CheckObject
     public enum Type { Battery, CPU, Target, Unreal, Other, Wall }
     public Type type = Type.Other;
     public bool pushable;
-    public int timeCount;
     public TimeText text;
     public bool isMoving;//ֻ����Relaybox�вŻ�ʹ��
     public List<Vector2> moveVec;

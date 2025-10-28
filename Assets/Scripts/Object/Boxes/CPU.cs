@@ -2,8 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CPU : Box
+public class CPUData
 {
+    public Vector3 position;
+    public List<Vector2> moveVec;
+    public CPUData(Vector3 position, List<Vector2> moveVec)
+    {
+        this.position = position;
+        this.moveVec = moveVec;
+    }
+}
+public class CPU : Box,IRecord<CPUData>
+{
+    Stack<CPUData> IRecord<CPUData>.stack { get; set; }
+
     public override bool CheckMove(Vector2 vec)
     {
         Box box;
@@ -45,5 +57,34 @@ public class CPU : Box
     public override void Move(Vector2 vec)
     {
         base.Move(vec);
+    }
+
+    void IRecord<CPUData>.Record(PlayerMovEventData data)
+    {
+        List<Vector2> Vecs=new List<Vector2>();
+        for(int i = 0; i < moveVec.Count; i++) 
+        {
+            Vecs.Add(moveVec[i]);
+        }
+        ((IRecord<CPUData>)this).stack.Push(new CPUData(transform.position,Vecs));
+    }
+
+    void IRecord<CPUData>.BackEffectInClass(CPUData data)
+    {
+        transform.position = data.position;
+        moveVec = data.moveVec;
+        SetTextCount();
+    }
+    void Init(LevelChangeData data) 
+    {
+        if (gameObject.layer == (int)data.layer) 
+        {
+            ((IRecord<CPUData>)this).Init();
+        }
+    }
+    protected override void Start()
+    {
+        base.Start();
+        EventManager.OnLevelChange += Init;
     }
 }

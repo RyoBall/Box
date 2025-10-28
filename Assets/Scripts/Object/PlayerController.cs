@@ -26,10 +26,29 @@ public class PlayerActionData
         this.delaySkillUnlock = delaySkillUnlock;
     }
 }
-
-public class PlayerController : CheckObject,ICode
+public interface IRecord<T> 
 {
-    public Stack<PlayerActionData> actionCounter = new Stack<PlayerActionData>();
+    public Stack<T> stack { get; set; }
+    public void Init() 
+    {
+        stack = new Stack<T>();
+        EventManager.OnPlayerMov +=Record;
+        EventManager.OnBack +=BackEffect;
+    }
+    public void BackEffect()//框架 
+    {
+        if (stack.Count != 0) 
+        {
+            T data= stack.Pop();
+            BackEffectInClass(data);
+        }
+    }
+    public void Record(PlayerMovEventData data);
+    public void BackEffectInClass(T data);
+}
+
+public class PlayerController : CheckObject,ICode,IRecord<PlayerActionData>
+{
     public static PlayerController instance;
     public bool delaySkillUnlock = false;
     bool moving;
@@ -46,6 +65,7 @@ public class PlayerController : CheckObject,ICode
 
     ICode.CodeType ICode.codeType { get; set; }
     string ICode.name { get; set; }
+    Stack<PlayerActionData> IRecord<PlayerActionData>.stack { get; set; }
 
     void Start()
     {
@@ -54,6 +74,7 @@ public class PlayerController : CheckObject,ICode
         jumpSkill = true;
         playerAnimator = GetComponent<Animator>();
         playerAnimator.speed = 3;
+        ((IRecord<PlayerActionData>)this).Init();
     }
 
     // Update is called once per frame
@@ -95,6 +116,11 @@ public class PlayerController : CheckObject,ICode
             {
                 vec = new Vector2(1, 0);
                 this.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+            }
+            else if (Input.GetKeyDown(KeyCode.Z))
+            {
+                EventManager.Back();
+                return 0;
             }
             else if (Input.GetKeyDown(KeyCode.E)&&delaySkillUnlock)
             {
@@ -256,11 +282,20 @@ public class PlayerController : CheckObject,ICode
         playerAnimator.SetBool("Push", false);
         playerAnimator.SetBool("Jump", false);
     }
-
-    public override void RecordEffect()
+    void IRecord<PlayerActionData>.BackEffectInClass(PlayerActionData data)
     {
-        base.RecordEffect();
-        Record<PlayerActionData>(actionCounter, new PlayerActionData(transform.position, canJump, delay, onBox, jumpCount, inPower, jumpSkill, delaySkillUnlock));
+        transform.position = data.position;
+        canJump = data.canJump;
+        delay = data.delay;
+        onBox = data.onBox;
+        jumpCount = data.jumpCount;
+        inPower = data.inPower;
+        jumpSkill = data.jumpSkill;
+        delaySkillUnlock = data.delaySkillUnlock;
     }
 
+    void IRecord<PlayerActionData>.Record(PlayerMovEventData data)
+    {
+        ((IRecord<PlayerActionData>)this).stack.Push(new PlayerActionData(transform.position, canJump, delay, onBox, jumpCount, inPower, jumpSkill, delaySkillUnlock));
+    }
 }
