@@ -90,6 +90,8 @@ public class GameManager : MonoBehaviour
                 cam.transform.DOMove(new Vector3(13.5f, 6.5f, -5.85f), Data.fixedCameraMovTime);
                 layer = LayerMask.NameToLayer("Level2");
                 MapManager.instance.ResaveTransformAndResetPlayer(layer);
+                Dialogue.instance.ShowText();
+                Dialogue.instance.ShowText();
                 break;
             case State.TWO:
                 state = State.THREE;
@@ -99,6 +101,7 @@ public class GameManager : MonoBehaviour
                 MapManager.instance.ResaveTransformAndResetPlayer(layer);
                 //
                 Level3SpecialManager.instance.Init();
+                Dialogue.instance.ShowText();
                 break;
             case State.THREE:
                 //
@@ -124,6 +127,7 @@ public class GameManager : MonoBehaviour
                 cam.transform.DORotate(new Vector3(72,0,0), Data.fixedCameraMovTime);
                 layer = LayerMask.NameToLayer("Level5");
                 MapManager.instance.ResaveTransformAndResetPlayer(layer);
+                Dialogue.instance.ShowText();
                 break;       
             case State.FIVE:
                 //
@@ -138,6 +142,8 @@ public class GameManager : MonoBehaviour
                 break;
             case State.SIX:
                 //胜利结算
+                Dialogue.instance.ShowText();
+                break;
             default:
                 break;
         }

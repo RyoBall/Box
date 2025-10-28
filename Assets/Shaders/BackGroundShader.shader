@@ -4,8 +4,9 @@ Shader "Custom/GradientShader"
     {
         [HDR]_ColorTop ("Top Color", Color) = (1,1,1,1)
         [HDR]_ColorBottom ("Bottom Color", Color) = (0,0,1,1)
-        _Tilt ("Tilt", Range(0.0, 1.0)) = 0
         _TimeSpeed("TimeSpeed",Range(0.0,1.0)) = 0.1
+        _GridSize("GridSize",float) = 1
+        _Thickness("Thickness",float) = 0.1
     }
     SubShader
     {
@@ -38,8 +39,31 @@ Shader "Custom/GradientShader"
 
             float4 _ColorTop;
             float4 _ColorBottom;
-            float _Tilt;
             float _TimeSpeed;
+            float _GridSize;
+            float _Thickness;
+
+            float CalculateGrid(float2 uv, float gridSize, float thickness)
+            {
+                float2 gridUV = uv * gridSize;
+                float2 gridPos = frac(gridUV);
+                
+                // 创建网格线
+                float gridX = step(thickness, gridPos.x);
+                float gridY = step(thickness, gridPos.y);
+                
+                return gridX * gridY;
+            }
+
+            float3 GetChangingColor(float time)
+            {
+                // 使用三角函数创建平滑的颜色循环
+                float r = 0.5 + 0.5 * sin(time);
+                float g = 0.5 + 0.5 * sin(time + 2.0943951); // 2π/3 相位差
+                float b = 0.5 + 0.5 * sin(time + 4.1887902); // 4π/3 相位差
+                
+                return float3(r, g, b);
+            }
 
             v2f vert (appdata v)
             {
@@ -51,14 +75,8 @@ Shader "Custom/GradientShader"
 
             half4 frag (v2f i) : SV_Target
             {
-                float x = (i.uv.x + _Time.y * _TimeSpeed) % 1.0f;
-                float y = (i.uv.y + _Time.y * _TimeSpeed) % 1.0f;
-                float lerpValue = lerp(x,y,_Tilt);
-                
-                half3 bottomSRGB = LinearToSRGB(_ColorBottom.rgb);
-                half3 topSRGB = LinearToSRGB(_ColorTop.rgb);
-                half3 resultSRGB = lerp(bottomSRGB, topSRGB, lerpValue);
-                half4 col = half4(SRGBToLinear(resultSRGB), 1.0);
+                float grid = CalculateGrid(i.uv,_GridSize,_Thickness);
+                half4 col = lerp(half4(GetChangingColor(_Time.y * _TimeSpeed),1),half4(0,0,0,1),grid);
                 
                 return col;
             }

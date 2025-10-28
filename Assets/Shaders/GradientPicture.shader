@@ -34,9 +34,7 @@ Shader "Custom/Picture"
                 float2 uv : TEXCOORD0;
                 float4 vertex : SV_POSITION;
             };
-
-            float4 _ColorTop;
-            float4 _ColorBottom;
+            
             float _Tilt;
             float _TimeSpeed;
             TEXTURE2D(_MainTex);

@@ -43,5 +43,6 @@ public class Level4SpecialManager : MonoBehaviour
         }
         target.transform.position = MovPositions[randPos - 1];
         currentPosId = randPos;
+        Dialogue.instance.ShowText();
     }
 }

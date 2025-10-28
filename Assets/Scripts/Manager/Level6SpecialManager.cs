@@ -25,6 +25,7 @@ public class Level6SpecialManager : MonoBehaviour
     {
         if (loopBug)
         {
+            Dialogue.instance.ShowText();
             StartCoroutine(LoopGenerate(20, data.gameObject));
         }
     }
