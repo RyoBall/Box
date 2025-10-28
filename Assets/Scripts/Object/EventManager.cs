@@ -7,6 +7,7 @@ using UnityEngine;
 public class EventManager : MonoBehaviour
 {
     public static Action<PlayerMovEventData> OnPlayerMov;
+    public static Action OnPlayerReadyToMov;
     public static Action<PlayerExitDelayEventData> OnPlayerExitDelay;
     public static Action OnPlayerEnterDelay;
     public static Action OnPlayerOverMov;
@@ -67,6 +68,10 @@ public class EventManager : MonoBehaviour
     public static void Back() 
     {
         OnBack?.Invoke();
+    }    
+    public static void PlayerReadyToMov() 
+    {
+        OnPlayerReadyToMov?.Invoke();
     }
 }
 public class LoopEnterEventData
