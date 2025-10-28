@@ -20,8 +20,8 @@ public class MouseMoving : MonoBehaviour
         {
             // 使用 GetAxis("Mouse X") 获取平滑的增量值
             float mouseX = Input.GetAxis("Mouse X");
-            
-            // 添加灵敏度控制
+            float mouseY = Input.GetAxis("Mouse Y");
+
             float moveSpeed = 0.2f;
             cam.transform.position -= cam.transform.right * mouseX * moveSpeed;
 

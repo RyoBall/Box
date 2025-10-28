@@ -9992,7 +9992,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 56c9747309dfb1249a0239fbe2dacd4e, type: 3}
   - {fileID: 21300000, guid: 3eea6d3a1b0f58545a8ab8263a2ff429, type: 3}
   image: {fileID: 599817258}
-  typeSpeed: 0.05
+  typeSpeed: 0.07
 --- !u!114 &331566188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10911,8 +10911,8 @@ Transform:
   m_GameObject: {fileID: 360774892}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.8, y: 0, z: -1.8249}
-  m_LocalScale: {x: 10, y: 1, z: 8}
+  m_LocalPosition: {x: 25.7, y: 0, z: -13.5}
+  m_LocalScale: {x: 10, y: 1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -39235,7 +39235,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1305033073
 RectTransform:
   m_ObjectHideFlags: 0
@@ -58370,7 +58370,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4291681401
-  m_fontColor: {r: 0.47450984, g: 0.86274517, b: 0.80392164, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -63904,7 +63904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2828299003999663917, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2828299003999663917, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
       propertyPath: m_LocalPosition.z
