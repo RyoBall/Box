@@ -15,7 +15,15 @@ public class CPUData
 public class CPU : Box,IRecord<CPUData>
 {
     Stack<CPUData> IRecord<CPUData>.stack { get; set; }
-
+    public void FindPlayer()
+    {
+        if (PlayerController.instance.inPower && ChecDistance())
+        {
+            PlayerController.instance.inPower = false;
+            BurnOut();
+        }
+    }
+    bool ChecDistance() { return PlayerController.instance.transform.position.x - transform.position.x <= 1 && PlayerController.instance.transform.position.x - transform.position.x >= -1 && PlayerController.instance.transform.position.z - transform.position.z <= 1 && PlayerController.instance.transform.position.z - transform.position.z >= -1; }
     public override bool CheckMove(Vector2 vec)
     {
         Box box;
@@ -80,6 +88,7 @@ public class CPU : Box,IRecord<CPUData>
         if (gameObject.layer == (int)data.layer) 
         {
             ((IRecord<CPUData>)this).Init();
+            EventManager.OnPlayerOverMov += FindPlayer;
         }
     }
     protected override void Start()
