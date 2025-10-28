@@ -28,6 +28,7 @@ public class Level1SpecialManager : MonoBehaviour//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿
         Destroy(wallToDestroy);
         this.data = data;
         EventManager.OnCPUEnterTarget -= CPUEnterSpecialEvent;
+        Dialogue.instance.ShowText();
     }
     public void HitBadInsectEvent() 
     {

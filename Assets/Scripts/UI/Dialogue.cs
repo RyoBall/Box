@@ -1,13 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
     public TextMeshProUGUI contentText;
     public GameObject DialoguePanel;
+    public List<Sprite> imagesList;//立绘列表
+    private static List<int> currentImages;//每句对应表情数字
+    public Image image;
+    private int index;//当前第几句
     public float typeSpeed;
     public static Dialogue instance;
 
@@ -23,8 +29,35 @@ public class Dialogue : MonoBehaviour
         instance = this;
         folderPath = "Assets/Text";
         LoadTextFiles();
+        currentImages = new List<int>();
+        index = 0;
+        ReadImage();
     }
-    
+
+    private static void ReadImage()
+    {
+        try
+        {
+            string fileContent = File.ReadAllText("Assets/ImageNum.txt");
+            
+            MatchCollection matches = Regex.Matches(fileContent, @"\d+");
+            
+            foreach (Match match in matches)
+            {
+                if (int.TryParse(match.Value, out int number))
+                {
+                    currentImages.Add(number);
+                }
+            }
+            Debug.Log($"成功读取 {currentImages.Count} 个图片索引");
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"读取图片索引文件失败: {e.Message}");
+            currentImages = new List<int> { 0 }; 
+        }
+    }
+
     void LoadTextFiles()
     {
         // 获取所有 txt 文件路径
@@ -58,6 +91,7 @@ public class Dialogue : MonoBehaviour
     {
         contentText.text = "";
         string currentLine = "";
+        ChangeImgae();
 
         foreach (char c in fullText)
         {
@@ -70,7 +104,9 @@ public class Dialogue : MonoBehaviour
                 waitingForInput = true;
                 // 等待玩家点击鼠标左键或按空格
                 yield return new WaitUntil(() => Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space));
+                index++;
                 waitingForInput = false;
+                ChangeImgae();
 
                 // 清空文字再继续下一句
                 currentLine = "";
@@ -81,5 +117,15 @@ public class Dialogue : MonoBehaviour
         // 句子结束后等待玩家关闭
         yield return new WaitUntil(() => Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space));
         DialoguePanel.SetActive(false);
+    }
+
+    private void ChangeImgae()
+    {
+        if (index >= currentImages.Count)
+        {
+            index = currentImages.Count - 1;
+        }
+        int imageIndex = currentImages[index];
+        image.sprite = imagesList[imageIndex];
     }
 }
