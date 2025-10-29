@@ -13,7 +13,7 @@ public class TrueCode : GuestCode, IRecord<BaseData>
 
     public override void Effect(string name)
     {
-        Debug.Log(1);
+
         switch (name)
         {
             case "Bug":

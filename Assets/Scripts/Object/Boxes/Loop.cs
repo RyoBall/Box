@@ -10,16 +10,17 @@ public class Loop : MonoBehaviour
     {
         if (collision.tag == "Box" && Level6SpecialManager.instance.loopSkill && collision.gameObject.GetComponent<Box>().cloneable)
         {
+            Debug.Log(collision.name);
             this.collision = collision;
             EventManager.OnPlayerOverMov += LoopEnter;
         }
     }
     public void LoopEnter() 
     {
-        EventManager.LoopEnter(new LoopEnterEventData(collision.gameObject));
+        EventManager.OnPlayerOverMov -= LoopEnter;
         GameObject box = Instantiate(collision.gameObject, collision.transform.position + new Vector3(collision.GetComponent<Box>().currentMoveVec.x, 0, collision.GetComponent<Box>().currentMoveVec.y), Quaternion.identity);
             box.GetComponent<Box>().cloneable = false;
         MapManager.instance.tmpObjects.Add(box);
-        EventManager.OnPlayerOverMov -= LoopEnter;
+        EventManager.LoopEnter(new LoopEnterEventData(collision.gameObject));
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.LookDev;
 
 public class Level6SpecialManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Level6SpecialManager : MonoBehaviour
     public bool loopSkill = true;
     public bool loopBug = true;
     const float genTime = .2f;
+    bool say = false;
     private void Awake()
     {
         instance = this;
@@ -25,7 +27,11 @@ public class Level6SpecialManager : MonoBehaviour
     {
         if (loopBug)
         {
-            Dialogue.instance.ShowText();
+            if (!say)
+            {
+                Dialogue.instance.ShowText();
+                say = true;
+            }
             StartCoroutine(LoopGenerate(20, data.gameObject));
         }
     }

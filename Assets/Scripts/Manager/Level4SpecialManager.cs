@@ -8,6 +8,7 @@ public class Level4SpecialManager : MonoBehaviour
     public List<Vector3> MovPositions;
     int currentPosId=1;
     public Target target;
+    bool say=false;
     private void Awake()
     {
         instance = this;
@@ -43,6 +44,10 @@ public class Level4SpecialManager : MonoBehaviour
         }
         target.transform.position = MovPositions[randPos - 1];
         currentPosId = randPos;
-        Dialogue.instance.ShowText();
+        if (!say) 
+        {
+            Dialogue.instance.ShowText();
+            say = true;
+        }
     }
 }

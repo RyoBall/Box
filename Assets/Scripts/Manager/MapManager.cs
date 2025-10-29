@@ -69,6 +69,8 @@ public class MapManager : MonoBehaviour,IRecord<MapData>
         }
         foreach(GameObject obj in tmpObjects) 
         {
+            if (obj.GetComponent<Box>() != null)
+                OnReset -= obj.GetComponent<Box>().ResetDealyBox;
             Destroy(obj);
         }       
         foreach(GameObject obj in delObjects) 
