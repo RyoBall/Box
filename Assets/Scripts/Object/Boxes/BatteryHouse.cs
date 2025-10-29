@@ -20,8 +20,8 @@ public class BatteryHouse : Wall
                 {
                     if (box.GetComponent<Battery>().inPower) 
                     {
-                        Effect();   
-                        Destroy(box.gameObject);
+                        Effect();
+                        EventManager.OnPlayerOverMov -= ChecBattery;
                     }
                 }
             }
