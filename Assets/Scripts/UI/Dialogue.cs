@@ -39,9 +39,9 @@ public class Dialogue : MonoBehaviour
         try
         {
             string fileContent = File.ReadAllText("Assets/ImageNum.txt");
-            
+
             MatchCollection matches = Regex.Matches(fileContent, @"\d+");
-            
+
             foreach (Match match in matches)
             {
                 if (int.TryParse(match.Value, out int number))
@@ -54,7 +54,7 @@ public class Dialogue : MonoBehaviour
         catch (System.Exception e)
         {
             Debug.LogError($"读取图片索引文件失败: {e.Message}");
-            currentImages = new List<int> { 0 }; 
+            currentImages = new List<int> { 0 };
         }
     }
 
@@ -86,9 +86,15 @@ public class Dialogue : MonoBehaviour
             StartCoroutine(TypeText(currentText));
         }
     }
-    
+    public void ShowTextInOtherSituation(string text)
+    {
+        currentText = text;
+        DialoguePanel.SetActive(true);
+        StartCoroutine(TypeText(currentText));
+    }
     IEnumerator TypeText(string fullText)
     {
+        bool breakDialogue = false;
         contentText.text = "";
         string currentLine = "";
         ChangeImgae();
@@ -98,7 +104,13 @@ public class Dialogue : MonoBehaviour
             currentLine += c;
             contentText.text = currentLine;
             yield return new WaitForSeconds(typeSpeed);
-            
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                DialoguePanel.SetActive(false);
+                breakDialogue = true;
+                contentText.text = "";
+                break;
+            }
             if (c == '。' || c == '.' || c == '！' || c == '？')
             {
                 waitingForInput = true;
@@ -113,10 +125,12 @@ public class Dialogue : MonoBehaviour
                 contentText.text = "";
             }
         }
-
-        // 句子结束后等待玩家关闭
-        yield return new WaitUntil(() => Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space));
-        DialoguePanel.SetActive(false);
+        if (!breakDialogue)
+        {
+            // 句子结束后等待玩家关闭
+            yield return new WaitUntil(() => Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space));
+            DialoguePanel.SetActive(false);
+        }
     }
 
     private void ChangeImgae()

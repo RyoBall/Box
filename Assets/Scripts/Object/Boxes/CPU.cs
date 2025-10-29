@@ -46,6 +46,7 @@ public class CPU : Box,IRecord<CPUData>
     public void BurnOut() 
     {
         pushable = false;//ʧ���¼�
+        Dialogue.instance.ShowTextInOtherSituation("你把CPU烧坏了,讲真,也许下次带着电的时候你要离CPU远点。");
     }
     IEnumerator CPUEnterTarget() //�������Ӧ�����ƶ��������������
     {
