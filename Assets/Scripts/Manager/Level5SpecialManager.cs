@@ -18,6 +18,7 @@ public class Level5SpecialManager : MonoBehaviour
     {
         PlayerController.instance.gameObject.SetActive(false);
         obj.SetActive(false);
+        Dialogue.instance.ShowTextInOtherSituation("等等，你被删除了？那是个意外，稍等片刻，现在应该不会了");
         MapManager.instance.delObjects.Add(PlayerController.instance.gameObject);
         MapManager.instance.delObjects.Add(obj);
         StartCoroutine(ResetAfterTime());

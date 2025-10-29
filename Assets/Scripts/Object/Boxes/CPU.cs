@@ -48,11 +48,17 @@ public class CPU : Box,IRecord<CPUData>
     {
         pushable = false;//ʧ���¼�
         Dialogue.instance.ShowTextInOtherSituation("你把CPU烧坏了,讲真,也许下次带着电的时候你要离CPU远点。");
+        StartCoroutine(CPUBurnOut());
     }
     IEnumerator CPUEnterTarget() //�������Ӧ�����ƶ��������������
     {
         yield return new WaitForSeconds(Data.fixedMovTime);
         EventManager.CPUEnterTarget(new CPUEnterTargetEventData(this));
+    }    
+    IEnumerator CPUBurnOut() //�������Ӧ�����ƶ��������������
+    {
+        yield return new WaitForSeconds(.5f);
+        MapManager.instance.Reset();
     }
     public override void GetDelayPush(Vector2 vec)
     {
