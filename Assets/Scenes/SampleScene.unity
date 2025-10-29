@@ -44241,8 +44241,7 @@ MonoBehaviour:
   MovPositions:
   - {x: 42, y: 0.5, z: -2}
   - {x: 47, y: 0.5, z: -3}
-  - {x: 48, y: 0.5, z: -8}
-  - {x: 0, y: 0, z: 0}
+  - {x: 48, y: 0.5, z: -7}
   target: {fileID: 488482523}
 --- !u!114 &991462998
 MonoBehaviour:

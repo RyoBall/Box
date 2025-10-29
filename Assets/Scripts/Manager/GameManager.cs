@@ -116,6 +116,7 @@ public class GameManager : MonoBehaviour
                 cam.transform.DOMove(new Vector3(44.5f, 8.5f, -8f), Data.fixedCameraMovTime);
                 layer = LayerMask.NameToLayer("Level4");
                 MapManager.instance.ResaveTransformAndResetPlayer(layer);
+                Dialogue.instance.ShowTextInOtherSituation("总算恢复正常了，但讲真，你不觉得有时候卡卡的也不错吗。我给你留了个接口，按一下E就又会卡卡的了，当然再按一下会恢复正常。");
                 break; 
             case State.FOUR:
                 //
