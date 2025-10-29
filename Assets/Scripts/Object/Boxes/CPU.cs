@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,7 +44,7 @@ public class CPU : Box,IRecord<CPUData>
         }
         return base.CheckMove(vec);
     }
-    public void BurnOut() 
+    public void BurnOut()
     {
         pushable = false;//ʧ���¼�
         Dialogue.instance.ShowTextInOtherSituation("你把CPU烧坏了,讲真,也许下次带着电的时候你要离CPU远点。");
@@ -96,5 +97,11 @@ public class CPU : Box,IRecord<CPUData>
     {
         base.Start();
         EventManager.OnLevelChange += Init;
+        MapManager.OnReset += ResetBurnOut;
+    }
+
+    public void ResetBurnOut(object sender, EventArgs e)
+    {
+        pushable = true;
     }
 }
