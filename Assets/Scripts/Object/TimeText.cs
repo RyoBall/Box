@@ -6,7 +6,7 @@ using UnityEngine;
 public class TimeText : MonoBehaviour
 {
     public TMP_Text text;
-
+    [SerializeField] float offset=0;
     private RectTransform rectTransform;
     // Start is called before the first frame update
     void Start()
@@ -23,6 +23,7 @@ public class TimeText : MonoBehaviour
     }
     public void UpdateText(int count) 
     {
-        text.text = count.ToString();     
+        text.text = count.ToString();
+        transform.localPosition = new Vector3(0, offset, 0);
     }
 }

@@ -242,7 +242,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   pushable: 0
-  timeCount: 0
   text: {fileID: 0}
   isMoving: 0
   moveVec: []
@@ -516,7 +515,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   pushable: 0
-  timeCount: 0
   text: {fileID: 0}
   isMoving: 0
   moveVec: []
@@ -1019,6 +1017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  offset: 0.5
 --- !u!1 &9206652514935838452
 GameObject:
   m_ObjectHideFlags: 0

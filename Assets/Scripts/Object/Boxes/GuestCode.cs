@@ -29,7 +29,10 @@ public class GuestCode : Box,ICode
     {
         ;
     }
-
+    public override void Init(LevelChangeData data)
+    {
+        base.Init(data);
+    }
     protected override void Start()
     {
         base.Start();

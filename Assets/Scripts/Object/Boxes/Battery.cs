@@ -7,11 +7,13 @@ public class BatteryData
     public Vector3 position;
     public bool inPower;
     public List<Vector2> moveVec;
-    public BatteryData(Vector3 position, bool inPower, List<Vector2> moveVec)
+    public bool delayMovSubscribePlayerMov;
+    public BatteryData(Vector3 position, bool inPower, List<Vector2> moveVec, bool delayMovSubscribePlayerMov)
     {
         this.position = position;
         this.inPower = inPower;
-        this.moveVec=moveVec;
+        this.moveVec = moveVec;
+        this.delayMovSubscribePlayerMov = delayMovSubscribePlayerMov;
     }
 }
 public class Battery : Box,IRecord<BatteryData>
@@ -24,7 +26,6 @@ public class Battery : Box,IRecord<BatteryData>
 
     public void FindPlayer() 
     {
-        
         if (PlayerController.instance.inPower&&ChecDistance()) 
         {
             PlayerController.instance.inPower = false;
@@ -88,7 +89,7 @@ public class Battery : Box,IRecord<BatteryData>
         MapManager.OnReset += ResetPower;
         EventManager.OnLevelChange += Init;
     }
-    void Init(LevelChangeData data)
+    public override void Init(LevelChangeData data)
     {
         if (gameObject.layer == (int)data.layer)
         {
@@ -96,20 +97,28 @@ public class Battery : Box,IRecord<BatteryData>
         }
     }
 
-    void IRecord<BatteryData>.Record(PlayerMovEventData data)
+    void IRecord<BatteryData>.Record()
     {
         List<Vector2> Vecs = new List<Vector2>();
         for (int i = 0; i < moveVec.Count; i++)
         {
             Vecs.Add(moveVec[i]);
         }
-        ((IRecord<BatteryData>)this).stack.Push(new BatteryData(transform.position,inPower,Vecs));
+        ((IRecord<BatteryData>)this).stack.Push(new BatteryData(transform.position,inPower,Vecs,delayMovSubscribePlayerMov));
     }
     void IRecord<BatteryData>.BackEffectInClass(BatteryData data)
     {
         transform.position = data.position;
         inPower = data.inPower;
         moveVec = data.moveVec;
+        if (delayMovSubscribePlayerMov && !data.delayMovSubscribePlayerMov)
+        {
+            DelayMoveDisSubscribePlayerMov();
+        }
+        else if (!delayMovSubscribePlayerMov && data.delayMovSubscribePlayerMov)
+        {
+            DelayMoveSubscribePlayerMov(null);
+        }
         SetTextCount();
         ReChangePower();
     }

@@ -7,10 +7,12 @@ public class CPUData
 {
     public Vector3 position;
     public List<Vector2> moveVec;
-    public CPUData(Vector3 position, List<Vector2> moveVec)
+    public bool delayMovSubscribePlayerMov;
+    public CPUData(Vector3 position, List<Vector2> moveVec, bool delayMovSubscribePlayerMov)
     {
         this.position = position;
         this.moveVec = moveVec;
+        this.delayMovSubscribePlayerMov = delayMovSubscribePlayerMov;
     }
 }
 public class CPU : Box,IRecord<CPUData>
@@ -75,29 +77,41 @@ public class CPU : Box,IRecord<CPUData>
         base.Move(vec);
     }
 
-    void IRecord<CPUData>.Record(PlayerMovEventData data)
+    void IRecord<CPUData>.Record()
     {
+        try 
+        {
         List<Vector2> Vecs=new List<Vector2>();
         for(int i = 0; i < moveVec.Count; i++) 
         {
             Vecs.Add(moveVec[i]);
         }
-        ((IRecord<CPUData>)this).stack.Push(new CPUData(transform.position,Vecs));
+        ((IRecord<CPUData>)this).stack.Push(new CPUData(transform.position,Vecs, delayMovSubscribePlayerMov));
+        }
+        catch 
+        {
+            ;
+        }
     }
 
     void IRecord<CPUData>.BackEffectInClass(CPUData data)
     {
         transform.position = data.position;
         moveVec = data.moveVec;
+        if (delayMovSubscribePlayerMov && !data.delayMovSubscribePlayerMov) 
+        {
+            DelayMoveDisSubscribePlayerMov();
+        }
+        else if(!delayMovSubscribePlayerMov && data.delayMovSubscribePlayerMov) 
+        {
+            DelayMoveSubscribePlayerMov(null);
+        }
         SetTextCount();
     }
-    void Init(LevelChangeData data) 
+    public override void Init(LevelChangeData data) 
     {
-        Debug.Log(LayerMask.LayerToName(gameObject.layer));
-        Debug.Log(name);
         if (gameObject.layer == (int)data.layer) 
         {
-            Debug.Log(1);
             ((IRecord<CPUData>)this).Init();
             EventManager.OnPlayerOverMov += FindPlayer;
         }

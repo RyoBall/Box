@@ -10,7 +10,7 @@ public class IsCode : Box, ICode,IRecord<BaseData>
     string ICode.name { get; set; }
     Stack<BaseData> IRecord<BaseData>.stack { get; set; }
 
-    public void Init(LevelChangeData data)
+    public override void Init(LevelChangeData data)
     {
         if (gameObject.layer == (int)data.layer)
         {
@@ -108,7 +108,7 @@ public class IsCode : Box, ICode,IRecord<BaseData>
         ((ICode)this).codeType = ICode.CodeType.Is;
         base.Start();
     }
-    void IRecord<BaseData>.Record(PlayerMovEventData data)
+    void IRecord<BaseData>.Record()
     {
         List<Vector2> Vecs = new List<Vector2>();
         for (int i = 0; i < moveVec.Count; i++)

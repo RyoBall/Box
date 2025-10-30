@@ -20,7 +20,7 @@ public class Box : CheckObject
     public bool isMoving;//ֻ����Relaybox�вŻ�ʹ��
     public List<Vector2> moveVec;
     public bool supportDelay;
-    bool delayMovSubscribePlayerMov = false;//代表DelayMov函数是否监听玩家移动事件，找不到检测是否监听的函数先代替一下
+    public bool delayMovSubscribePlayerMov = false;//代表DelayMov函数是否监听玩家移动事件，找不到检测是否监听的函数先代替一下
     public Vector2 currentMoveVec;//仅在第六关使用，我实在没招了<-没事，哥们已经很棒了
     public bool cloneable;//同样仅在第六关使用，我实在没招了
     // Start is called before the first frame update
@@ -28,15 +28,14 @@ public class Box : CheckObject
     {
         EventManager.OnPlayerExitDelay += DelayMoveSubscribePlayerMov;//让延迟移动函数在脱离ExitDelay后订阅玩家移动事件
         EventManager.OnPlayerExitDelay += DisactiveText;
+        EventManager.OnPlayerEnterDelay += SetTextCount;
         text = GetComponentInChildren<TimeText>();
         pushable = true;
         MapManager.OnReset += ResetDealyBox;
     }
-
-    // Update is called once per frame
-    void Update()
+    public virtual void Init(LevelChangeData data)
     {
-
+        ;
     }
     public virtual bool GetPush(Vector2 vec) //�����Ƿ�ɹ��ƶ�
     {
@@ -49,21 +48,21 @@ public class Box : CheckObject
         SetTextCount();
     }
     #region 为了防止重复订阅专门写的让delaymove订阅和取消订阅玩家移动事件的函数
-    void DelayMoveSubscribePlayerMov(PlayerExitDelayEventData data)
+    public void DelayMoveSubscribePlayerMov(PlayerExitDelayEventData data)
     {
         if (!delayMovSubscribePlayerMov)
         {
-            EventManager.OnPlayerMov += DelayMove;
+            EventManager.OnPlayerReadyToMov += DelayMove;
             delayMovSubscribePlayerMov = true;
         }
     }
-    void DelayMoveDisSubscribePlayerMov()
+    public void DelayMoveDisSubscribePlayerMov()
     {
-        EventManager.OnPlayerMov -= DelayMove;
+        EventManager.OnPlayerReadyToMov -= DelayMove;
         delayMovSubscribePlayerMov = false;
     }
     #endregion
-    public void DelayMove(PlayerMovEventData data)
+    public void DelayMove()
     {
         if (moveVec.Count > 0)
         {
@@ -74,21 +73,15 @@ public class Box : CheckObject
         else
             DelayMoveDisSubscribePlayerMov();
     }
-    public void DelayMoveInLevel3(PlayerMovEventData data)
-    {
-        if (moveVec.Count > 0)
-        {
-            CheckMove(moveVec[0]);
-            moveVec.RemoveAt(0);
-            SetTextCount();
-        }
-    }
     public void SetTextCount()
     {
-        text.UpdateText(moveVec.Count);
-        if (moveVec.Count <= 0 && !DelayStateManager.instance.inDelayAction)
+        if (text != null)
         {
-            text.text.enabled = false;
+            text.UpdateText(moveVec.Count);
+            if (moveVec.Count <= 0 && !DelayStateManager.instance.inDelayAction)
+            {
+                text.text.enabled = false;
+            }
         }
     }
     public void DisactiveText(PlayerExitDelayEventData data)
@@ -137,10 +130,8 @@ public class Box : CheckObject
     {
         transform.DOKill();
         moveVec.Clear();
-        if (text != null)
-        {
-            text.UpdateText(0);
-        }
+        if (text != null && PlayerController.instance.delaySkillUnlock)
+            SetTextCount();
     }
 
 }

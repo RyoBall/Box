@@ -432,6 +432,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &2674169
@@ -2905,6 +2906,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!4 &61622197 stripped
@@ -3137,6 +3139,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &66740719
@@ -3909,6 +3912,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &85671426
@@ -4666,6 +4670,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &99288458
@@ -4790,6 +4795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  offset: 0
 --- !u!114 &99858609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5035,6 +5041,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &103278847
@@ -5160,6 +5167,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &107689192
@@ -5593,6 +5601,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &125320897
@@ -5959,6 +5968,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &130686836
@@ -8606,6 +8616,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &193316581
@@ -9378,6 +9389,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &216912266
@@ -10300,6 +10312,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &245524510
@@ -10427,6 +10440,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &246344855
@@ -10605,6 +10619,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &252488210
@@ -11473,6 +11488,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &275399522
@@ -11604,6 +11620,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &278071828
@@ -11869,6 +11886,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!1001 &279208829
@@ -12048,6 +12066,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &283352658
@@ -13071,6 +13090,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &311966236
@@ -13231,6 +13251,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &315071038
@@ -13447,6 +13468,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &319109325
@@ -13800,6 +13822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  offset: 0
 --- !u!114 &322138752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14220,6 +14243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  offset: 0
 --- !u!114 &326011711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14580,6 +14604,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &326751605
@@ -14877,6 +14902,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &329428993
@@ -15486,6 +15512,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!1 &337192413
@@ -15714,6 +15741,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &337643659
@@ -16095,6 +16123,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &345436886
@@ -16629,6 +16658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  offset: 0
 --- !u!114 &365005097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16817,6 +16847,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &370150614
@@ -17415,6 +17446,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &383907204
@@ -18361,6 +18393,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &421930147
@@ -18654,6 +18687,7 @@ Transform:
   - {fileID: 436637397}
   - {fileID: 329428991}
   - {fileID: 1971949452}
+  - {fileID: 1489110594}
   - {fileID: 2111426898}
   - {fileID: 295993014}
   - {fileID: 1440687684}
@@ -18815,6 +18849,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &436637399
@@ -18919,10 +18954,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1305033073}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2228, y: 1500}
+  m_SizeDelta: {x: 2560, y: 1600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &437410397
 MonoBehaviour:
@@ -19697,6 +19732,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &457636171
@@ -19823,6 +19859,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &460898921
@@ -20957,6 +20994,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &486938090
@@ -21210,6 +21248,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!1 &491425301
@@ -21265,6 +21304,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &491425304
@@ -21575,6 +21615,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &503701478
@@ -21702,6 +21743,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &503768813
@@ -22166,6 +22208,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &526327366
@@ -22598,6 +22641,7 @@ MonoBehaviour:
   isMoving: 1
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!1001 &536229848
@@ -23036,6 +23080,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &547543337
@@ -24038,6 +24083,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &574260912
@@ -24406,6 +24452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  offset: 0
 --- !u!114 &581299210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24828,6 +24875,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &588386437
@@ -24954,6 +25002,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &590654189
@@ -25211,6 +25260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  offset: 0
 --- !u!114 &594575830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25399,6 +25449,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &595863359
@@ -25987,6 +26038,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!1 &614075052
@@ -26042,6 +26094,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &614075055
@@ -26340,6 +26393,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &618494778
@@ -26528,6 +26582,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &624271098
@@ -27445,6 +27500,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &652977770
@@ -27576,6 +27632,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &659238469
@@ -27821,6 +27878,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &663254723
@@ -27945,6 +28003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  offset: 0
 --- !u!114 &665231771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28493,6 +28552,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &679790115
@@ -28685,6 +28745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  offset: 0
 --- !u!114 &680464561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29045,6 +29106,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &681556377
@@ -29537,6 +29599,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &687248007
@@ -29665,6 +29728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  offset: 0
 --- !u!114 &692555529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30217,6 +30281,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &705905693
@@ -30571,6 +30636,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &718558741
@@ -30885,6 +30951,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 1
 --- !u!65 &719890148
@@ -31014,6 +31081,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &720495183
@@ -31676,6 +31744,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
   inPower: 0
@@ -32152,6 +32221,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &746686801
@@ -32504,6 +32574,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &758309760
@@ -32694,6 +32765,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 1
 --- !u!1001 &758813318
@@ -32943,6 +33015,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &765031606
@@ -33258,6 +33331,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 1
   codeName: Loop
@@ -33663,6 +33737,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &783577754
@@ -34034,6 +34109,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
   codeName: Jump
@@ -34463,6 +34539,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &800340608
@@ -34709,6 +34786,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &807339894
@@ -34836,6 +34914,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &814876633
@@ -35256,6 +35335,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &820998685
@@ -35401,6 +35481,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &828255428
@@ -36058,6 +36139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  offset: 0
 --- !u!114 &844239234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36599,6 +36681,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &852449614
@@ -36954,6 +37037,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &857413163
@@ -37751,6 +37835,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &867519479
@@ -38469,6 +38554,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &890500780
@@ -38973,6 +39059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  offset: 0
 --- !u!114 &900210223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39431,7 +39518,7 @@ Transform:
   m_GameObject: {fileID: 916102819}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 17, y: 0.5, z: -2.0052853}
+  m_LocalPosition: {x: 17, y: 0.5, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -39456,6 +39543,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
   inPower: 0
@@ -41369,6 +41457,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &944821934
@@ -42150,6 +42239,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &951289808
@@ -43469,6 +43559,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &977828255
@@ -43848,6 +43939,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 1
 --- !u!65 &988124086
@@ -44585,6 +44677,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1000609659
@@ -44749,6 +44842,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1003388936
@@ -45477,6 +45571,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1033408604
@@ -45607,6 +45702,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1041337921
@@ -46753,6 +46849,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1068628841
@@ -47064,6 +47161,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1076232193
@@ -47332,6 +47430,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1080996507
@@ -47873,6 +47972,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1096871415
@@ -48011,6 +48111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  offset: 0
 --- !u!114 &1099344263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48439,6 +48540,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1113233045
@@ -48804,6 +48906,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1122720335
@@ -48930,6 +49033,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1123537114
@@ -49187,6 +49291,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1127125737
@@ -49510,6 +49615,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1139927214
@@ -49861,6 +49967,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1145477091
@@ -50273,6 +50380,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1149122984
@@ -50646,6 +50754,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1166031841
@@ -50907,6 +51016,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1170131792
@@ -51133,6 +51243,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1172812087
@@ -51433,6 +51544,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1182248773
@@ -51904,6 +52016,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1186876871
@@ -53376,6 +53489,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!1 &1209044370
@@ -53605,6 +53719,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 1
   codeName: Delay
@@ -53733,6 +53848,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1209975788
@@ -53923,6 +54039,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 1
 --- !u!1001 &1213140546
@@ -54152,6 +54269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  offset: 0
 --- !u!114 &1217396027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54522,6 +54640,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1230139475
@@ -55798,6 +55917,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1263676370
@@ -56029,6 +56149,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 1
   codeName: Jump
@@ -56422,6 +56543,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1295498168
@@ -56556,6 +56678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  offset: 0
 --- !u!114 &1301016181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56951,7 +57074,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1305033073
 RectTransform:
   m_ObjectHideFlags: 0
@@ -56973,7 +57096,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 95}
-  m_SizeDelta: {x: 332, y: 100}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1307452162
 PrefabInstance:
@@ -57097,6 +57220,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1310626847
@@ -57474,6 +57598,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1318025300
@@ -57602,6 +57727,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1319099302
@@ -57866,6 +57992,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1333644337
@@ -58229,6 +58356,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1344974071
@@ -58352,6 +58480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  offset: 0
 --- !u!114 &1345171056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58732,6 +58861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  offset: 0
 --- !u!114 &1346634488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59697,6 +59827,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1375607750
@@ -59832,6 +59963,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1384680517
@@ -60020,6 +60152,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1389498585
@@ -60318,6 +60451,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1395378641
@@ -60573,10 +60707,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 820642062}
     m_Modifications:
-    - target: {fileID: 1663916128617354943, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2828299003999663917, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10
@@ -60625,13 +60755,23 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7415050940161166939, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8822855215362031976, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3616167129611922591, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
-    m_RemovedGameObjects: []
+    - target: {fileID: 9059035183417997864, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 1047108951364762302, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
+    - {fileID: 8648994563608026255, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
+    - {fileID: 8402156923098539830, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9059035183417997864, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
@@ -60807,6 +60947,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1408393680
@@ -61181,6 +61322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  offset: 0
 --- !u!114 &1414859468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62011,6 +62153,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 1
 --- !u!65 &1428490664
@@ -63264,6 +63407,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1448348631
@@ -63400,6 +63544,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1457205953
@@ -63765,6 +63910,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1465023923
@@ -64149,6 +64295,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 1
 --- !u!65 &1486323758
@@ -64290,6 +64437,132 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3144607957212027277, guid: 1776de1e984ab734d84450cec7a2f558, type: 3}
   m_PrefabInstance: {fileID: 1937624345}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1489110593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1489110594}
+  - component: {fileID: 1489110598}
+  - component: {fileID: 1489110597}
+  - component: {fileID: 1489110596}
+  - component: {fileID: 1489110595}
+  m_Layer: 0
+  m_Name: Wall (44)
+  m_TagString: Box
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1489110594
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489110593}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: 7, y: 0.5, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 429734326}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1489110595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489110593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e32391206614abf488c13cc4727a74e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  pushable: 0
+  text: {fileID: 0}
+  isMoving: 0
+  moveVec: []
+  supportDelay: 0
+  delayMovSubscribePlayerMov: 0
+  currentMoveVec: {x: 0, y: 0}
+  cloneable: 0
+--- !u!65 &1489110596
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489110593}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1489110597
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489110593}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials: []
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1489110598
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489110593}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1489343017 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3144607957212027277, guid: 1776de1e984ab734d84450cec7a2f558, type: 3}
@@ -64348,6 +64621,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1492466461
@@ -65102,6 +65376,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1517515366
@@ -65492,6 +65767,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1521113172
@@ -65722,6 +65998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  offset: 0
 --- !u!114 &1523274986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67040,10 +67317,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 77912943}
     m_Modifications:
-    - target: {fileID: 1663916128617354943, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2828299003999663917, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10
@@ -67092,8 +67365,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3616167129611922591, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
+    - target: {fileID: 7415050940161166939, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -67504,6 +67780,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1567251504
@@ -67615,6 +67892,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1568980819
@@ -67886,6 +68164,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1574357380
@@ -68495,6 +68774,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1587311320
@@ -68618,6 +68898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  offset: 0
 --- !u!114 &1592029661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68806,6 +69087,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1593173671
@@ -68936,6 +69218,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1593688265
@@ -69105,6 +69388,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1595388838
@@ -69231,6 +69515,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1596288081
@@ -69357,6 +69642,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1597850111
@@ -69909,6 +70195,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1608708897
@@ -70106,6 +70393,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1611849501
@@ -70943,6 +71231,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1628364202
@@ -71086,6 +71375,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 1
 --- !u!65 &1638353654
@@ -71265,6 +71555,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1644278169
@@ -71546,6 +71837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  offset: 0
 --- !u!114 &1658384935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72837,6 +73129,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1687003796
@@ -73725,6 +74018,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1710349785
@@ -73860,6 +74154,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1713589670
@@ -74106,6 +74401,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1715568805
@@ -74271,10 +74567,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1691413852}
     m_Modifications:
-    - target: {fileID: 1663916128617354943, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2828299003999663917, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 23.5
@@ -74323,8 +74615,15 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3616167129611922591, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
+    - target: {fileID: 7415050940161166939, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059035183417997864, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -74469,6 +74768,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1741419426
@@ -75316,6 +75616,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1762204802
@@ -75618,6 +75919,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1767013615
@@ -75744,6 +76046,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1768563501
@@ -76812,6 +77115,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1803161034
@@ -77089,6 +77393,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1816144332
@@ -77262,6 +77567,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1820304838
@@ -77610,6 +77916,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1828716136
@@ -78195,6 +78502,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1844513851
@@ -80283,6 +80591,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1883153889
@@ -81101,6 +81410,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1901814470
@@ -81405,6 +81715,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1905788773
@@ -81477,6 +81788,153 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1905788770}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1907342881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1907342885}
+  - component: {fileID: 1907342884}
+  - component: {fileID: 1907342883}
+  - component: {fileID: 1907342882}
+  - component: {fileID: 1907342886}
+  - component: {fileID: 1907342887}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!65 &1907342882
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907342881}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1907342883
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907342881}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 2
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 94b0f79d6bf806345b7be28d29bb4050, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1907342884
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907342881}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1907342885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907342881}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4, y: 0.5, z: -3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1907342886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907342881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0ce92f2ea0279d49b205129c6e8c87c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delaySkillUnlock: 0
+  jumpSkill: 1
+  canJump: 0
+  delay: 0
+  onBox: 0
+  jumpCount: 0
+  inPower: 0
+--- !u!95 &1907342887
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907342881}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f9d34aee7bee511438eeb8187804210f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1911088857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81598,6 +82056,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1918742502
@@ -81765,6 +82224,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1920296824
@@ -81973,6 +82433,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1921975262
@@ -82103,6 +82564,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1922850305
@@ -82869,6 +83331,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1941689257
@@ -83262,6 +83725,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1949585468
@@ -83731,6 +84195,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1966902148
@@ -84064,6 +84529,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!1001 &1971916348
@@ -84187,6 +84653,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1971949454
@@ -85057,6 +85524,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1978793119
@@ -85537,6 +86005,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1986069699
@@ -85841,6 +86310,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &1994548720
@@ -86640,6 +87110,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &2007174029
@@ -87539,6 +88010,7 @@ MonoBehaviour:
   isMoving: 1
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!4 &2022848316 stripped
@@ -87943,6 +88415,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &2024788858
@@ -88066,6 +88539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  offset: 0
 --- !u!114 &2025089092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88261,6 +88735,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 1
 --- !u!65 &2028237678
@@ -88661,6 +89136,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
   codeName: Delay
@@ -88789,6 +89265,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &2037465999
@@ -88976,6 +89453,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &2040914264
@@ -89179,6 +89657,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 1
 --- !u!65 &2046933824
@@ -89611,6 +90090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+  offset: 0
 --- !u!114 &2050509961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90028,6 +90508,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &2066886113
@@ -90438,6 +90919,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &2073581456
@@ -91002,6 +91484,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &2086276595
@@ -92045,6 +92528,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &2111426900
@@ -92986,6 +93470,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!65 &2142898581
@@ -93292,6 +93777,7 @@ MonoBehaviour:
   isMoving: 0
   moveVec: []
   supportDelay: 0
+  delayMovSubscribePlayerMov: 0
   currentMoveVec: {x: 0, y: 0}
   cloneable: 0
 --- !u!1001 &7530802548820676640
@@ -93302,10 +93788,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1701820098}
     m_Modifications:
-    - target: {fileID: 1663916128617354943, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2828299003999663917, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -93346,13 +93828,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3775851510503722621, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 4128200879354993672, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 186e07f87f312674eb396a9a4eca024a, type: 2}
     - target: {fileID: 5933479340052584998, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
       propertyPath: m_Name
       value: CPU
+      objectReference: {fileID: 0}
+    - target: {fileID: 7415050940161166939, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9059035183417997864, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
       propertyPath: m_IsActive
@@ -93362,8 +93848,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Box
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3616167129611922591, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -93381,6 +93866,7 @@ SceneRoots:
   - {fileID: 331566186}
   - {fileID: 1929040897}
   - {fileID: 360774896}
+  - {fileID: 1907342885}
   - {fileID: 224882053}
   - {fileID: 1701820098}
   - {fileID: 820642062}

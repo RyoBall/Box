@@ -32,14 +32,14 @@ public interface IRecord<T>
     public void Init() 
     {
         stack = new Stack<T>();
-        EventManager.OnPlayerMov +=Record;
+        EventManager.OnPlayerReadyToMov +=Record;
         EventManager.OnBack +=BackEffect;
         EventManager.OnLevelReset+=ClearStack;
         EventManager.OnLevelChange+=ClearStack;
     }
     public void Quit() 
     {
-        EventManager.OnPlayerMov -= Record;
+        EventManager.OnPlayerReadyToMov -= Record;
         EventManager.OnBack -= BackEffect;
         EventManager.OnLevelReset -= ClearStack;
         EventManager.OnLevelChange -= ClearStack;
@@ -60,7 +60,7 @@ public interface IRecord<T>
             BackEffectInClass(data);
         }
     }
-    public void Record(PlayerMovEventData data);
+    public void Record();
     public void BackEffectInClass(T data);
 }
 
@@ -91,6 +91,7 @@ public class PlayerController : CheckObject,ICode,IRecord<PlayerActionData>
         jumpSkill = true;
         playerAnimator = GetComponent<Animator>();
         playerAnimator.speed = 3;
+        EventManager.OnPlayerReadyToMov += Record;
         ((IRecord<PlayerActionData>)this).Init();
     }
 
@@ -311,9 +312,12 @@ public class PlayerController : CheckObject,ICode,IRecord<PlayerActionData>
         jumpSkill = data.jumpSkill;
         delaySkillUnlock = data.delaySkillUnlock;
     }
-
-    void IRecord<PlayerActionData>.Record(PlayerMovEventData data)
+    void Record() 
     {
         ((IRecord<PlayerActionData>)this).stack.Push(new PlayerActionData(transform.position, canJump, delay, onBox, jumpCount, inPower, jumpSkill, delaySkillUnlock));
+    }
+    void IRecord<PlayerActionData>.Record()
+    {
+        ;   
     }
 }

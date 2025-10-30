@@ -98,7 +98,6 @@ public class GameManager : MonoBehaviour
                 layer = LayerMask.NameToLayer("Level2");
                 MapManager.instance.ResaveTransformAndResetPlayer(layer);
                 Dialogue.instance.ShowText();
-                Dialogue.instance.ShowText();
                 break;
             case State.TWO:
                 state = State.THREE;
@@ -118,7 +117,7 @@ public class GameManager : MonoBehaviour
                 EventManager.OnCPUEnterTarget -= Win;
                 //
                 state = State.FOUR;
-                PlayerController.instance.transform.position = new Vector3(41f, 0, -2);
+                PlayerController.instance.transform.position = new Vector3(39f, 0, -2);
                 cam.transform.DOMove(new Vector3(44.5f, 8.5f, -8f), Data.fixedCameraMovTime);
                 layer = LayerMask.NameToLayer("Level4");
                 MapManager.instance.ResaveTransformAndResetPlayer(layer);

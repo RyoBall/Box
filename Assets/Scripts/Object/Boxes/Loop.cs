@@ -20,6 +20,7 @@ public class Loop : MonoBehaviour
         EventManager.OnPlayerOverMov -= LoopEnter;
         GameObject box = Instantiate(collision.gameObject, collision.transform.position + new Vector3(collision.GetComponent<Box>().currentMoveVec.x, 0, collision.GetComponent<Box>().currentMoveVec.y), Quaternion.identity);
             box.GetComponent<Box>().cloneable = false;
+            box.GetComponent<Box>().Init(new LevelChangeData(LayerMask.NameToLayer("Level6")));
         MapManager.instance.tmpObjects.Add(box);
         EventManager.LoopEnter(new LoopEnterEventData(collision.gameObject));
     }

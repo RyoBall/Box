@@ -15,6 +15,7 @@ public class DelayTextManager : MonoBehaviour
     {
         foreach(TMP_Text text in texts) 
         {
+            if(text!=null)
             text.enabled=true;
         }   
     }

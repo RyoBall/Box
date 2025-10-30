@@ -55,14 +55,14 @@ public class DeleteBox : Box,IRecord<BaseData>
         base.Start();
         EventManager.OnLevelChange += Init;
     }
-    void Init(LevelChangeData data)
+    public override void Init(LevelChangeData data)
     {
         if (gameObject.layer == (int)data.layer)
         {
             ((IRecord<BaseData>)this).Init();
         }
     }
-    void IRecord<BaseData>.Record(PlayerMovEventData data)
+    void IRecord<BaseData>.Record()
     {
         List<Vector2> Vecs = new List<Vector2>();
         for (int i = 0; i < moveVec.Count; i++)

@@ -61,6 +61,7 @@ public class MapManager : MonoBehaviour,IRecord<MapData>
 
     public void Reset()//所有物体回到原点
     {
+        DelayStateManager.instance.inDelayAction = false;
         EventManager.LevelReset();
         foreach (var t in originalTransforms)
         {
@@ -84,11 +85,12 @@ public class MapManager : MonoBehaviour,IRecord<MapData>
             PlayerController.instance.canJump = true;
             PlayerController.instance.onBox=false;
         }
-        
+        if(PlayerController.instance.delaySkillUnlock)
+        PlayerController.instance.delay = false;
         OnReset?.Invoke(this, EventArgs.Empty);
     }
 
-    void IRecord<MapData>.Record(PlayerMovEventData data)
+    void IRecord<MapData>.Record()
     {
         ;
     }

@@ -35,12 +35,14 @@ public class Level3SpecialManager : MonoBehaviour
         {
             if (box.moveVec.Count >= 2) 
             {
-                EventManager.OnPlayerMov += box.DelayMove;
+                box.DelayMoveSubscribePlayerMov(null);
             }
             else if(box.moveVec.Count <= 0) 
             {
-                EventManager.OnPlayerMov -= box.DelayMove;
+                box.DelayMoveDisSubscribePlayerMov();
             }
+            if(box.text!=null)
+                box.text.text.enabled = true;
         }
     }
 }
