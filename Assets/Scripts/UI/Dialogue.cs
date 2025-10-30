@@ -86,6 +86,25 @@ public class Dialogue : MonoBehaviour
             StartCoroutine(TypeText(currentText));
         }
     }
+    
+    public IEnumerator ShowTextCoroutine()
+    {
+        if (textFiles.Length == 0 || textFiles == null)
+        {
+            yield break;
+        }
+    
+        string filePath = textFiles[currentIndex++];
+        currentText = File.ReadAllText(filePath);
+        DialoguePanel.SetActive(true);
+    
+        // 启动文本显示
+        StartCoroutine(TypeText(currentText));
+    
+        // 等待对话面板关闭作为完成标志
+        yield return new WaitUntil(() => !DialoguePanel.activeInHierarchy);
+    }
+    
     public void ShowTextInOtherSituation(string text)
     {
         currentText = text;

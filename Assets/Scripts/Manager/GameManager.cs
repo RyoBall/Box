@@ -151,11 +151,31 @@ public class GameManager : MonoBehaviour
                 break;
             case State.SIX:
                 //胜利结算
-                Dialogue.instance.ShowText();
+                StartCoroutine(WinCoroutine());
                 break;
             default:
                 break;
         }
         EventManager.LevelChange(new LevelChangeData(layer));
     }
+    
+    private IEnumerator WinCoroutine()
+    {
+        // 等待文本显示完成
+        yield return StartCoroutine(Dialogue.instance.ShowTextCoroutine());
+    
+        // 文本显示完成后关闭游戏
+        QuitGame();
+    }
+
+    private void QuitGame()
+    {
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                Application.Quit();
+        #endif
+    }
 }
+
+
