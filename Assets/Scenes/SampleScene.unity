@@ -60617,12 +60617,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: CPUPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 7415050940161166939, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8822855215362031976, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9059035183417997864, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1047108951364762302, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
+    - {fileID: 8648994563608026255, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
+    - {fileID: 8402156923098539830, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9059035183417997864, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
@@ -67074,6 +67085,10 @@ PrefabInstance:
     - target: {fileID: 5933479340052584998, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
       propertyPath: m_Name
       value: CPUPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 7415050940161166939, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -74296,6 +74311,10 @@ PrefabInstance:
     - target: {fileID: 5933479340052584998, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
       propertyPath: m_Name
       value: CPUPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 7415050940161166939, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -93462,9 +93481,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4128200879354993672, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 186e07f87f312674eb396a9a4eca024a, type: 2}
     - target: {fileID: 5933479340052584998, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
       propertyPath: m_Name
       value: CPU
+      objectReference: {fileID: 0}
+    - target: {fileID: 7415050940161166939, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9059035183417997864, guid: f08559f9de0681c4b8642bc61eab496d, type: 3}
       propertyPath: m_IsActive
