@@ -37,11 +37,9 @@ public class Level4SpecialManager : MonoBehaviour
     }
     public void ChangeCPU(CPUEnterTargetEventData data) 
     {
-        int randPos = currentPosId;
-        while (randPos == currentPosId) 
-        {
-            randPos = Random.Range(1, 4);
-        }
+        int randPos = currentPosId + 1;
+        if (randPos > 3)
+            randPos = 1;
         target.transform.position = MovPositions[randPos - 1];
         currentPosId = randPos;
         if (!say) 
