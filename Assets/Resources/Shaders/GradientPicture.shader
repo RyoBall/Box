@@ -1,25 +1,25 @@
-Shader "Custom/GradientShader"
+Shader "Custom/Picture"
 {
     Properties
     {
-        [HDR]_ColorTop ("Top Color", Color) = (1,1,1,1)
-        [HDR]_ColorBottom ("Bottom Color", Color) = (0,0,1,1)
-        _Tilt ("Tilt", Range(0.0, 1.0)) = 0
-        _TimeSpeed("TimeSpeed",Range(0.0,1.0)) = 0.1
+        _MainTex("MainTex",2D) = "white" {}
+        _TimeSpeed("YimeSpeed",Range(0.0,1.0)) = 0.1
     }
     SubShader
     {
         Tags { 
-            "RenderType"="Opaque"
+            "RenderType"="TransParent"
+            "Queue"="AlphaTest"
             "RenderPipeline"="UniversalRenderPipeline"
-            "LightMode" = "UniversalForward"
         }
 
         Pass
         {
+            Tags {"LightMode" = "UniversalForward"}
             HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
+            //#pragma shader_feature _ALPHATEST_ON
 
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Color.hlsl"
@@ -35,11 +35,11 @@ Shader "Custom/GradientShader"
                 float2 uv : TEXCOORD0;
                 float4 vertex : SV_POSITION;
             };
-
-            float4 _ColorTop;
-            float4 _ColorBottom;
+            
             float _Tilt;
             float _TimeSpeed;
+            TEXTURE2D(_MainTex);
+            SAMPLER(sampler_MainTex);
 
             v2f vert (appdata v)
             {
@@ -51,16 +51,16 @@ Shader "Custom/GradientShader"
 
             half4 frag (v2f i) : SV_Target
             {
-                float x = (i.uv.x + _Time.y * _TimeSpeed) % 1.0f;
-                float y = (i.uv.y + _Time.y * _TimeSpeed) % 1.0f;
-                float lerpValue = lerp(x,y,_Tilt);
+                half4 albedo = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv);
+                half a = albedo.a;
                 
-                half3 bottomSRGB = LinearToSRGB(_ColorBottom.rgb);
-                half3 topSRGB = LinearToSRGB(_ColorTop.rgb);
-                half3 resultSRGB = lerp(bottomSRGB, topSRGB, lerpValue);
-                half4 col = half4(SRGBToLinear(resultSRGB), 1.0);
+                //float fade = (sin(_Time.y * _TimeSpeed) + 1.0) * 0.5;  // 范围 [0, 1]
+                //albedo.a *= fade;
                 
-                return col;
+                // 如果需要硬边缘，可以保留clip但调整阈值
+                clip(albedo.a - 0.01);
+
+                return albedo;
             }
             ENDHLSL
         }

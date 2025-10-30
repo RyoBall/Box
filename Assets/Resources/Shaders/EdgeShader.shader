@@ -6,10 +6,11 @@ Shader "Unlit/EdgeShader"
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" "LightMode" = "UniversalForward"}
+        Tags { "RenderType"="Opaque" "RenderPipeline"="UniversalRenderPipeline"}
 
         Pass
         {
+            Tags {"LightMode" = "UniversalForward"}
             ZWrite On
             Cull Front
             
@@ -27,7 +28,6 @@ Shader "Unlit/EdgeShader"
 
             struct Varyings
             {
-                float3 normalWS : TEXCOORD0;
                 float4 positionCS : SV_POSITION;
             };
             

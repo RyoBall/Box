@@ -34,7 +34,14 @@ GraphicsSettings:
   - {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10783, guid: 0000000000000000f000000000000000, type: 0}
-  m_PreloadedShaders: []
+  - {fileID: 4800000, guid: 86468536b386c634b9249d6e7b5bcc89, type: 3}
+  - {fileID: 4800000, guid: fd8ddd0907b959a45943b72a9e3a5919, type: 3}
+  - {fileID: 4800000, guid: 70eb8152cbe2211499d5b1f08de76854, type: 3}
+  - {fileID: 4800000, guid: 06a30806a23d212429b9be3d5be9965f, type: 3}
+  - {fileID: 4800000, guid: 86468536b386c634b9249d6e7b5bcc89, type: 3}
+  - {fileID: 4800000, guid: 990019f7267d1894eba5cfdcb3c0772d, type: 3}
+  m_PreloadedShaders:
+  - {fileID: 20000000, guid: 45b7d959bf11309489ad6d7d8d018d8d, type: 2}
   m_PreloadShadersBatchTimeLimit: -1
   m_SpritesDefaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_CustomRenderPipeline: {fileID: 11400000, guid: e69b7dff4479bd3409383bba958d3c47, type: 2}
@@ -45,8 +52,8 @@ GraphicsSettings:
   m_TierSettings: []
   m_LightmapStripping: 0
   m_FogStripping: 0
-  m_InstancingStripping: 0
-  m_BrgStripping: 0
+  m_InstancingStripping: 2
+  m_BrgStripping: 2
   m_LightmapKeepPlain: 1
   m_LightmapKeepDirCombined: 1
   m_LightmapKeepDynamicPlain: 1

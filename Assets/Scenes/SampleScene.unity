@@ -44152,6 +44152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 330585545}
   OpenPanel: {fileID: 1305033072}
+  shaderVariantCollection: {fileID: 0}
 --- !u!4 &991462992
 Transform:
   m_ObjectHideFlags: 0

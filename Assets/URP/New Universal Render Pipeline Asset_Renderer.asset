@@ -15,6 +15,7 @@ MonoBehaviour:
   m_Active: 1
   _OutLineThickness: 0.005
   _OutLineMaterial: {fileID: 2100000, guid: 554a0a753b1f7b6449aa8df1ebb38928, type: 2}
+  shaderVariantCollection: {fileID: 20000000, guid: 3056e5034b7cf8e438d293c3a158eaf1, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,20 +1,20 @@
-Shader "Custom/Picture"
+Shader "Custom/F"
 {
     Properties
     {
         _MainTex("MainTex",2D) = "white" {}
-        _TimeSpeed("YimeSpeed",Range(0.0,1.0)) = 0.1
+        _TimeSpeed("TimeSpeed",Range(0.0,1.0)) = 0.1
     }
     SubShader
     {
         Tags { 
             "RenderType"="TransParent"
             "Queue"="AlphaTest"
-            "LightMode" = "UniversalForward"
         }
 
         Pass
         {
+            Tags {"LightMode" = "UniversalForward"}
             HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
@@ -50,7 +50,9 @@ Shader "Custom/Picture"
 
             half4 frag (v2f i) : SV_Target
             {
-                half4 albedo = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv);
+                float2 uv = i.uv;
+                uv.x -= _Time.x * 0.5;
+                half4 albedo = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, uv);
                 half a = albedo.a;
                 
                 //float fade = (sin(_Time.y * _TimeSpeed) + 1.0) * 0.5;  // 范围 [0, 1]

@@ -8,23 +8,20 @@ Shader "Unlit/PBR_WithShadow"
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque"
-            "RenderPipeline"="UniversalRenderPipeline"
-            "LightMode" = "UniversalForward"}
+        Tags { "RenderType"="Opaque"}
 
         Pass
         {
-            HLSLPROGRAM
+            CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
             
-            #pragma multi_compile _ _MAIN_LIGHT_SHADOWS
-            #pragma multi_compile _ _MAIN_LIGHT_SHADOWS_CASCADE
-            #pragma multi_compile _ _SHADOWS_SOFT
+            #pragma multi_compile_fwdbase
+            #pragma multi_compile_fog
 
-            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
-            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
-            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Shadows.hlsl"
+            #include "UnityCG.cginc"
+            #include "AutoLight.cginc"
+            #include "Lighting.cginc"
 
             struct Attributes
             {
@@ -39,14 +36,12 @@ Shader "Unlit/PBR_WithShadow"
                 float3 positionWS : TEXCOORD0;
                 float3 normalWS : TEXCOORD1;
                 float3 viewDirWS : TEXCOORD2;
-                float4 shadowCoord : TEXCOORD3; 
+                LIGHTING_COORDS(3, 4)
             };
 
-            CBUFFER_START(UnityPerMaterial)
-                float4 _BaseColor;
-                float _Metallic;
-                float _Roughness;
-            CBUFFER_END
+            float4 _BaseColor;
+            float _Metallic;
+            float _Roughness;
             
             float3 FresnelSchlick(float cosTheta, float3 F0)
             {
@@ -103,40 +98,35 @@ Shader "Unlit/PBR_WithShadow"
             Varyings vert (Attributes v)
             {
                 Varyings o;
-                VertexPositionInputs posInputs = GetVertexPositionInputs(v.vertex);
-                o.positionCS = posInputs.positionCS;
-                o.positionWS = posInputs.positionWS;
-                o.normalWS = TransformObjectToWorldNormal(v.normal);
-                o.viewDirWS = GetWorldSpaceNormalizeViewDir(o.positionWS);
+                o.positionCS = UnityObjectToClipPos(v.vertex);
+                o.positionWS = mul(unity_ObjectToWorld, v.vertex).xyz;
+                o.normalWS = UnityObjectToWorldNormal(v.normal);
+                o.viewDirWS = normalize(_WorldSpaceCameraPos.xyz - o.positionWS);
                 
-                o.shadowCoord = TransformWorldToShadowCoord(o.positionWS);
                 return o;
             }
 
-            
             half4 frag (Varyings i) : SV_Target
             {
-                Light light = GetMainLight(i.shadowCoord);
-
                 float3 N = normalize(i.normalWS);
-                float3 L = normalize(light.direction);
+                float3 L = normalize(_WorldSpaceLightPos0.xyz);
                 float3 V = normalize(i.viewDirWS);
                 float3 albedo = _BaseColor.rgb;
                 
-                float shadow = MainLightRealtimeShadow(i.shadowCoord);
+                float shadow = LIGHT_ATTENUATION(i);
 
                 float3 brdf = BRDF(N, L, V, albedo);
-                float3 ambient = SampleSH(N) * albedo * 0.1;
+                float3 ambient = UNITY_LIGHTMODEL_AMBIENT.rgb * albedo * 0.1;
 
-                float3 finalColor = (brdf * light.color * shadow * light.distanceAttenuation) + ambient;
+                float3 finalColor = (brdf * _LightColor0.rgb * shadow) + ambient;
                 finalColor = pow(saturate(finalColor), 1.0 / 2.2);
                 
                 return half4(finalColor, 1.0);
             }
-            ENDHLSL
+            ENDCG
         }
 
-         Pass
+        Pass
         {
             Name "ShadowCaster"
             Tags { "LightMode" = "ShadowCaster" }
@@ -146,12 +136,12 @@ Shader "Unlit/PBR_WithShadow"
             ColorMask 0
             Cull Back
 
-            HLSLPROGRAM
-            #pragma vertex ShadowPassVertex
-            #pragma fragment ShadowPassFragment
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            #pragma multi_compile_shadowcaster
 
-            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
-            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
+            #include "UnityCG.cginc"
 
             struct Attributes
             {
@@ -165,33 +155,18 @@ Shader "Unlit/PBR_WithShadow"
                 float4 positionCS : SV_POSITION;
             };
 
-            float3 _LightDirection;
-
-            Varyings ShadowPassVertex(Attributes v)
+            Varyings vert(Attributes v)
             {
                 Varyings o;
-                
-                VertexPositionInputs vertexInput = GetVertexPositionInputs(v.positionOS.xyz);
-                float3 positionWS = vertexInput.positionWS;
-                float3 normalWS = TransformObjectToWorldNormal(v.normalOS);
-
-                float4 positionCS = TransformWorldToHClip(ApplyShadowBias(positionWS, normalWS, _LightDirection));
-                
-                #if UNITY_REVERSED_Z
-                    positionCS.z = min(positionCS.z, positionCS.w * UNITY_NEAR_CLIP_VALUE);
-                #else
-                    positionCS.z = max(positionCS.z, positionCS.w * UNITY_NEAR_CLIP_VALUE);
-                #endif
-
-                o.positionCS = positionCS;
+                o.positionCS = UnityObjectToClipPos(v.positionOS);
                 return o;
             }
 
-            half4 ShadowPassFragment(Varyings i) : SV_TARGET
+            half4 frag(Varyings i) : SV_TARGET
             {
                 return 0;
             }
-            ENDHLSL
+            ENDCG
         }
     }
 }
