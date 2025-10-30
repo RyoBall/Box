@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
         //PlayerController.instance.transform.position = new Vector3(-4,.5f,-3);
         //cam.transform.position = new Vector3(0.54f, 7.18f, -6.64f);
         OpenPanel.SetActive(true);
-        EventManager.LevelChange(new LevelChangeData(LayerMask.NameToLayer("Level1")));
         if (shaderVariantCollection != null)
         {
             // 强制加载 Shader Variant Collection

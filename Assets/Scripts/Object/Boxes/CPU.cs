@@ -93,8 +93,11 @@ public class CPU : Box,IRecord<CPUData>
     }
     void Init(LevelChangeData data) 
     {
+        Debug.Log(LayerMask.LayerToName(gameObject.layer));
+        Debug.Log(name);
         if (gameObject.layer == (int)data.layer) 
         {
+            Debug.Log(1);
             ((IRecord<CPUData>)this).Init();
             EventManager.OnPlayerOverMov += FindPlayer;
         }
@@ -103,6 +106,7 @@ public class CPU : Box,IRecord<CPUData>
     {
         base.Start();
         EventManager.OnLevelChange += Init;
+        Init(new LevelChangeData(LayerMask.NameToLayer("Level1")));
         MapManager.OnReset += ResetBurnOut;
     }
 

@@ -55,6 +55,7 @@ public class EventManager : MonoBehaviour
     }   
     public static void LevelChange(LevelChangeData data) 
     {
+        Debug.Log((int)data.layer);
         OnLevelChange?.Invoke(data);
     }
     public static void DeleteBoxGetPush(GameObject obj) 
